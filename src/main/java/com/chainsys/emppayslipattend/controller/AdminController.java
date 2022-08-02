@@ -1,7 +1,6 @@
 package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +9,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import com.chainsys.emppayslipattend.model.Admin;
 import com.chainsys.emppayslipattend.service.AdminService;
 
@@ -29,14 +27,14 @@ public class AdminController {
 	}
 
 	@GetMapping("/getadmindetailsbyid")
-	public String getAdminDetailsById(@RequestParam("adminId") int id, Model model) {
+	public String getAdminDetailsById(@RequestParam("adminid") int id, Model model) {
 		Admin admin = adminService.findByid(id);
 		model.addAttribute("getadmindetailsbyid", admin);
 		return "findby-admid";
 	}
 
 	@GetMapping("/deleteadmindetailsbyid")
-	public String deleteAdminDetailsbyid(@RequestParam("adminId") int id) {
+	public String deleteAdminDetailsbyid(@RequestParam("adminid") int id) {
 		adminService.deleteById(id);
 		return "redirect:/admindetails/adminlist";
 	}
@@ -55,7 +53,7 @@ public class AdminController {
 	}
 
 	@GetMapping("/updateadmindetails")
-	public String showUpdateAdminForm(@RequestParam("adminId") int id, Model model) {
+	public String showUpdateAdminForm(@RequestParam("adminid") int id, Model model) {
 		Admin admin = adminService.findByid(id);
 		model.addAttribute("updateadmindetails", admin);
 		return "update-admindetails";

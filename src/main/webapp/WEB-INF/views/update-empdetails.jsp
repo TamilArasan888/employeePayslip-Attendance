@@ -10,7 +10,7 @@
 <body>
     <div id="root">
         <div id="form">
-            <form:form action ="updateemp" method = "post" modelAttribute = "updateempdetails">
+            <form:form action ="updateemployee" method = "post" modelAttribute = "updateemployeedetails">
             <div>
                     <label for="employeeID">Employee ID : </label>
                     <div>
@@ -66,9 +66,9 @@
                     </div>
                 </div>
                 <div>
-                    <label for="emplpoyeeJobID">Job ID : </label>
+                    <label for="employeeJobID">Job ID : </label>
                     <div>
-                        <form:input path="emplpoyeeJobID" />
+                        <form:input path="employeeJobID" />
                     </div>
                 </div>
                 <div>

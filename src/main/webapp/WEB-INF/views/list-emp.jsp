@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="table root">
-        <table>
+        <table border='2' width='100%' cellpadding='2'>
             <thead>
             <tr>
             <th>Employee Id</th>
@@ -21,6 +21,7 @@
             <th>Password</th>
             <th>Phone Number</th>
             <th>Address</th>
+            <th>Job Id</th>
             <th>Designation</th>
             <th>Manager Name</th>
             <th>Hire Date</th>
@@ -39,7 +40,7 @@
             <td>${employee.employeePassword}</td>
             <td>${employee.employeePhoneNumber}</td>
             <td>${employee.employeeAddress}</td>
-            <td>${employee.emplpoyeeJobID}</td>
+            <td>${employee.employeeJobID}</td>
             <td>${employee.employeeRole}</td>
             <td>${employee.employeeManager}</td>
             <td>${employee.employeeHireDate}</td>

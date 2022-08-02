@@ -10,7 +10,7 @@
 <body>
     <div id="root">
         <div id="form">
-            <form:form action ="updatepay" method = "post" modelAttribute = "updatepaydetails">
+            <form:form action ="updatepayslip" method = "post" modelAttribute = "updatepayslipdetails">
             <div>
                     <label for="payslipID">Payslip ID : </label>
                     <div>

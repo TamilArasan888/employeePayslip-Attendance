@@ -13,23 +13,23 @@ import com.chainsys.emppayslipattend.repository.PayslipRepository;
 public class PayslipService {
 
 	@Autowired
-	private PayslipRepository payslipReposit;
+	private PayslipRepository payslipRepository;
 
 	public Payslip findByid(int id) {
-		return payslipReposit.findById(id);
+		return payslipRepository.findById(id);
 	}
 
 	public Payslip save(Payslip pay) {
-		return payslipReposit.save(pay);
+		return payslipRepository.save(pay);
 	}
 
 	@Transactional
 	public void deleteById(int payid) {
-		payslipReposit.deleteById(payid);
+		payslipRepository.deleteById(payid);
 	}
 
 	public List<Payslip> getPayslip() {
-		List<Payslip> listPay = payslipReposit.findAll();
+		List<Payslip> listPay = payslipRepository.findAll();
 		return listPay;
 	}
 

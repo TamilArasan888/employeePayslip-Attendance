@@ -13,23 +13,23 @@ import com.chainsys.emppayslipattend.repository.AttendanceRepository;
 public class AttendanceService {
 
 	@Autowired
-	private AttendanceRepository attendanceReposit;
+	private AttendanceRepository attendanceRepository;
 
 	public Attendance findByid(int id) {
-		return attendanceReposit.findById(id);
+		return attendanceRepository.findById(id);
 	}
 
 	public Attendance save(Attendance atten) {
-		return attendanceReposit.save(atten);
+		return attendanceRepository.save(atten);
 	}
 
 	@Transactional
 	public void deleteById(int atten_id) {
-		attendanceReposit.deleteById(atten_id);
+		attendanceRepository.deleteById(atten_id);
 	}
 
 	public List<Attendance> getAttendance() {
-		List<Attendance> listAttend = attendanceReposit.findAll();
+		List<Attendance> listAttend = attendanceRepository.findAll();
 		return listAttend;
 	}
 

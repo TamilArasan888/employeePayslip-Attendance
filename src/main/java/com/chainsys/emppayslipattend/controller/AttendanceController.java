@@ -19,52 +19,52 @@ import com.chainsys.emppayslipattend.service.AttendanceService;
 public class AttendanceController {
 
 		@Autowired
-		private AttendanceService attendService;
+		private AttendanceService attendanceService;
 
-		@GetMapping("/attendlist")
+		@GetMapping("/attendancelist")
 		public String getAttendance(Model model) {
-			List<Attendance> atten = attendService.getAttendance();
-			model.addAttribute("allattendancedetails", atten);
+			List<Attendance> attendance = attendanceService.getAttendance();
+			model.addAttribute("allattendancedetails", attendance);
 			return "list-attend";
 		}
 
-		@GetMapping("/getattendbyid")
-		public String getAttendDetails(@RequestParam("id") int id, Model model) {
-			Attendance atten = attendService.findByid(id);
-			model.addAttribute("getattend", atten);
+		@GetMapping("/findattendancebyid")
+		public String getAttendDetails(@RequestParam("attendanceid") int id, Model model) {
+			Attendance attendance= attendanceService.findByid(id);
+			model.addAttribute("getattendance", attendance);
 			return "findby-attendid";
 		}
 
-		@GetMapping("/deleteattendance")
-		public String deleteAttendanceDetails(@RequestParam("attendid") int id) {
-			attendService.deleteById(id);
-			return "redirect:/attendancedetails/attendlist";
+		@GetMapping("/deleteattendancebyid")
+		public String deleteAttendanceDetails(@RequestParam("attendanceid") int id) {
+			attendanceService.deleteById(id);
+			return "redirect:/attendancedetails/attendancelist";
 		}
 
-		@GetMapping("/addattenddetails")
+		@GetMapping("/addattendancedetails")
 		public String showAddForm(Model model) {
-			Attendance atten = new Attendance();
-			model.addAttribute("addattenddetail", atten);
+			Attendance attendance = new Attendance();
+			model.addAttribute("addattendancedetail", attendance);
 			return "add-attend-form";
 		}
 
-		@PostMapping("/addattend")
-		public String addNewAttendDetails(@ModelAttribute("addattenddetail") Attendance atten) {
-			attendService.save(atten);
-			return "redirect:/attendancedetails/attendlist";
+		@PostMapping("/addattendance")
+		public String addNewAttendDetails(@ModelAttribute("addattendancedetail") Attendance attendance) {
+			attendanceService.save(attendance);
+			return "redirect:/attendancedetails/attendancelist";
 		}
 
-		@GetMapping("/updateattenddetails")
-		public String showUpdateAttendForm(@RequestParam("attendid") int id, Model model) {
-			Attendance atten = attendService.findByid(id);
-			model.addAttribute("updateattenddetails", atten);
+		@GetMapping("/updateattendancedetails")
+		public String showUpdateAttendForm(@RequestParam("attendanceid") int id, Model model) {
+			Attendance attendance = attendanceService.findByid(id);
+			model.addAttribute("updateattendancedetails", attendance);
 			return "update-attenddetails";
 		}
 
-		@PostMapping("/updateattend")
-		public String updateAttendDetails(@ModelAttribute("updateattenddetails") Attendance atten) {
-			attendService.save(atten);
-			return "redirect:/attendancedetails/attendlist";
+		@PostMapping("/updateattendance")
+		public String updateAttendDetails(@ModelAttribute("updateattendancedetails") Attendance attendance) {
+			attendanceService.save(attendance);
+			return "redirect:/attendancedetails/attendancelist";
 		}
 
 }

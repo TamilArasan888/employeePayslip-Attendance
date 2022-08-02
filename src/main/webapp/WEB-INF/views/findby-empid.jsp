@@ -10,7 +10,7 @@
 <body>
     <div id="root">
         <div id="form">
-            <form:form action ="" method = "post" modelAttribute = "getemp">
+            <form:form action ="" method = "post" modelAttribute = "getemployeebyid">
             <div>
                     <label for="employeeID">Employee ID : </label>
                     <div>
@@ -66,9 +66,9 @@
                     </div>
                 </div>
                 <div>
-                    <label for="emplpoyeeJobID">Job ID : </label>
+                    <label for="employeeJobID">Job ID : </label>
                     <div>
-                        <form:input path="emplpoyeeJobID" readonly="true"/>
+                        <form:input path="employeeJobID" readonly="true"/>
                     </div>
                 </div>
                 <div>

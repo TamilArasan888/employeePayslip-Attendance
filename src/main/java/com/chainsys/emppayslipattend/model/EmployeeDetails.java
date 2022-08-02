@@ -38,7 +38,7 @@ public class EmployeeDetails {
 	private String employeeAddress;
 
 	@Column(name = "emp_Jobid")
-	private int emplpoyeeJobID;
+	private int employeeJobID;
 
 	@Column(name = "emp_Role")
 	private String employeeRole;
@@ -51,6 +51,17 @@ public class EmployeeDetails {
 
 	@Column(name = "emp_Workinghours")
 	private int employeeWorkingHours;
+
+	@Column(name="emp_basicsalary")
+	private float empBasicsalary;
+	
+	public float getEmpBasicsalary() {
+		return empBasicsalary;
+	}
+
+	public void setEmpBasicsalary(float empBasicsalary) {
+		this.empBasicsalary = empBasicsalary;
+	}
 
 	public int getEmployeeID() {
 		return employeeID;
@@ -124,12 +135,12 @@ public class EmployeeDetails {
 		this.employeeAddress = employeeAddress;
 	}
 
-	public int getEmplpoyeeJobID() {
-		return emplpoyeeJobID;
+	public int getEmployeeJobID() {
+		return employeeJobID;
 	}
 
-	public void setEmplpoyeeJobID(int emplpoyeeJobID) {
-		this.emplpoyeeJobID = emplpoyeeJobID;
+	public void setEmployeeJobID(int employeeJobID) {
+		this.employeeJobID = employeeJobID;
 	}
 
 	public String getEmployeeRole() {

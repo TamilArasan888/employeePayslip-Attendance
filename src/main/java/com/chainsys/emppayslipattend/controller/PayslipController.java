@@ -19,52 +19,52 @@ import com.chainsys.emppayslipattend.service.PayslipService;
 public class PayslipController {
 
 	@Autowired
-	private PayslipService payService;
+	private PayslipService payslipService;
 
-	@GetMapping("/paylist")
+	@GetMapping("/paysliplist")
 	public String getPayslip(Model model) {
-		List<Payslip> pay = payService.getPayslip();
-		model.addAttribute("allpayslipdetails", pay);
+		List<Payslip> payslip = payslipService.getPayslip();
+		model.addAttribute("allpayslipdetails", payslip);
 		return "list-pay";
 	}
 
-	@GetMapping("/getpaybyid")
-	public String getPayDetails(@RequestParam("id") int id, Model model) {
-		Payslip pay = payService.findByid(id);
-		model.addAttribute("getpay", pay);
+	@GetMapping("/findpayslipbyid")
+	public String getPayDetails(@RequestParam("payslipid") int id, Model model) {
+		Payslip payslip = payslipService.findByid(id);
+		model.addAttribute("getpayslip", payslip);
 		return "findby-payid";
 	}
 
-	@GetMapping("/deletepayslip")
-	public String deletePayslipDetails(@RequestParam("payid") int id) {
-		payService.deleteById(id);
-		return "redirect:/payslipdetails/paylist";
+	@GetMapping("/deletepayslipbyid")
+	public String deletePayslipDetails(@RequestParam("payslipid") int id) {
+		payslipService.deleteById(id);
+		return "redirect:/payslipdetails/paysliplist";
 	}
 
-	@GetMapping("/addpaydetails")
+	@GetMapping("/addpayslipdetails")
 	public String showAddForm(Model model) {
-		Payslip pay = new Payslip();
-		model.addAttribute("addpaydetail", pay);
+		Payslip payslip = new Payslip();
+		model.addAttribute("addpayslipdetail", payslip);
 		return "add-pay-form";
 	}
 
-	@PostMapping("/addpay")
-	public String addNewPayslipDetails(@ModelAttribute("addpaydetail") Payslip pay) {
-		payService.save(pay);
-		return "redirect:/payslipdetails/paylist";
+	@PostMapping("/addpayslip")
+	public String addNewPayslipDetails(@ModelAttribute("addpaydetail") Payslip payslip) {
+		payslipService.save(payslip);
+		return "redirect:/payslipdetails/paysliplist";
 	}
 
-	@GetMapping("/updatepaydetails")
-	public String showUpdatePayForm(@RequestParam("payid") int id, Model model) {
-		Payslip pay = payService.findByid(id);
-		model.addAttribute("updatepaydetails", pay);
+	@GetMapping("/updatepayslipdetails")
+	public String showUpdatePayForm(@RequestParam("payslipid") int id, Model model) {
+		Payslip payslip = payslipService.findByid(id);
+		model.addAttribute("updatepayslipdetails", payslip);
 		return "update-paydetails";
 	}
 
-	@PostMapping("/updatepay")
-	public String updatePayDetails(@ModelAttribute("updatepaydetails") Payslip pay) {
-		payService.save(pay);
-		return "redirect:/payslipdetails/paylist";
+	@PostMapping("/updatepayslip")
+	public String updatePayDetails(@ModelAttribute("updatepaydetails") Payslip payslip) {
+		payslipService.save(payslip);
+		return "redirect:/payslipdetails/paysliplist";
 	}
 
 }

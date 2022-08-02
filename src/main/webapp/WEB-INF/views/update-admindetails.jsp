@@ -10,7 +10,7 @@
 <body>
     <div id="root">
         <div id="form">
-            <form:form action ="updateadmin" method = "post" modelAttribute = "updateadmdetails">
+            <form:form action ="updateadmin" method = "post" modelAttribute = "updateadmindetails">
             <div>
                     <label for="adminID">Admin ID : </label>
                     <div>

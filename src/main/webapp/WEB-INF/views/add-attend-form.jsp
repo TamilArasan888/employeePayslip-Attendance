@@ -10,7 +10,7 @@
 <body>
     <div id="root">
         <div id="form">
-            <form:form action ="addattend" method = "post" modelAttribute = "addattenddetail">
+            <form:form action ="addattendance" method = "post" modelAttribute = "addattendancedetail">
             <div>
                     <label for="attendanceID">Attendance ID : </label>
                     <div>

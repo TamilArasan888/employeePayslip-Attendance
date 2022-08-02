@@ -11,22 +11,22 @@ import com.chainsys.emppayslipattend.repository.AdminRepository;
 @Service
 public class AdminService {
 	@Autowired
-	private AdminRepository adminReposit;
+	private AdminRepository adminRepository;
 
 	public Admin findByid(int id) {
-		return adminReposit.findById(id);
+		return adminRepository.findById(id);
 	}
 
 	public Admin save(Admin adm) {
-		return adminReposit.save(adm);
+		return adminRepository.save(adm);
 	}
 
 	public void deleteById(int adm_id) {
-		adminReposit.deleteById(adm_id);
+		adminRepository.deleteById(adm_id);
 	}
 
 	public List<Admin> getAdmin() {
-		List<Admin> listAdm = adminReposit.findAll();
+		List<Admin> listAdm = adminRepository.findAll();
 		return listAdm;
 	}
 

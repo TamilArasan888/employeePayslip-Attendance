@@ -1,6 +1,7 @@
 package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.emppayslipattend.model.BasicSalary;
 import com.chainsys.emppayslipattend.model.EmployeeDetails;
 import com.chainsys.emppayslipattend.service.EmployeeDetailsService;
 
@@ -21,50 +23,54 @@ public class EmployeeDetailsController {
 	@Autowired
 	private EmployeeDetailsService employeeDetailsService;
 
-	@GetMapping("/emplist")
+	@GetMapping("/employeelist")
 	public String getEmployeeDetails(Model model) {
-		List<EmployeeDetails> theEmp = employeeDetailsService.getEmployeeDetails();
-		model.addAttribute("allemployeedetails", theEmp);
+		List<EmployeeDetails> employee = employeeDetailsService.getEmployeeDetails();
+		model.addAttribute("allemployeedetails", employee);
 		return "list-emp";
 	}
 
-	@GetMapping("/getempbyid")
-	public String getEmpDetails(@RequestParam("id") int id, Model model) {
-		EmployeeDetails theEmp = employeeDetailsService.findByid(id);
-		model.addAttribute("getemp", theEmp);
+	@GetMapping("/findemployeebyid")
+	public String getEmpDetails(@RequestParam("employeeid") int id, Model model) {
+		EmployeeDetails employee = employeeDetailsService.findByid(id);
+		model.addAttribute("getemployeebyid", employee);
 		return "findby-empid";
 	}
 
-	@GetMapping("/deleteemp")
-	public String deleteEmployeeDetails(@RequestParam("empid") int id) {
+	@GetMapping("/deleteemployeebyid")
+	public String deleteEmployeeDetails(@RequestParam("employeeid") int id) {
 		employeeDetailsService.deleteById(id);
-		return "redirect:/employeedetails/emplist";
+		return "redirect:/employeedetails/employeelist";
 	}
 
-	@GetMapping("/addempdetails")
+	@GetMapping("/addemployeedetails")
 	public String showAddForm(Model model) {
-		EmployeeDetails theEmp = new EmployeeDetails();
-		model.addAttribute("addempdetail", theEmp);
+		EmployeeDetails employee = new EmployeeDetails();
+		model.addAttribute("addemployeedetail", employee);
+		List<BasicSalary> basicSalary=employeeDetailsService.getAllBasicSalary();
+		model.addAttribute("basicSalary", basicSalary);
 		return "add-emp-form";
 	}
 
-	@PostMapping("/addemp")
-	public String addNewEmployeeDetails(@ModelAttribute("addempdetail") EmployeeDetails theEmp) {
-		employeeDetailsService.save(theEmp);
-		return "redirect:/employeedetails/emplist";
+	@PostMapping("/addemployee")
+	public String addNewEmployeeDetails(@ModelAttribute("addempdetail") EmployeeDetails employee) {
+		Optional<BasicSalary> basicSalary=employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
+		employee.setEmpBasicsalary(basicSalary.get().getEmployeeBasicSalary());
+		employeeDetailsService.save(employee);
+		return "redirect:/employeedetails/employeelist";
 	}
 
-	@GetMapping("/updateempdetails")
-	public String showUpdateEmpForm(@RequestParam("empid") int id, Model model) {
-		EmployeeDetails theEmp = employeeDetailsService.findByid(id);
-		model.addAttribute("updateempdetails", theEmp);
+	@GetMapping("/updateemployeedetails")
+	public String showUpdateEmpForm(@RequestParam("employeeid") int id, Model model) {
+		EmployeeDetails employee = employeeDetailsService.findByid(id);
+		model.addAttribute("updateemployeedetails", employee);
 		return "update-empdetails";
 	}
 
-	@PostMapping("/updateemp")
-	public String updateEmpDetails(@ModelAttribute("updateempdetails") EmployeeDetails theEmp) {
-		employeeDetailsService.save(theEmp);
-		return "redirect:/employeedetails/emplist";
+	@PostMapping("/updateemployee")
+	public String updateEmpDetails(@ModelAttribute("updateempdetails") EmployeeDetails employee) {
+		employeeDetailsService.save(employee);
+		return "redirect:/employeedetails/employeelist";
 	}
 
 }
