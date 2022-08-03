@@ -14,59 +14,32 @@
             <div>
                     <label for="payslipID">Payslip ID : </label>
                     <div>
-                        <form:input path="payslipID" />
+                        <form:input path="payslipID" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="payslipDate">Payslip Date : </label>
                     <div>
-                        <form:input path="payslipDate" />
-                    </div>
-                </div>
-                <div>
-                    <label for="homeRentAllowance">HRA : </label>
-                    <div>
-                        <form:input path="homeRentAllowance" />
+                        <form:input path="payslipDate" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="grossSalary">Gross Salary : </label>
                     <div>
-                        <form:input path="grossSalary" />
-                    </div>
-                </div>
-                <div>
-                    <label for="providentFund">PF : </label>
-                    <div>
-                        <form:input path="providentFund" />
-                    </div>
-                </div>
-                <div>
-                    <label for="dailyAllowance">DA : </label>
-                    <div>
-                        <form:input path="dailyAllowance" />
-                    </div>
-                </div>
-                <div>
-                    <label for="incomeTax">Income Tax : </label>
-                    <div>
-                        <form:input path="incomeTax" />
+                        <form:input path="grossSalary" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="netSalary">Net Salary : </label>
                     <div>
-                        <form:input path="netSalary" />
+                        <form:input path="netSalary" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="employeeID">Employee Id : </label>
                     <div>
-                        <form:input path="employeeID" />
+                        <form:input path="employeeID" readonly="true"/>
                     </div>
-                </div>
-                <div>
-                    <form:button>Find Payslip</form:button>
                 </div>
             </form:form>
         </div>

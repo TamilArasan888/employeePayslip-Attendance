@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.emppayslipattend.dto.EmployeeDetailsPayslipDTO;
 import com.chainsys.emppayslipattend.model.BasicSalary;
 import com.chainsys.emppayslipattend.model.EmployeeDetails;
 import com.chainsys.emppayslipattend.service.EmployeeDetailsService;
@@ -32,7 +33,7 @@ public class EmployeeDetailsController {
 
 	@GetMapping("/findemployeebyid")
 	public String getEmpDetails(@RequestParam("employeeid") int id, Model model) {
-		EmployeeDetails employee = employeeDetailsService.findByid(id);
+		EmployeeDetails employee = employeeDetailsService.findById(id);
 		model.addAttribute("getemployeebyid", employee);
 		return "findby-empid";
 	}
@@ -62,7 +63,7 @@ public class EmployeeDetailsController {
 
 	@GetMapping("/updateemployeedetails")
 	public String showUpdateEmpForm(@RequestParam("employeeid") int id, Model model) {
-		EmployeeDetails employee = employeeDetailsService.findByid(id);
+		EmployeeDetails employee = employeeDetailsService.findById(id);
 		model.addAttribute("updateemployeedetails", employee);
 		return "update-empdetails";
 	}
@@ -71,6 +72,14 @@ public class EmployeeDetailsController {
 	public String updateEmpDetails(@ModelAttribute("updateempdetails") EmployeeDetails employee) {
 		employeeDetailsService.save(employee);
 		return "redirect:/employeedetails/employeelist";
+	}
+	
+	@GetMapping("/getpaysliplist")
+	public String getEmployeePayslip(@RequestParam("id") int id,Model model) {
+		EmployeeDetailsPayslipDTO dto=employeeDetailsService.getEmployeedetailsPayslip(id);
+		model.addAttribute("getemployeedetails",dto.getEmployeeDetails());
+		model.addAttribute("payslipdetails",dto.getPayslipList());
+		return "employeedetails-payslip";
 	}
 
 }

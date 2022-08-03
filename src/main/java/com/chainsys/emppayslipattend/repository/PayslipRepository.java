@@ -11,4 +11,5 @@ public interface PayslipRepository extends CrudRepository<Payslip,Integer>  {
 	Payslip save(Payslip pay); 
     void deleteById(int pay_Id);
     List<Payslip> findAll();
+    List<Payslip> findByEmployeeID(int id);
 }

@@ -24,33 +24,9 @@
                     </div>
                 </div>
                 <div>
-                    <label for="homeRentAllowance">HRA : </label>
-                    <div>
-                        <form:input path="homeRentAllowance" />
-                    </div>
-                </div>
-                <div>
                     <label for="grossSalary">Gross Salary : </label>
                     <div>
                         <form:input path="grossSalary" />
-                    </div>
-                </div>
-                <div>
-                    <label for="providentFund">PF : </label>
-                    <div>
-                        <form:input path="providentFund" />
-                    </div>
-                </div>
-                <div>
-                    <label for="dailyAllowance">DA : </label>
-                    <div>
-                        <form:input path="dailyAllowance" />
-                    </div>
-                </div>
-                <div>
-                    <label for="incomeTax">Income Tax : </label>
-                    <div>
-                        <form:input path="incomeTax" />
                     </div>
                 </div>
                 <div>

@@ -1,41 +1,44 @@
 package com.chainsys.emppayslipattend.model;
-import java.util.Date;
 
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="Payslip")
+@Table(name = "Payslip")
 public class Payslip {
 	@Id
-	@Column(name="payslip_Id")
+	@Column(name = "payslip_Id")
 	private int payslipID;
-	
-	@Column(name="payslip_Date")
+
+	@Column(name = "payslip_Date")
 	private Date payslipDate;
-	
-	@Column(name="HRA")
-	private float homeRentAllowance;
-	
-	@Column(name="gross_Salary")
+
+	@Column(name = "gross_Salary")
 	private float grossSalary;
-	
-	@Column(name="PF")
-	private float providentFund;
-	
-	@Column(name="DA")
-	private float dailyAllowance;
-	
-	@Column(name="income_Tax")
-	private float incomeTax;
-	
-	@Column(name="net_Salary")
+
+	@Column(name = "net_Salary")
 	private float netSalary;
-	
-	@Column(name="emp_id")
+
+	@Column(name = "emp_id")
 	private int employeeID;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "emp_Id", nullable = false, insertable = false, updatable = false)
+	private EmployeeDetails employeeDetails;
+
+	public EmployeeDetails getEmployeeDetails() {
+		return employeeDetails;
+	}
+
+	public void setEmployeeDetails(EmployeeDetails employeeDetails) {
+		this.employeeDetails = employeeDetails;
+	}
 
 	public int getPayslipID() {
 		return payslipID;
@@ -53,44 +56,12 @@ public class Payslip {
 		this.payslipDate = payslipDate;
 	}
 
-	public float getHomeRentAllowance() {
-		return homeRentAllowance;
-	}
-
-	public void setHomeRentAllowance(float homeRentAllowance) {
-		this.homeRentAllowance = homeRentAllowance;
-	}
-
 	public float getGrossSalary() {
 		return grossSalary;
 	}
 
 	public void setGrossSalary(float grossSalary) {
 		this.grossSalary = grossSalary;
-	}
-
-	public float getProvidentFund() {
-		return providentFund;
-	}
-
-	public void setProvidentFund(float providentFund) {
-		this.providentFund = providentFund;
-	}
-
-	public float getDailyAllowance() {
-		return dailyAllowance;
-	}
-
-	public void setDailyAllowance(float dailyAllowance) {
-		this.dailyAllowance = dailyAllowance;
-	}
-
-	public float getIncomeTax() {
-		return incomeTax;
-	}
-
-	public void setIncomeTax(float incomeTax) {
-		this.incomeTax = incomeTax;
 	}
 
 	public float getNetSalary() {
@@ -108,6 +79,5 @@ public class Payslip {
 	public void setEmployeeID(int employeeID) {
 		this.employeeID = employeeID;
 	}
-	
-	
+
 }

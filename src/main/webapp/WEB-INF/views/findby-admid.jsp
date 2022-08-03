@@ -14,23 +14,20 @@
             <div>
                     <label for="adminID">Admin ID : </label>
                     <div>
-                        <form:input path="adminID" />
+                        <form:input path="adminID" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="adminName">Admin Name : </label>
                     <div>
-                        <form:input path="adminName" />
+                        <form:input path="adminName" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="adminPassword">Admin Password : </label>
                     <div>
-                        <form:input path="adminPassword" />
+                        <form:input path="adminPassword" readonly="true"/>
                     </div>
-                </div>
-                <div>
-                    <form:button>Find Admin ById</form:button>
                 </div>
             </form:form>
         </div>

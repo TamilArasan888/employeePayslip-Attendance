@@ -95,9 +95,6 @@
                         <form:input path="employeeWorkingHours" readonly="true"/>
                     </div>
                 </div>
-                <div>
-                    <form:button>Find Employee ById</form:button>
-                </div>
             </form:form>
         </div>
     </div>

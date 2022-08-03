@@ -9,16 +9,12 @@
 </head>
 <body>
     <div id="table root">
-        <table>
+        <table border='2' width='100%' cellpadding='2'>
             <thead>
             <tr>
             <th>Payslip Id</th>
             <th>Payslip Date</th>
-            <th>HRA</th>
             <th>Gross Salary</th>
-            <th>PF</th>
-            <th>DA</th>
-            <th>Income Tax</th>
             <th>Net Salary</th>
             <th>Employee Id</th>
             </tr>
@@ -28,11 +24,7 @@
             <tr>
             <td>${payslip.payslipID}</td>
             <td>${payslip.payslipDate}</td>
-            <td>${payslip.homeRentAllowance}</td>
             <td>${payslip.grossSalary}</td>
-            <td>${payslip.providentFund}</td>
-            <td>${payslip.dailyAllowance}</td>
-            <td>${payslip.incomeTax}</td>
             <td>${payslip.netSalary}</td>
             <td>${payslip.employeeID}</td>
             </tr>

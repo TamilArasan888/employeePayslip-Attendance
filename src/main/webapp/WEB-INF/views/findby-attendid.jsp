@@ -14,41 +14,38 @@
             <div>
                     <label for="attendanceID">Attendance ID : </label>
                     <div>
-                        <form:input path="attendanceID" />
+                        <form:input path="attendanceID" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="attendanceDate">Attendance Date : </label>
                     <div>
-                        <form:input path="attendanceDate" />
+                        <form:input path="attendanceDate" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="inTime">In-Time : </label>
                     <div>
-                        <form:input path="inTime" />
+                        <form:input path="inTime" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="outTime">Out-Time : </label>
                     <div>
-                        <form:input path="outTime" />
+                        <form:input path="outTime" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="dailyTask">Daily Task Description : </label>
                     <div>
-                        <form:input path="dailyTask" />
+                        <form:input path="dailyTask" readonly="true"/>
                     </div>
                 </div>
                 <div>
                     <label for="employeeID">Employee Id : </label>
                     <div>
-                        <form:input path="employeeID" />
+                        <form:input path="employeeID" readonly="true"/>
                     </div>
-                </div>
-                <div>
-                    <form:button>Find Attendance</form:button>
                 </div>
             </form:form>
         </div>
