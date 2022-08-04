@@ -10,5 +10,6 @@ public interface AttendanceRepository extends CrudRepository<Attendance,Integer>
 	Attendance save(Attendance attend); 
     void deleteById(int atten_Id);
     List<Attendance> findAll();
+    List<Attendance> findByEmployeeID(int id);
 }
 

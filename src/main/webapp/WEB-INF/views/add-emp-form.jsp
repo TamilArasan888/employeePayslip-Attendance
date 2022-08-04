@@ -34,7 +34,8 @@
 				<div>
 					<label for="employeeGender">Gender : </label>
 					<div>
-						<form:input path="employeeGender" />
+						<form:radiobutton path="employeeGender" value="Male" />Male
+						<form:radiobutton path="employeeGender" value="Female" />Female
 					</div>
 				</div>
 				<div>

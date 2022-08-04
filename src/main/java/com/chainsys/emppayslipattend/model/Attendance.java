@@ -4,7 +4,10 @@ import java.sql.Timestamp;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="Attendance")
@@ -27,6 +30,10 @@ public class Attendance {
 	
 	@Column(name="emp_Id")
 	private int employeeID;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "emp_Id", nullable = false, insertable = false, updatable = false)
+	private EmployeeDetails employeeDetails;
 
 	public int getAttendanceID() {
 		return attendanceID;

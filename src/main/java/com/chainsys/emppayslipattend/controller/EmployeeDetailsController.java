@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.emppayslipattend.dto.EmployeeDetailsAttendanceDTO;
 import com.chainsys.emppayslipattend.dto.EmployeeDetailsPayslipDTO;
 import com.chainsys.emppayslipattend.model.BasicSalary;
 import com.chainsys.emppayslipattend.model.EmployeeDetails;
@@ -74,12 +75,20 @@ public class EmployeeDetailsController {
 		return "redirect:/employeedetails/employeelist";
 	}
 	
-	@GetMapping("/getpaysliplist")
+	@GetMapping("/getemployeepaysliplist")
 	public String getEmployeePayslip(@RequestParam("id") int id,Model model) {
 		EmployeeDetailsPayslipDTO dto=employeeDetailsService.getEmployeedetailsPayslip(id);
 		model.addAttribute("getemployeedetails",dto.getEmployeeDetails());
 		model.addAttribute("payslipdetails",dto.getPayslipList());
 		return "employeedetails-payslip";
+	}
+	
+	@GetMapping("/getemployeeattendancelist")
+	public String getEmployeeattendance(@RequestParam("id") int id,Model model) {
+		EmployeeDetailsAttendanceDTO dto=employeeDetailsService.getEmployeedetailsAttendance(id);
+		model.addAttribute("getemployeedetails",dto.getEmployeeDetails());
+		model.addAttribute("attendancedetails",dto.getAttendanceList());
+		return "employeedetails-attendance";
 	}
 
 }

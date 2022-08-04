@@ -24,18 +24,6 @@
                     </div>
                 </div>
                 <div>
-                    <label for="grossSalary">Gross Salary : </label>
-                    <div>
-                        <form:input path="grossSalary" />
-                    </div>
-                </div>
-                <div>
-                    <label for="netSalary">Net Salary : </label>
-                    <div>
-                        <form:input path="netSalary" />
-                    </div>
-                </div>
-                <div>
                     <label for="employeeID">Employee Id : </label>
                     <div>
                         <form:input path="employeeID" />

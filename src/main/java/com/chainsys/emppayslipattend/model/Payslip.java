@@ -31,7 +31,7 @@ public class Payslip {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "emp_Id", nullable = false, insertable = false, updatable = false)
 	private EmployeeDetails employeeDetails;
-
+	
 	public EmployeeDetails getEmployeeDetails() {
 		return employeeDetails;
 	}

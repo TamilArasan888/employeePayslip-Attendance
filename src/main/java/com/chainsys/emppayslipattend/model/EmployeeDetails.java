@@ -62,7 +62,17 @@ public class EmployeeDetails {
 	@OneToMany(mappedBy="employeeDetails",fetch=FetchType.LAZY)
 	private List<Payslip> payslipList;
 
+	@OneToMany(mappedBy="employeeDetails",fetch=FetchType.LAZY)
+	private List<Attendance> attendanceList;
 	
+	public List<Attendance> getAttendanceList() {
+		return attendanceList;
+	}
+
+	public void setAttendanceList(List<Attendance> attendanceList) {
+		this.attendanceList = attendanceList;
+	}
+
 	public List<Payslip> getPayslipList() {
 		return payslipList;
 	}
