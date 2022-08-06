@@ -1,6 +1,6 @@
 package com.chainsys.emppayslipattend.model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;

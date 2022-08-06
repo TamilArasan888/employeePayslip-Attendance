@@ -10,102 +10,77 @@
 </head>
 <body>
 	<div id="root">
-		<div id="form">
+		<div id="form" align="center">
 			<form:form action="addemployee" method="post"
 				modelAttribute="addemployeedetail">
-				<div>
-					<label for="employeeID">Employee ID : </label>
-					<div>
-						<form:input path="employeeID" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeFirstName">Employee FirstName : </label>
-					<div>
-						<form:input path="employeeFirstName" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeLastName">Employee LastName : </label>
-					<div>
-						<form:input path="employeeLastName" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeGender">Gender : </label>
-					<div>
-						<form:radiobutton path="employeeGender" value="Male" />Male
-						<form:radiobutton path="employeeGender" value="Female" />Female
-					</div>
-				</div>
-				<div>
-					<label for="employeeDOB">Date Of Birth : </label>
-					<div>
-						<form:input path="employeeDOB" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeEmail">Email : </label>
-					<div>
-						<form:input path="employeeEmail" />
-					</div>
-				</div>
-				<div>
-					<label for="employeePassword">Password : </label>
-					<div>
-						<form:input path="employeePassword" />
-					</div>
-				</div>
-				<div>
-					<label for="employeePhoneNumber">Phone Number : </label>
-					<div>
-						<form:input path="employeePhoneNumber" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeAddress">Address : </label>
-					<div>
-						<form:input path="employeeAddress" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeJobID">Job ID : </label>
-					<div>
-						<form:input path="employeeJobID" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeRole">Employee Role : </label>
-					<div>
-						<form:select path="employeeRole">
-							<c:forEach var="basicSalary" items="${basicSalary}">
-								<form:option value="${basicSalary.employeeRole}"
-									label="${basicSalary.employeeRole}" />
-							</c:forEach>
-						</form:select>
-					</div>
-				</div>
-				<div>
-					<label for="employeeManager">Manager Name : </label>
-					<div>
-						<form:input path="employeeManager" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeHireDate">HireDate : </label>
-					<div>
-						<form:input path="employeeHireDate" />
-					</div>
-				</div>
-				<div>
-					<label for="employeeWorkingHours">WorkingHours : </label>
-					<div>
-						<form:input path="employeeWorkingHours" />
-					</div>
-				</div>
-				<div>
-					<form:button>Add Employee</form:button>
-				</div>
+				<h1>Employee Registration Form</h1>
+				<table>
+					<tr>
+						<td><label for="employeeID">Employee ID : </label> <form:input
+								path="employeeID" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeFirstName">Employee FirstName
+								: </label> <form:input path="employeeFirstName" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeLastName">Employee LastName :
+						</label> <form:input path="employeeLastName" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeGender">Gender : </label> <form:radiobutton
+								path="employeeGender" value="Male" /> Male <form:radiobutton
+								path="employeeGender" value="Female" /> Female</td>
+					</tr>
+					<tr>
+						<td><label for="employeeDOB">Date Of Birth : </label> <form:input
+								type="date" path="employeeDOB" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeEmail">Email : </label> <form:input
+								path="employeeEmail" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeePassword">Password : </label> <form:input
+								path="employeePassword" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeePhoneNumber">Phone Number : </label>
+							<form:input path="employeePhoneNumber" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeAddress">Address : </label> <form:input
+								path="employeeAddress" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeJobID">Job ID : </label> <form:input
+								path="employeeJobID" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeRole">Employee Role : </label> <form:select
+								path="employeeRole">
+								<c:forEach var="basicSalary" items="${basicSalary}">
+									<form:option value="${basicSalary.employeeRole}"
+										label="${basicSalary.employeeRole}" />
+								</c:forEach>
+							</form:select></td>
+					</tr>
+					<tr>
+						<td><label for="employeeManager">Manager Name : </label> <form:input
+								path="employeeManager" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeHireDate">HireDate : </label> <form:input
+								type="date" path="employeeHireDate" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeWorkingHours">WorkingHours :
+						</label> <form:input path="employeeWorkingHours" /></td>
+					</tr>
+					<tr>
+						<td><form:button>Add Employee</form:button></td>
+					</tr>
+				</table>
 			</form:form>
 		</div>
 	</div>

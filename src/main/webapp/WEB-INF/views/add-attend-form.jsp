@@ -20,7 +20,7 @@
                 <div>
                     <label for="attendanceDate">Attendance Date : </label>
                     <div>
-                        <form:input path="attendanceDate" />
+                        <form:input type="date"  path="attendanceDate" />
                     </div>
                 </div>
                 <div>

@@ -9,6 +9,7 @@ public interface EmployeeDetailsRepository extends CrudRepository<EmployeeDetail
 	EmployeeDetails save(EmployeeDetails empl); 
     void deleteById(int emp_id);
     List<EmployeeDetails> findAll();
+    EmployeeDetails findByEmployeeIDAndEmployeeEmailAndEmployeePassword(int id,String email,String password);
 
 }
 

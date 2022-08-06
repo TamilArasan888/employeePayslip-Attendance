@@ -20,7 +20,7 @@
                 <div>
                     <label for="payslipDate">Payslip Date : </label>
                     <div>
-                        <form:input path="payslipDate" />
+                        <form:input type="date" path="payslipDate" />
                     </div>
                 </div>
                 <div>

@@ -90,5 +90,26 @@ public class EmployeeDetailsController {
 		model.addAttribute("attendancedetails",dto.getAttendanceList());
 		return "employeedetails-attendance";
 	}
+	
+	@GetMapping("/employeelogin")
+    public String employeeAccessForm(Model model) {
+        EmployeeDetails employee = new EmployeeDetails();
+        model.addAttribute("employeelogindetails", employee);
+        return "employee-loginform";
+    }                   
+
+    @PostMapping("/checkemployeelogin")
+    public String checkingAccess(@ModelAttribute("employeelogindetails") EmployeeDetails employeeDet) {
+        EmployeeDetails employee = employeeDetailsService.getEmployeeByIDEmailAndPassword(employeeDet.getEmployeeID(), employeeDet.getEmployeeEmail(), employeeDet.getEmployeePassword());
+        if (employee!= null){
+            return "employee-indexpage";
+        } else
+            return "redirect-employeeloginpage";
+    }
+    
+    @GetMapping("/attendancetype")
+    public String index(Model model) {
+        return "attendance-type";
+    }  
 
 }

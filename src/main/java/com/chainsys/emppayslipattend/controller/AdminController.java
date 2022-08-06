@@ -18,7 +18,7 @@ public class AdminController {
 
 	@Autowired
 	private AdminService adminService;
-
+	
 	@GetMapping("/adminlist")
 	public String getAllAdminDetailsFromDB(Model model) {
 		List<Admin> admin = adminService.getAdmin();
@@ -64,5 +64,23 @@ public class AdminController {
 		adminService.save(admin);
 		return "redirect:/admindetails/adminlist";
 	}
+	
+	@GetMapping("/adminlogin")
+    public String adminAccessForm(Model model) {
+        Admin admin = new Admin();
+        model.addAttribute("adminlogindetails", admin);
+        return "admin-loginform";
+    }                   
 
+    @PostMapping("/checkadminlogin")
+    public String checkingAccess(@ModelAttribute("adminlogindetails") Admin admin) {
+        Admin adm = adminService.getAdminByIDNameAndPassword(admin.getAdminID(),admin.getAdminName(),admin.getAdminPassword());
+        if (adm!= null){
+
+            return "redirect:/admindetails/adminlist";
+        } else
+            return "redirect-adminloginpage";
+
+    }
+	
 }
