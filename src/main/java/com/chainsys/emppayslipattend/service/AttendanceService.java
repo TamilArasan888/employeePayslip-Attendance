@@ -1,5 +1,6 @@
 package com.chainsys.emppayslipattend.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,12 @@ public class AttendanceService {
 	public List<Attendance> getAttendance() {
 		List<Attendance> listAttend = attendanceRepository.findAll();
 		return listAttend;
+	}
+	public List<Attendance> getAttendenceByEmployeeId(int id){
+		return attendanceRepository.findByEmployeeID(id);
+	}
+	public List<Attendance> getAttendanceBetweenTwoDates(Date startdate,Date endDate){
+		return attendanceRepository.findByAttendanceDateGreaterThanEqualAndAttendanceDateLessThanEqual(startdate, endDate);
 	}
 
 }

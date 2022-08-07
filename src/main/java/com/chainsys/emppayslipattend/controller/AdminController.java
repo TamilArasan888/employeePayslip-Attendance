@@ -77,10 +77,14 @@ public class AdminController {
         Admin adm = adminService.getAdminByIDNameAndPassword(admin.getAdminID(),admin.getAdminName(),admin.getAdminPassword());
         if (adm!= null){
 
-            return "redirect:/admindetails/adminlist";
+            return "redirect:/admindetails/adminindex";
         } else
             return "redirect-adminloginpage";
-
     }
+    
+    @GetMapping("/adminindex")
+    public String index(Model model) {
+        return "admin-indexpage";
+    } 
 	
 }

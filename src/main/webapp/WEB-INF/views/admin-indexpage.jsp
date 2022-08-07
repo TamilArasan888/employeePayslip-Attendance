@@ -14,24 +14,40 @@
 			</tr>
 			<tr>
 				<td><h3>
-						<a href="/admindetails/addadmindetailsbyuser">Add New
-							Admin</a>
+						<a href="/admindetails/addadmindetailsbyuser">Add New Admin</a>
 					</h3></td>
+			</tr>
+			<tr>
+				<td><h3>
+						<a href="/admindetails/adminlist">View All Admins</a>
+					</h3></td>
+			</tr>
+			
+			<tr>
 				<td><h3>
 						<a href="/employeedetails/employeelist">View All Employee
 							Details</a>
 					</h3></td>
+			</tr>
+			<tr>
 				<td><h3>
 						<a href="/employeedetails/addemployeedetails">Add New Employee</a>
 					</h3></td>
+			</tr>
+			<tr>
 				<td><h3>
-						<a href="/employeedetails/attendancetype">Update New Employee</a>
+						<a href="/employeedetails/updateemployeedetails">Update
+							Employee Details</a>
 					</h3></td>
+			</tr>
+			<tr>
 				<td><h3>
-						<a href="/employeedetails/attendancetype">Delete Employee</a>
+						<a href="/employeedetails/deleteemployeebyid">Delete Employee</a>
 					</h3></td>
+			</tr>
+			<tr>
 				<td><h3>
-						<a href="/employeedetails/attendancetype">Find Employee</a>
+						<a href="/employeedetails/findemployeebyid">Find Employee</a>
 					</h3></td>
 			</tr>
 		</table>

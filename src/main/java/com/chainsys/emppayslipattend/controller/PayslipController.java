@@ -16,6 +16,7 @@ import com.chainsys.emppayslipattend.businesslogic.BusinessLogic;
 import com.chainsys.emppayslipattend.model.BasicSalary;
 import com.chainsys.emppayslipattend.model.EmployeeDetails;
 import com.chainsys.emppayslipattend.model.Payslip;
+import com.chainsys.emppayslipattend.service.AttendanceService;
 import com.chainsys.emppayslipattend.service.BasicSalaryService;
 import com.chainsys.emppayslipattend.service.EmployeeDetailsService;
 import com.chainsys.emppayslipattend.service.PayslipService;
@@ -26,12 +27,7 @@ public class PayslipController {
 
 	@Autowired
 	private PayslipService payslipService;
-
-	@Autowired
-	private EmployeeDetailsService employeeService;
 	
-	@Autowired
-	private BasicSalaryService basicSalaryService;
 	@GetMapping("/paysliplist")
 	public String getPayslip(Model model) {
 		List<Payslip> payslip = payslipService.getPayslip();
@@ -61,11 +57,6 @@ public class PayslipController {
 
 	@PostMapping("/addpayslip")
 	public String addNewPayslipDetails(@ModelAttribute("addpaydetail") Payslip payslip) {
-		EmployeeDetails employee=employeeService.findById(payslip.getEmployeeID());
-		Optional<BasicSalary> basicSalary=basicSalaryService.getBasicSalaryById(employee.getEmployeeRole());
-		float grossSalary=BusinessLogic.grossSalaryCalculation(basicSalary);
-		payslip.setGrossSalary(grossSalary);
-		payslip.setNetSalary(BusinessLogic.netSalaryCalculation(grossSalary, basicSalary));
 		payslipService.save(payslip);
 		return "redirect:/payslipdetails/paysliplist";
 	}
