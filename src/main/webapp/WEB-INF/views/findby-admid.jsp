@@ -8,9 +8,10 @@
 <title>Find Admin ByID</title>
 </head>
 <body>
-    <div id="root">
+    <div id="root" align="center">
         <div id="form">
             <form:form action ="" method = "post" modelAttribute = "getadmindetailsbyid">
+            <h1>Get Admin Details</h1>
             <div>
                     <label for="adminID">Admin ID : </label>
                     <div>

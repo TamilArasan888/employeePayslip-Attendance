@@ -3,9 +3,12 @@ package com.chainsys.emppayslipattend.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -55,17 +58,23 @@ public class EmployeeDetailsController {
 	}
 
 	@PostMapping("/addemployee")
-	public String addNewEmployeeDetails(@ModelAttribute("addempdetail") EmployeeDetails employee) {
+	public String addNewEmployeeDetails(@Valid@ModelAttribute("addemployeedetail") EmployeeDetails employee,Errors errors) {
+	if(errors.hasErrors()){
+		return "add-emp-form";
+	}
+		else {
 		Optional<BasicSalary> basicSalary=employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
 		employee.setEmpBasicsalary(basicSalary.get().getEmployeeBasicSalary());
 		employeeDetailsService.save(employee);
-		return "redirect:/employeedetails/employeelist";
+		return "redirect:/employeedetails/employeelogin";}
 	}
 
 	@GetMapping("/updateemployeedetails")
 	public String showUpdateEmpForm(@RequestParam("employeeid") int id, Model model) {
 		EmployeeDetails employee = employeeDetailsService.findById(id);
 		model.addAttribute("updateemployeedetails", employee);
+		List<BasicSalary> basicSalary=employeeDetailsService.getAllBasicSalary();
+		model.addAttribute("basicSalary", basicSalary);
 		return "update-empdetails";
 	}
 
@@ -111,5 +120,7 @@ public class EmployeeDetailsController {
     public String index(Model model) {
         return "attendance-type";
     }  
+    
+    
 
 }

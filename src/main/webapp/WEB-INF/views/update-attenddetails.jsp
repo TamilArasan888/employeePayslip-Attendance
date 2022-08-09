@@ -8,9 +8,10 @@
 <title>Update Attendance Details</title>
 </head>
 <body>
-    <div id="root">
+    <div id="root" align="center">
         <div id="form">
             <form:form action ="updateattendance" method = "post" modelAttribute = "updateattendancedetails">
+            <h1>Update Attendance Details</h1>
             <div>
                     <label for="attendanceID">Attendance ID : </label>
                     <div>

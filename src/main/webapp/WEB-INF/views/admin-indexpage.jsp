@@ -8,49 +8,61 @@
 </head>
 <body>
 	<div align="center">
-		<table>
-			<tr>
-				<td><h1>Welcome Admin</h1></td>
-			</tr>
-			<tr>
-				<td><h3>
-						<a href="/admindetails/addadmindetailsbyuser">Add New Admin</a>
-					</h3></td>
-			</tr>
-			<tr>
-				<td><h3>
-						<a href="/admindetails/adminlist">View All Admins</a>
-					</h3></td>
-			</tr>
+			<h1>Welcome Admin</h1>
+			<div>
+				<h3>
+					<a href="/admindetails/addadmindetailsbyuser">Add New Admin</a>
+				</h3>
+			</div>
+
+			<div>
+				<h3>
+					<a href="/admindetails/adminlist">View All Admins</a>
+				</h3>
+			</div>
 			
-			<tr>
-				<td><h3>
-						<a href="/employeedetails/employeelist">View All Employee
-							Details</a>
-					</h3></td>
-			</tr>
-			<tr>
-				<td><h3>
-						<a href="/employeedetails/addemployeedetails">Add New Employee</a>
-					</h3></td>
-			</tr>
-			<tr>
-				<td><h3>
-						<a href="/employeedetails/updateemployeedetails">Update
-							Employee Details</a>
-					</h3></td>
-			</tr>
-			<tr>
-				<td><h3>
-						<a href="/employeedetails/deleteemployeebyid">Delete Employee</a>
-					</h3></td>
-			</tr>
-			<tr>
-				<td><h3>
-						<a href="/employeedetails/findemployeebyid">Find Employee</a>
-					</h3></td>
-			</tr>
-		</table>
-	</div>
+			
+			
+			<div>
+				<h3>
+					<a href="/employeedetails/addemployeedetails">Add New Employee</a>
+				</h3>
+			</div>
+
+			<div>
+				<h3>
+					<a href="/employeedetails/employeelist">View All Employee
+						Details</a>
+				</h3>
+			</div>
+			
+			
+			
+			<div>
+				<h3>
+					<a href="/payslipdetails/addpayslipdetails">Add Payslip</a>
+				</h3>
+			</div>
+
+			<div>
+				<h3>
+					<a href="/payslipdetails/paysliplist">View All Payslip</a>
+				</h3>
+			</div>
+			
+			
+			
+			<div>
+				<h3>
+					<a href="/attendancedetails/addattendancedetails">Add Attendance</a>
+				</h3>
+			</div>
+
+			<div>
+				<h3>
+					<a href="/attendancedetails/attendancelist">View All Attendance</a>
+				</h3>
+			</div>
+		</div>
 </body>
 </html>

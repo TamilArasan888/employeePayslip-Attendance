@@ -9,7 +9,7 @@
 </head>
 <body>
     <div id="table root">
-        <table border='2' width='100%' cellpadding='2'>
+        <table>
             <thead>
             <tr>
             <th>Payslip Id</th>
@@ -17,6 +17,8 @@
             <th>Gross Salary</th>
             <th>Net Salary</th>
             <th>Employee Id</th>
+            <th>Update</th>
+            <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -27,6 +29,8 @@
             <td>${payslip.grossSalary}</td>
             <td>${payslip.netSalary}</td>
             <td>${payslip.employeeID}</td>
+            <td><a href="/payslipdetails/updatepayslipdetails?payslipid=${payslip.payslipID}">Update</a></td>
+			<td><a href="/payslipdetails/deletepayslipbyid?payslipid=${payslip.payslipID}">Delete</a></td>
             </tr>
             </c:forEach>
             </tbody>

@@ -11,6 +11,9 @@ import com.chainsys.emppayslipattend.model.Attendance;
 import com.chainsys.emppayslipattend.model.BasicSalary;
 
 public class BusinessLogic {
+	private BusinessLogic() {
+		
+	}
 	public static float grossSalaryCalculation(Optional<BasicSalary> basicSal) {
 		BasicSalary basicSalary=basicSal.get();
 		return basicSalary.getEmployeeBasicSalary()+basicSalary.getHouseRentAllowance()+basicSalary.getDailyAllowance();
@@ -18,8 +21,11 @@ public class BusinessLogic {
 	public static float netSalaryCalculation(float grossSalary,Optional<BasicSalary> basicSal,float cutSalaryPercent) {
 		BasicSalary basicSalary=basicSal.get();
 		float cutSalary=grossSalary*cutSalaryPercent;
+		System.out.println(cutSalary);
 		return grossSalary-basicSalary.getProvidentFund()-(grossSalary*basicSalary.getIncomeTax()/100)-cutSalary;
 	}
+	
+	
 	public static float getCutSalaryPercent(Date[] array,int noOfPresent) {
 		String startdate=array[0]+"";
 		String endDate=array[1]+"";
@@ -30,6 +36,8 @@ public class BusinessLogic {
 		int totalDays=day2-day1+1;
 		return (totalDays-noOfPresent)/totalDays;
 	}
+	
+	
 	public static Date[] fromDateCalculation(Date payslipDate) {
 		String stringDate=payslipDate+"";
 		String dateArray[]=stringDate.split("-");
@@ -57,12 +65,12 @@ public class BusinessLogic {
 			else
 				endDate="28"+"/"+month+"/"+year;
 		}
-		SimpleDateFormat SimpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
 		Date startdate=null;
 		Date enddate=null;
 		try {
-			java.util.Date date1=SimpleDateFormat.parse(startDateString);
-			java.util.Date date2=SimpleDateFormat.parse(endDate);
+			java.util.Date date1=simpleDateFormat.parse(startDateString);
+			java.util.Date date2=simpleDateFormat.parse(endDate);
 			startdate=new java.sql.Date(date1.getTime());
 			enddate=new java.sql.Date(date2.getTime());
 		} catch (ParseException e) {
@@ -74,6 +82,8 @@ public class BusinessLogic {
 		
 		return sartEndDate;
 	}
+	
+	
 	public static int findemployeeAttendance(List<Attendance>attendancelist,int employeeId) {
 		int noOfPresent=0;
 		Iterator<Attendance> itr=attendancelist.iterator();

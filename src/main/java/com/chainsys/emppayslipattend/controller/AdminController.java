@@ -1,9 +1,13 @@
 package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,7 +22,7 @@ public class AdminController {
 
 	@Autowired
 	private AdminService adminService;
-	
+
 	@GetMapping("/adminlist")
 	public String getAllAdminDetailsFromDB(Model model) {
 		List<Admin> admin = adminService.getAdmin();
@@ -47,9 +51,13 @@ public class AdminController {
 	}
 
 	@PostMapping("/addadmin")
-	public String addNewAdminDetails(@ModelAttribute("addadmindetail") Admin admin) {
-		adminService.save(admin);
-		return "redirect:/admindetails/adminlist";
+	public String addNewAdminDetails(@Valid @ModelAttribute("addadmindetail") Admin admin, Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-admin-details";
+		} else {
+			adminService.save(admin);
+			return "redirect:/admindetails/adminlist";
+		}
 	}
 
 	@GetMapping("/updateadmindetails")
@@ -60,31 +68,36 @@ public class AdminController {
 	}
 
 	@PostMapping("/updateadmin")
-	public String updateAdminDetails(@ModelAttribute("updateadmindetails") Admin admin) {
+	public String updateAdminDetails(@Valid@ModelAttribute("updateadmindetails") Admin admin,Errors errors) {
+		if (errors.hasErrors()) {
+			return "update-admindetails";
+		} 
+		else {
 		adminService.save(admin);
 		return "redirect:/admindetails/adminlist";
 	}
-	
+	}
 	@GetMapping("/adminlogin")
-    public String adminAccessForm(Model model) {
-        Admin admin = new Admin();
-        model.addAttribute("adminlogindetails", admin);
-        return "admin-loginform";
-    }                   
+	public String adminAccessForm(Model model) {
+		Admin admin = new Admin();
+		model.addAttribute("adminlogindetails", admin);
+		return "admin-loginform";
+	}
 
-    @PostMapping("/checkadminlogin")
-    public String checkingAccess(@ModelAttribute("adminlogindetails") Admin admin) {
-        Admin adm = adminService.getAdminByIDNameAndPassword(admin.getAdminID(),admin.getAdminName(),admin.getAdminPassword());
-        if (adm!= null){
+	@PostMapping("/checkadminlogin")
+	public String checkingAccess(@ModelAttribute("adminlogindetails") Admin admin) {
+		Admin adm = adminService.getAdminByIDNameAndPassword(admin.getAdminID(), admin.getAdminName(),
+				admin.getAdminPassword());
+		if (adm != null) {
 
-            return "redirect:/admindetails/adminindex";
-        } else
-            return "redirect-adminloginpage";
-    }
-    
-    @GetMapping("/adminindex")
-    public String index(Model model) {
-        return "admin-indexpage";
-    } 
-	
+			return "redirect:/admindetails/adminindex";
+		} else
+			return "redirect-adminloginpage";
+	}
+
+	@GetMapping("/adminindex")
+	public String index(Model model) {
+		return "admin-indexpage";
+	}
+
 }

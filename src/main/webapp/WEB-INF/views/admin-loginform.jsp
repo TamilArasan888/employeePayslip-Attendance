@@ -6,33 +6,45 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin login page</title>
+<style type="text/css">
+.text-danger {
+	color: #e80c4d;
+	font-size: 0.9em;
+}
+</style>
 </head>
 <body>
-	<div id="root">
-		<div id="form" align="center">
+	<div id="root"  align="center">
+		<div id="form">
 			<form:form action="checkadminlogin" method="post"
 				modelAttribute="adminlogindetails">
 				<div>
 					<h1 align="center">ADMIN LOGIN</h1>
 				</div>
-				<table>
-				<tr>
-					<td><label for="adminID">Admin ID : </label></td>
-					<td><form:input path="adminID" /></td>
-					</tr>
-				<tr>
-					<td><label for="adminName">Admin Name : </label></td>
-					<td><form:input path="adminName" /></td>
-				</tr>
-				<tr>
-					<td><label for="adminPassword">Admin Password : </label></td>
-					<td><form:input path="adminPassword" /></td>
-				</tr>
-				<tr>
-					<td><form:button value="SignIn">SignIn</form:button></td>
-					<td><form:button type="reset" value="Clear">Reset</form:button></td>
-				</tr>
-				</table>
+			
+				<div>
+					<label for="adminID">Admin ID : </label>
+					<form:input path="adminID" placeholder="Enter Your Admin ID" required="true"/>
+					</div>
+				<form:errors path="adminID" cssClass="text-danger" />
+					
+				<div>
+					<label for="adminName">Admin Name : </label>
+					<form:input path="adminName" placeholder="Enter Admin Name" required="true"/>
+				</div>
+				<form:errors path="adminName" cssClass="text-danger" />
+				
+				<div>
+					<label for="adminPassword">Admin Password : </label>
+					<form:input path="adminPassword" placeholder="Enter Admin Password" required="true"/>
+				</div>
+				<form:errors path="adminPassword" cssClass="text-danger" />
+				
+				<div>
+					<form:button>SignIn</form:button>
+					<form:button type="reset">Reset</form:button>
+				</div>
+				
 			</form:form>
 		</div>
 	</div>

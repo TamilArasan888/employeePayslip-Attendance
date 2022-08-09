@@ -7,9 +7,9 @@ import java.util.List;
 
 
 public interface PayslipRepository extends CrudRepository<Payslip,Integer>  {
-	Payslip findById(int pay_Id);
+	Payslip findById(int payId);
 	Payslip save(Payslip pay); 
-    void deleteById(int pay_Id);
+    void deleteById(int payId);
     List<Payslip> findAll();
     List<Payslip> findByEmployeeID(int id);
 }

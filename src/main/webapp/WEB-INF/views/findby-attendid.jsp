@@ -8,9 +8,10 @@
 <title>Find Attendance ById</title>
 </head>
 <body>
-    <div id="root">
+    <div id="root" align="center">
         <div id="form">
             <form:form action ="" method = "post" modelAttribute = "getattendance">
+            <h1>Get Attendance Details</h1>
             <div>
                     <label for="attendanceID">Attendance ID : </label>
                     <div>

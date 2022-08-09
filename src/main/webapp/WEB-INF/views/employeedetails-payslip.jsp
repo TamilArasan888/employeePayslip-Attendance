@@ -9,70 +9,90 @@
 <title>Employee Details & Payslip</title>
 </head>
 <body>
-	<div id="root"  align="center">
+	<div id="root" align="center">
 		<div id="form">
 			<form:form action="" method="post"
 				modelAttribute="getemployeedetails">
-				<div><h3>Employee details with his payslip list</h3></div>
+				<div>
+					<h3>Employee details with his payslip list</h3>
+				</div>
 				<div>
 					<label for="employeeID">Employee ID : </label>
-						<form:input path="employeeID" readonly="true" />
+					<form:input path="employeeID" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeFirstName">Employee FirstName : </label>
-						<form:input path="employeeFirstName" readonly="true" />
+					<form:input path="employeeFirstName" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeLastName">Employee LastName : </label>
-						<form:input path="employeeLastName" readonly="true" />
+					<form:input path="employeeLastName" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeGender">Gender : </label>
-						<form:input path="employeeGender" readonly="true" />
+					<form:input path="employeeGender" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeDOB">Date Of Birth : </label>
-						<form:input path="employeeDOB" readonly="true" />
+					<form:input path="employeeDOB" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeEmail">Email : </label>
-						<form:input path="employeeEmail" readonly="true" />
+					<form:input path="employeeEmail" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeePassword">Password : </label>
-						<form:input path="employeePassword" readonly="true" />
+					<form:input path="employeePassword" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeePhoneNumber">Phone Number : </label>
-						<form:input path="employeePhoneNumber" readonly="true" />
+					<form:input path="employeePhoneNumber" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeAddress">Address : </label>
-						<form:input path="employeeAddress" readonly="true" />
+					<form:input path="employeeAddress" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeJobID">Job ID : </label>
-						<form:input path="employeeJobID" readonly="true" />
+					<form:input path="employeeJobID" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeRole">Employee Role : </label>
-						<form:input path="employeeRole" readonly="true" />
+					<form:input path="employeeRole" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeManager">Manager Name : </label>
-						<form:input path="employeeManager" readonly="true" />
+					<form:input path="employeeManager" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeHireDate">HireDate : </label>
-						<form:input path="employeeHireDate" readonly="true" />
+					<form:input path="employeeHireDate" readonly="true" />
 				</div>
+
 				<div>
 					<label for="employeeWorkingHours">WorkingHours : </label>
-						<form:input path="employeeWorkingHours" readonly="true" />
+					<form:input path="employeeWorkingHours" readonly="true" />
 				</div>
+
 			</form:form>
 		</div>
-		<div><h3>Payslip list</h3></div>
+
+
+		<div>
+			<h3>Payslip list</h3>
+		</div>
 		<div id="payslipdetails">
 			<table border='2' width='100%' cellpadding='2'>
 				<thead>

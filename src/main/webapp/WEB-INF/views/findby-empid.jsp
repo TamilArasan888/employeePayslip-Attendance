@@ -8,9 +8,10 @@
 <title>Find Employee ByID</title>
 </head>
 <body>
-    <div id="root">
+    <div id="root" align="center">
         <div id="form">
             <form:form action ="" method = "post" modelAttribute = "getemployeebyid">
+            <h1>Get Employee Details</h1>
             <div>
                     <label for="employeeID">Employee ID : </label>
                     <div>

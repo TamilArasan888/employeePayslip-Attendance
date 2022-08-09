@@ -8,9 +8,9 @@ import java.sql.Date;
 import java.util.List;
 
 public interface AttendanceRepository extends CrudRepository<Attendance,Integer>  {
-	Attendance findById(int atten_Id);
+	Attendance findById(int attenId);
 	Attendance save(Attendance attend); 
-    void deleteById(int atten_Id);
+    void deleteById(int attenId);
     List<Attendance> findAll();
     List<Attendance> findByEmployeeID(int id);
 //    @Query(value="select * from Attendance a where(attend_Date between a.)")

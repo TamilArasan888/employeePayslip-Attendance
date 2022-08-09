@@ -8,9 +8,10 @@
 <title>Find Payslip Details</title>
 </head>
 <body>
-    <div id="root">
+    <div id="root" align="center">
         <div id="form">
             <form:form action ="" method = "post" modelAttribute = "getpayslip">
+            <h1>Get Payslip Details</h1>
             <div>
                     <label for="payslipID">Payslip ID : </label>
                     <div>

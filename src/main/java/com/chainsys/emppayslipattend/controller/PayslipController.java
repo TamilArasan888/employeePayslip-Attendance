@@ -1,24 +1,20 @@
 package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
-import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.emppayslipattend.businesslogic.BusinessLogic;
-import com.chainsys.emppayslipattend.model.BasicSalary;
-import com.chainsys.emppayslipattend.model.EmployeeDetails;
 import com.chainsys.emppayslipattend.model.Payslip;
-import com.chainsys.emppayslipattend.service.AttendanceService;
-import com.chainsys.emppayslipattend.service.BasicSalaryService;
-import com.chainsys.emppayslipattend.service.EmployeeDetailsService;
 import com.chainsys.emppayslipattend.service.PayslipService;
 
 @Controller
@@ -27,7 +23,7 @@ public class PayslipController {
 
 	@Autowired
 	private PayslipService payslipService;
-	
+
 	@GetMapping("/paysliplist")
 	public String getPayslip(Model model) {
 		List<Payslip> payslip = payslipService.getPayslip();
@@ -56,9 +52,13 @@ public class PayslipController {
 	}
 
 	@PostMapping("/addpayslip")
-	public String addNewPayslipDetails(@ModelAttribute("addpaydetail") Payslip payslip) {
-		payslipService.save(payslip);
-		return "redirect:/payslipdetails/paysliplist";
+	public String addNewPayslipDetails(@Valid @ModelAttribute("addpayslipdetail") Payslip payslip, Errors errors) {
+		if (errors.hasErrors()) {
+			return "add-pay-form";
+		} else {
+			payslipService.save(payslip);
+			return "redirect:/payslipdetails/paysliplist";
+		}
 	}
 
 	@GetMapping("/updatepayslipdetails")

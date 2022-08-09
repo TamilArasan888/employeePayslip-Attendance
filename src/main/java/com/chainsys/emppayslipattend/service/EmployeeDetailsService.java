@@ -41,8 +41,8 @@ public class EmployeeDetailsService {
 		return employeeDetailsRepository.save(empl);
 	}
 
-	public void deleteById(int emp_id) {
-		employeeDetailsRepository.deleteById(emp_id);
+	public void deleteById(int empId) {
+		employeeDetailsRepository.deleteById(empId);
 	}
 
 	public List<EmployeeDetails> getEmployeeDetails() {

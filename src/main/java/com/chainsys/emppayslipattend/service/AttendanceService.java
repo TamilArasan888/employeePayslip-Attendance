@@ -25,8 +25,8 @@ public class AttendanceService {
 	}
 
 	@Transactional
-	public void deleteById(int atten_id) {
-		attendanceRepository.deleteById(atten_id);
+	public void deleteById(int attenId) {
+		attendanceRepository.deleteById(attenId);
 	}
 
 	public List<Attendance> getAttendance() {

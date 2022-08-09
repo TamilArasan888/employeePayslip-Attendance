@@ -8,15 +8,17 @@
 </head>
 <body>
 	<div align="center">
-		<table>
-			<tr>
-				<td><h1>Welcome Employee</h1></td>
-			</tr>
-			<tr>
-			<td><h3><a href="/employeedetails/getemployeepaysliplist">PaySlip</a></h3></td>
-			<td><h3><a href="/employeedetails/attendancetype">Attendance</a></h3></td>
-			</tr>
-		</table>
+		<h1>Welcome Employee</h1>
+		<div>
+			<h3>
+				<a href="/employeedetails/getemployeepaysliplist">PaySlip</a>
+			</h3>
+		</div>
+		<div>
+			<h3>
+				<a href="/employeedetails/attendancetype">Attendance</a>
+			</h3>
+		</div>
 	</div>
 </body>
 </html>

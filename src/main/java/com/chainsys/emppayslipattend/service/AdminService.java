@@ -21,8 +21,8 @@ public class AdminService {
 		return adminRepository.save(adm);
 	}
 
-	public void deleteById(int adm_id) {
-		adminRepository.deleteById(adm_id);
+	public void deleteById(int admid) {
+		adminRepository.deleteById(admid);
 	}
 
 	public List<Admin> getAdmin() {

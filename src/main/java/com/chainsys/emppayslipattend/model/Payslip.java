@@ -8,11 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "Payslip")
 public class Payslip {
 	@Id
+	@Range(min=1,message="*Value should be greater than 0")
 	@Column(name = "payslip_Id")
 	private int payslipID;
 
@@ -25,6 +29,7 @@ public class Payslip {
 	@Column(name = "net_Salary")
 	private float netSalary;
 
+	@Range(min=1,message="*Value should be greater than 0")
 	@Column(name = "emp_id")
 	private int employeeID;
 
