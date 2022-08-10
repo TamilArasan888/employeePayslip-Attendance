@@ -14,7 +14,7 @@
 				modelAttribute="addattendancedetail">
 				<h1>Attendance Form</h1>
 
-				<div>
+				 <div>
 					<label for="attendanceID">Attendance ID : </label>
 					<div>
 						<form:input path="attendanceID" placeholder="Enter Attendance Id"

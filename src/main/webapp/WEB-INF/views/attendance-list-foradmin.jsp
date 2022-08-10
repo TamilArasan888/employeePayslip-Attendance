@@ -18,6 +18,8 @@
 					<th>Out-Time</th>
 					<th>Daily Task Description</th>
 					<th>Employee ID</th>
+					<th>Update</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			
@@ -30,6 +32,10 @@
 						<td>${attendance.outTime}</td>
 						<td>${attendance.dailyTask}</td>
 						<td>${attendance.employeeID}</td>
+						<td><a
+							href="/attendancedetails/updateattendancedetails?attendanceid=${attendance.attendanceID}">Update</a></td>
+						<td><a
+							href="/attendancedetails/deleteattendancebyid?attendanceid=${attendance.attendanceID}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

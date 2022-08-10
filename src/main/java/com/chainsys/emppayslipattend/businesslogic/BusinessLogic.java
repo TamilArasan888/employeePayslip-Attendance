@@ -11,20 +11,25 @@ import com.chainsys.emppayslipattend.model.Attendance;
 import com.chainsys.emppayslipattend.model.BasicSalary;
 
 public class BusinessLogic {
-	private BusinessLogic() {
+private BusinessLogic() {
 		
 	}
 	public static float grossSalaryCalculation(Optional<BasicSalary> basicSal) {
 		BasicSalary basicSalary=basicSal.get();
 		return basicSalary.getEmployeeBasicSalary()+basicSalary.getHouseRentAllowance()+basicSalary.getDailyAllowance();
 	}
-	public static float netSalaryCalculation(float grossSalary,Optional<BasicSalary> basicSal,float cutSalaryPercent) {
-		BasicSalary basicSalary=basicSal.get();
-		float cutSalary=grossSalary*cutSalaryPercent;
-		System.out.println(cutSalary);
-		return grossSalary-basicSalary.getProvidentFund()-(grossSalary*basicSalary.getIncomeTax()/100)-cutSalary;
-	}
 	
+	public static int findemployeeAttendance(List<Attendance>attendancelist,int employeeId) {
+		int noOfPresent=0;
+		Iterator<Attendance> itr=attendancelist.iterator();
+		while(itr.hasNext()) {
+			Attendance attendance=(Attendance)itr.next();
+			if(attendance.getEmployeeID()==employeeId) {
+				noOfPresent+=1;
+			}	
+		}
+		return noOfPresent;
+	}
 	
 	public static float getCutSalaryPercent(Date[] array,int noOfPresent) {
 		String startdate=array[0]+"";
@@ -37,6 +42,12 @@ public class BusinessLogic {
 		return (totalDays-noOfPresent)/totalDays;
 	}
 	
+	public static float netSalaryCalculation(float grossSalary,Optional<BasicSalary> basicSal,float cutSalaryPercent) {
+		BasicSalary basicSalary=basicSal.get();
+		float cutSalary=grossSalary*cutSalaryPercent;
+		System.out.println(cutSalary);
+		return grossSalary-basicSalary.getProvidentFund()-(grossSalary*basicSalary.getIncomeTax()/100)-cutSalary;
+	}
 	
 	public static Date[] fromDateCalculation(Date payslipDate) {
 		String stringDate=payslipDate+"";
@@ -84,17 +95,7 @@ public class BusinessLogic {
 	}
 	
 	
-	public static int findemployeeAttendance(List<Attendance>attendancelist,int employeeId) {
-		int noOfPresent=0;
-		Iterator<Attendance> itr=attendancelist.iterator();
-		while(itr.hasNext()) {
-			Attendance attendance=(Attendance)itr.next();
-			if(attendance.getEmployeeID()==employeeId) {
-				noOfPresent+=1;
-			}	
-		}
-		return noOfPresent;
-	}
+	
 //	public static void main(String[] args) {
 //		SimpleDateFormat SimpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
 //		String startDateString="12/03/2022";

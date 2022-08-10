@@ -17,6 +17,9 @@
             <th>Gross Salary</th>
             <th>Net Salary</th>
             <th>Employee Id</th>
+            <th>View Details</th>
+            <th>Update</th>
+            <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -27,6 +30,9 @@
             <td>${payslip.grossSalary}</td>
             <td>${payslip.netSalary}</td>
             <td>${payslip.employeeID}</td>
+            <td><a href="/employeedetails/getemployeepaysliplist?id=${payslip.employeeID}">View</a></td>
+            <td><a href="/payslipdetails/updatepayslipdetails?payslipid=${payslip.payslipID}">Update</a></td>
+			<td><a href="/payslipdetails/deletepayslipbyid?payslipid=${payslip.payslipID}">Delete</a></td>
             </tr>
             </c:forEach>
             </tbody>

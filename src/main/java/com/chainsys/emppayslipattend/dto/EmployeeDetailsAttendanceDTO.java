@@ -7,6 +7,7 @@ import com.chainsys.emppayslipattend.model.Attendance;
 import com.chainsys.emppayslipattend.model.EmployeeDetails;
 
 public class EmployeeDetailsAttendanceDTO {
+	
 	private EmployeeDetails employeeDetails;
 	private List<Attendance> attendanceList = new ArrayList<Attendance>();
 

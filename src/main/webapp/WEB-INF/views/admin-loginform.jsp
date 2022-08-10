@@ -6,6 +6,114 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin login page</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #080710;
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #1845ad,
+        #23a2f6
+    );
+    left: -80px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    right: -30px;
+    bottom: -80px;
+}
+form{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h1{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+button{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
 <style type="text/css">
 .text-danger {
 	color: #e80c4d;
@@ -14,39 +122,29 @@
 </style>
 </head>
 <body>
-	<div id="root"  align="center">
-		<div id="form">
+	<div class="background">
+		  <div class="shape"></div>
+        <div class="shape"></div>
+        </div>
 			<form:form action="checkadminlogin" method="post"
 				modelAttribute="adminlogindetails">
-				<div>
-					<h1 align="center">ADMIN LOGIN</h1>
-				</div>
+				
+					<h1>ADMIN LOGIN</h1>
 			
-				<div>
 					<label for="adminID">Admin ID : </label>
-					<form:input path="adminID" placeholder="Enter Your Admin ID" required="true"/>
-					</div>
+					<form:input id="adminid" path="adminID" placeholder="Enter Your Admin ID" required="true"/>
 				<form:errors path="adminID" cssClass="text-danger" />
 					
-				<div>
 					<label for="adminName">Admin Name : </label>
-					<form:input path="adminName" placeholder="Enter Admin Name" required="true"/>
-				</div>
+					<form:input id="adminname" path="adminName" placeholder="Enter Admin Name" required="true"/>
 				<form:errors path="adminName" cssClass="text-danger" />
 				
-				<div>
 					<label for="adminPassword">Admin Password : </label>
-					<form:input path="adminPassword" placeholder="Enter Admin Password" required="true"/>
-				</div>
+					<form:input  id="adminpassword" path="adminPassword" placeholder="Enter Admin Password" required="true"/>
 				<form:errors path="adminPassword" cssClass="text-danger" />
 				
-				<div>
 					<form:button>SignIn</form:button>
-					<form:button type="reset">Reset</form:button>
-				</div>
-				
+								
 			</form:form>
-		</div>
-	</div>
 </body>
 </html>

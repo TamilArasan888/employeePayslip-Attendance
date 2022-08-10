@@ -2,9 +2,7 @@ package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
 import java.util.Optional;
-
 import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +31,13 @@ public class EmployeeDetailsController {
 		List<EmployeeDetails> employee = employeeDetailsService.getEmployeeDetails();
 		model.addAttribute("allemployeedetails", employee);
 		return "list-emp";
+	}
+	
+	@GetMapping("/employeelistforadmin")
+	public String getEmployeeDetailsByAdmin(Model model) {
+		List<EmployeeDetails> employee = employeeDetailsService.getEmployeeDetails();
+		model.addAttribute("allemployeedetails", employee);
+		return "emp-list-foradmin";
 	}
 
 	@GetMapping("/findemployeebyid")
@@ -99,7 +104,6 @@ public class EmployeeDetailsController {
 		model.addAttribute("attendancedetails",dto.getAttendanceList());
 		return "employeedetails-attendance";
 	}
-	
 	@GetMapping("/employeelogin")
     public String employeeAccessForm(Model model) {
         EmployeeDetails employee = new EmployeeDetails();
@@ -120,7 +124,4 @@ public class EmployeeDetailsController {
     public String index(Model model) {
         return "attendance-type";
     }  
-    
-    
-
 }

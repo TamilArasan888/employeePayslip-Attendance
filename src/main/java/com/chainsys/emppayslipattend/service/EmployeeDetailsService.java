@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.chainsys.emppayslipattend.dto.EmployeeDetailsAttendanceDTO;
 import com.chainsys.emppayslipattend.dto.EmployeeDetailsPayslipDTO;
-import com.chainsys.emppayslipattend.model.Admin;
 import com.chainsys.emppayslipattend.model.Attendance;
 import com.chainsys.emppayslipattend.model.BasicSalary;
 import com.chainsys.emppayslipattend.model.EmployeeDetails;

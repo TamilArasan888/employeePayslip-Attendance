@@ -22,11 +22,11 @@
 				
 				<h1>Employee Registration Form</h1>
 				
-					<div>
+					<%-- <div>
 						<label for="employeeID">Employee ID : </label>
 						<form:input path="employeeID" placeholder="Enter Your Employee Id" required="true"/>
 					</div>
-					<form:errors path="employeeID" cssClass="text-danger" />
+					<form:errors path="employeeID" cssClass="text-danger" /> --%>
 					
 					<div>
 						<label for="employeeFirstName">Employee FirstName : </label>
@@ -42,7 +42,7 @@
 				
 				<div>
 					<label for="employeeGender">Gender : </label>
-					<form:radiobutton path="employeeGender" value="Male" required="true"/>
+					<form:radiobutton path="employeeGender" value="Male"/>
 					Male
 					<form:radiobutton path="employeeGender" value="Female" />
 					Female
@@ -74,19 +74,19 @@
 				
 				<div>
 					<label for="employeeAddress">Address : </label>
-					<form:input path="employeeAddress" placeholder="Enter Your Address" required="true"/>
+					<form:input path="employeeAddress" placeholder="Enter Your Address"/>
 				</div>
 				<form:errors path="employeeAddress" cssClass="text-danger" />
 				
-				<div>
+				<%-- <div>
 					<label for="employeeJobID">Job ID : </label>
 					<form:input path="employeeJobID" placeholder="Enter Your Job Id" required="true"/>
 				</div>
-				<form:errors path="employeeJobID" cssClass="text-danger" />
+				<form:errors path="employeeJobID" cssClass="text-danger" /> --%>
 				
 				<div>
 					<label for="employeeRole">Employee Role : </label>
-					<form:select path="employeeRole" required="true">
+					<form:select path="employeeRole">
 						<c:forEach var="basicSalary" items="${basicSalary}">
 							<form:option value="${basicSalary.employeeRole}"
 								label="${basicSalary.employeeRole}" />
@@ -96,18 +96,18 @@
 				
 				<div>
 					<label for="employeeManager">Manager Name : </label>
-					<form:input path="employeeManager" placeholder="Enter Your Manager Name" required="true"/>
+					<form:input path="employeeManager" placeholder="Enter Your Manager Name"/>
 				</div>
 				<form:errors path="employeeManager" cssClass="text-danger" />
 				
 				<div>
 					<label for="employeeHireDate">HireDate : </label>
-					<form:input type="date" path="employeeHireDate" placeholder="Enter Your HireDate" required="true"/>
+					<form:input type="date" path="employeeHireDate" placeholder="Enter Your HireDate"/>
 				</div>
 				
 				<div>
 					<label for="employeeWorkingHours">WorkingHours : </label>
-					<form:input path="employeeWorkingHours" placeholder="Enter Your Working Hours" required="true"/>
+					<form:input path="employeeWorkingHours" placeholder="Enter Your Working Hours"/>
 				</div>
 				<form:errors path="employeeWorkingHours" cssClass="text-danger" />
 				

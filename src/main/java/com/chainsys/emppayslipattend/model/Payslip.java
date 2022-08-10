@@ -4,11 +4,13 @@ import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -16,7 +18,8 @@ import org.hibernate.validator.constraints.Range;
 @Table(name = "Payslip")
 public class Payslip {
 	@Id
-	@Range(min=1,message="*Value should be greater than 0")
+	@GeneratedValue(strategy=GenerationType.AUTO,generator = "payslip_id_reference")
+	@SequenceGenerator(name="payslip_id_reference",sequenceName = "payslip_id_reference",allocationSize = 1)
 	@Column(name = "payslip_Id")
 	private int payslipID;
 

@@ -16,6 +16,10 @@ body {
 	background-size: cover;
 }
 
+h1{
+color:white;
+}
+
 .login-form {
 	width: 75px;
 	height: 30px;
@@ -56,7 +60,7 @@ body {
 						style="width: 20%;height: 35px;font-size: 17px;" />
 				</div>
 
-				<div style="margin-top: 20px; margin-left: 42px;">
+				<div style="margin-top: 20px; margin-left: 30px;">
 					<form:button class="login-form">SignIn</form:button>
 					<form:button class="login-form" style="margin-left: 12px;">
 						<a href="/employeedetails/addemployeedetails"

@@ -30,6 +30,13 @@ public class PayslipController {
 		model.addAttribute("allpayslipdetails", payslip);
 		return "list-pay";
 	}
+	
+	@GetMapping("/paysliplistforadmin")
+	public String getPayslipByAdmin(Model model) {
+		List<Payslip> payslip = payslipService.getPayslip();
+		model.addAttribute("allpayslipdetails", payslip);
+		return "payslip-list-foradmin";
+	}
 
 	@GetMapping("/findpayslipbyid")
 	public String getPayDetails(@RequestParam("payslipid") int id, Model model) {
@@ -41,7 +48,7 @@ public class PayslipController {
 	@GetMapping("/deletepayslipbyid")
 	public String deletePayslipDetails(@RequestParam("payslipid") int id) {
 		payslipService.deleteById(id);
-		return "redirect:/payslipdetails/paysliplist";
+		return "redirect:/payslipdetails/paysliplistforadmin";
 	}
 
 	@GetMapping("/addpayslipdetails")

@@ -19,11 +19,11 @@
 			<form:form action="addpayslip" method="post"
 				modelAttribute="addpayslipdetail">
 				<h1>Add Payslip Form</h1>
-				<div>
+				<%-- <div>
 					<label for="payslipID">Payslip ID : </label>
 					<form:input path="payslipID" placeholder="Enter Payslip ID" required="true"/>
 				</div>
-				<form:errors path="payslipID" cssClass="text-danger" />
+				<form:errors path="payslipID" cssClass="text-danger" /> --%>
 				
 				<div>
 					<label for="payslipDate">Payslip Date : </label>

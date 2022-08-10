@@ -41,7 +41,7 @@
 				</div>
 				<form:errors path="adminPassword" cssClass="text-danger" />
 				<div>
-					<form:button>Add Admin</form:button>
+					<form:button type="submit" name="submit">Add Admin</form:button>
 				</div>
 			</form:form>
 		</div>

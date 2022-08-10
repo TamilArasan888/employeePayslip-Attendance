@@ -68,15 +68,17 @@ public class AdminController {
 	}
 
 	@PostMapping("/updateadmin")
-	public String updateAdminDetails(@Valid@ModelAttribute("updateadmindetails") Admin admin,Errors errors) {
+	public String updateAdminDetails(@Valid@ModelAttribute("updateadmindetails") Admin adm,Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-admindetails";
 		} 
 		else {
-		adminService.save(admin);
+		adminService.save(adm);
 		return "redirect:/admindetails/adminlist";
 	}
 	}
+	
+//	Get and PostMapping for Admin Login checking
 	@GetMapping("/adminlogin")
 	public String adminAccessForm(Model model) {
 		Admin admin = new Admin();
@@ -94,7 +96,7 @@ public class AdminController {
 		} else
 			return "redirect-adminloginpage";
 	}
-
+	
 	@GetMapping("/adminindex")
 	public String index(Model model) {
 		return "admin-indexpage";

@@ -27,6 +27,13 @@ public class AttendanceController {
 			model.addAttribute("allattendancedetails", attendance);
 			return "list-attend";
 		}
+		
+		@GetMapping("/attendancelistforadmin")
+		public String getAttendanceByAdmin(Model model) {
+			List<Attendance> attendance = attendanceService.getAttendance();
+			model.addAttribute("allattendancedetails", attendance);
+			return "attendance-list-foradmin";
+		}
 
 		@GetMapping("/findattendancebyid")
 		public String getAttendDetails(@RequestParam("attendanceid") int id, Model model) {

@@ -34,12 +34,17 @@ public class PayslipService {
 	public Payslip save(Payslip payslip) {
 		EmployeeDetails employee=employeeService.findById(payslip.getEmployeeID());
 		Optional<BasicSalary> basicSalary=basicSalaryService.getBasicSalaryById(employee.getEmployeeRole());
+		
 		float grossSalary=BusinessLogic.grossSalaryCalculation(basicSalary);
 		payslip.setGrossSalary(grossSalary);
+		
 		Date dates[]=BusinessLogic.fromDateCalculation(payslip.getPayslipDate());
+		
 		List<Attendance> attendancelist=attendanceService.getAttendanceBetweenTwoDates(dates[0],dates[1]);
+		
 		int noOfPercent=BusinessLogic.findemployeeAttendance(attendancelist,payslip.getEmployeeID());
 		float cutsalaryPercent=BusinessLogic.getCutSalaryPercent(dates,noOfPercent);
+		
 		payslip.setNetSalary(BusinessLogic.netSalaryCalculation(grossSalary, basicSalary,cutsalaryPercent));
 		return payslipRepository.save(payslip);
 		

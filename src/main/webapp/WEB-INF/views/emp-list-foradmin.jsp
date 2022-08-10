@@ -26,6 +26,8 @@
             <th>Manager Name</th>
             <th>Hire Date</th>
             <th>Working Hours</th>
+            <th>Update</th>
+            <th>Delete</th>
             </tr>
             </thead>
             <tbody>
@@ -45,6 +47,8 @@
             <td>${employee.employeeManager}</td>
             <td>${employee.employeeHireDate}</td>
             <td>${employee.employeeWorkingHours}</td>
+            <td><a href="/employeedetails/updateemployeedetails?employeeid=${employee.employeeID}">Update</a></td>
+			<td><a href="/employeedetails/deleteemployeebyid?employeeid=${employee.employeeID}">Delete</a></td>
 			</tr>
             </c:forEach>
             </tbody>

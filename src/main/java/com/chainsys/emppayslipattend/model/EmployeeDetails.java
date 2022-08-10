@@ -6,24 +6,26 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-
 import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "employee_Details")
 public class EmployeeDetails {
 	@Id
-	@Range(min=1,message="*Value should be greater than 0")
+	@GeneratedValue(strategy=GenerationType.AUTO,generator = "employee_Id_reference")
+	@SequenceGenerator(name="employee_Id_reference",sequenceName = "employee_Id_reference",allocationSize = 1)
 	@Column(name = "emp_Id")
 	private int employeeID;
 	
@@ -53,7 +55,7 @@ public class EmployeeDetails {
 	@Column(name = "emp_Password")
 	private String employeePassword;
 
-	@Digits(message = "*Invalid number.", integer = 10, fraction = 0)
+	@Pattern(regexp="^([0-9]{10})$",message = "Invalid Mobile Number.")
 	@Column(name = "emp_Phoneno")
 	private long employeePhoneNumber;
 
@@ -61,7 +63,8 @@ public class EmployeeDetails {
 	@Column(name = "emp_Address")
 	private String employeeAddress;
 
-	@Min(value = 0,message="*value should be greater than 0")
+	@GeneratedValue(strategy=GenerationType.AUTO,generator = "job_Id_reference")
+	@SequenceGenerator(name="job_Id_reference",sequenceName = "job_Id_reference",allocationSize = 1)
 	@Column(name = "emp_Jobid")
 	private int employeeJobID;
 
