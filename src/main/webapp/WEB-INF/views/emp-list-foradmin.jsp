@@ -26,7 +26,8 @@
             <th>Manager Name</th>
             <th>Hire Date</th>
             <th>Working Hours</th>
-            <th>Update</th>
+            <th>View</th>
+            <th>Edit</th>
             <th>Delete</th>
             </tr>
             </thead>
@@ -47,7 +48,8 @@
             <td>${employee.employeeManager}</td>
             <td>${employee.employeeHireDate}</td>
             <td>${employee.employeeWorkingHours}</td>
-            <td><a href="/employeedetails/updateemployeedetails?employeeid=${employee.employeeID}">Update</a></td>
+            <td><a href="/employeedetails/findemployeebyid?employeeid=${employee.employeeID}">View this Employee Details</a></td>
+            <td><a href="/employeedetails/updateemployeedetails?employeeid=${employee.employeeID}">Edit</a></td>
 			<td><a href="/employeedetails/deleteemployeebyid?employeeid=${employee.employeeID}">Delete</a></td>
 			</tr>
             </c:forEach>

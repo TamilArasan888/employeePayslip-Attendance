@@ -16,7 +16,7 @@
 					<th>Admin Id</th>
 					<th>Admin Name</th>
 					<th>Admin Password</th>
-					<th>Update</th>
+					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
 			</thead>
@@ -27,7 +27,7 @@
 						<td>${admin.adminName}</td>
 						<td>${admin.adminPassword}</td>
 						<td><a
-							href="/admindetails/updateadmindetails?adminid=${admin.adminID}">Update</a></td>
+							href="/admindetails/updateadmindetails?adminid=${admin.adminID}">Edit</a></td>
 						<td><a
 							href="/admindetails/deleteadmindetailsbyid?adminid=${admin.adminID}">Delete</a></td>
 					</tr>

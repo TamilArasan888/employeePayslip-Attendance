@@ -12,6 +12,12 @@
 	color: #e80c4d;
 	font-size: 0.9em;
 }
+body {
+	background-image:
+		url(https://img.freepik.com/premium-vector/people-managers-clients-bank-employees-working-with-customers-financial-consulting-center_547662-869.jpg?w=2000);
+	background-repeat: no-repeat;
+	background-size: 1366px 768px;
+}
 </style>
 </head>
 <body>

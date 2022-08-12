@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
@@ -55,7 +54,6 @@ public class EmployeeDetails {
 	@Column(name = "emp_Password")
 	private String employeePassword;
 
-	@Pattern(regexp="^([0-9]{10})$",message = "Invalid Mobile Number.")
 	@Column(name = "emp_Phoneno")
 	private long employeePhoneNumber;
 

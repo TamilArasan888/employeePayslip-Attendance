@@ -34,12 +34,15 @@ private BusinessLogic() {
 	public static float getCutSalaryPercent(Date[] array,int noOfPresent) {
 		String startdate=array[0]+"";
 		String endDate=array[1]+"";
+		
 		String[] startdateArray=startdate.split("-");
 		String[] enddateArray=endDate.split("-");
+		
 		int day1=Integer.parseInt(startdateArray[2]);
 		int day2=Integer.parseInt(enddateArray[2]);
+		
 		int totalDays=day2-day1+1;
-		return (totalDays-noOfPresent)/totalDays;
+		return ((totalDays-noOfPresent)/totalDays);
 	}
 	
 	public static float netSalaryCalculation(float grossSalary,Optional<BasicSalary> basicSal,float cutSalaryPercent) {

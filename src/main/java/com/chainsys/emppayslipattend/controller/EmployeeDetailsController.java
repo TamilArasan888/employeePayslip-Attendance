@@ -50,7 +50,7 @@ public class EmployeeDetailsController {
 	@GetMapping("/deleteemployeebyid")
 	public String deleteEmployeeDetails(@RequestParam("employeeid") int id) {
 		employeeDetailsService.deleteById(id);
-		return "redirect:/employeedetails/employeelist";
+		return "redirect:/employeedetails/employeelistforadmin";
 	}
 
 	@GetMapping("/addemployeedetails")
@@ -86,7 +86,7 @@ public class EmployeeDetailsController {
 	@PostMapping("/updateemployee")
 	public String updateEmpDetails(@ModelAttribute("updateempdetails") EmployeeDetails employee) {
 		employeeDetailsService.save(employee);
-		return "redirect:/employeedetails/employeelist";
+		return "redirect:/employeedetails/employeelistforadmin";
 	}
 	
 	@GetMapping("/getemployeepaysliplist")

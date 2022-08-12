@@ -6,6 +6,14 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Attendance Details</title>
+<style type="text/css">
+body{
+	background-image:
+		url(https://media.istockphoto.com/photos/blue-wall-texture-picture-id175400834?b=1&k=20&m=175400834&s=170667a&w=0&h=R1InA1GKCO1_SsGdtipJgHxvE033OwaTSE7EN-O_Zjw=);
+	background-repeat: no-repeat;
+	background-size: 1366px 768px;
+}
+</style>
 </head>
 <body>
 	<div id="root" align="center">
@@ -14,13 +22,13 @@
 				modelAttribute="addattendancedetail">
 				<h1>Attendance Form</h1>
 
-				 <div>
+				<%--  <div>
 					<label for="attendanceID">Attendance ID : </label>
 					<div>
 						<form:input path="attendanceID" placeholder="Enter Attendance Id"
 							required="true" />
 					</div>
-				</div>
+				</div> --%>
 
 				<div>
 					<label for="attendanceDate">Attendance Date : </label>

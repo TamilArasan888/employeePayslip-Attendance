@@ -16,6 +16,8 @@ import javax.persistence.Table;
 @Table(name="Attendance")
 public class Attendance {
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO,generator = "attendance_id_reference")
+	@SequenceGenerator(name="attendance_id_reference",sequenceName = "attendance_id_reference",allocationSize = 1)
 	@Column(name="attendance_Id")
 	private int attendanceID;
 	

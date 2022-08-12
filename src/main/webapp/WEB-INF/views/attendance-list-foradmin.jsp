@@ -12,13 +12,13 @@
 		<table border='2' width='100%' cellpadding='2'>
 			<thead>
 				<tr>
+					<th>Employee ID</th>
 					<th>Attendance Id</th>
 					<th>Attendance Date</th>
 					<th>In-Time</th>
 					<th>Out-Time</th>
 					<th>Daily Task Description</th>
-					<th>Employee ID</th>
-					<th>Update</th>
+					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
 			</thead>
@@ -26,14 +26,15 @@
 			<tbody>
 				<c:forEach var="attendance" items="${allattendancedetails}">
 					<tr>
+						<td>${attendance.employeeID}</td>
 						<td>${attendance.attendanceID}</td>
 						<td>${attendance.attendanceDate}</td>
 						<td>${attendance.inTime}</td>
 						<td>${attendance.outTime}</td>
 						<td>${attendance.dailyTask}</td>
-						<td>${attendance.employeeID}</td>
+						
 						<td><a
-							href="/attendancedetails/updateattendancedetails?attendanceid=${attendance.attendanceID}">Update</a></td>
+							href="/attendancedetails/updateattendancedetails?attendanceid=${attendance.attendanceID}">Edit</a></td>
 						<td><a
 							href="/attendancedetails/deleteattendancebyid?attendanceid=${attendance.attendanceID}">Delete</a></td>
 					</tr>

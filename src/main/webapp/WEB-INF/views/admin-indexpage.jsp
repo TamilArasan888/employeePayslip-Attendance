@@ -9,12 +9,19 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
+	background-image:
+		url("https://images8.alphacoders.com/987/987256.png");
+		background-repeat: no-repeat;
+	background-size: 1366px 768px;
 	font-family: Arial, Helvetica, sans-serif;
 }
-
+h1{
+font-family:lucida Handwriting, Cursive;
+color:white;
+}
 .navbar {
 	overflow: hidden;
-	background-color: #333;
+	background-color: #38fca4;
 }
 
 .navbar a {
@@ -25,10 +32,7 @@ body {
 	padding: 14px 16px;
 	text-decoration: none;
 }
-.dropdown dropbtnlogout{
-	float:right;
-	overflow:hidden;
-}
+
 .dropdown {
 	float: left;
 	overflow: hidden;
@@ -38,7 +42,7 @@ body {
 	font-size: 16px;
 	border: none;
 	outline: none;
-	color: white;
+	color:#000000;
 	padding: 14px 16px;
 	background-color: inherit;
 	font-family: inherit;
@@ -46,7 +50,7 @@ body {
 }
 
 .navbar a:hover, .dropdown:hover .dropbtn {
-	background-color: red;
+	background-color: #fa6e6e;
 }
 
 .dropdown-content {
@@ -78,48 +82,51 @@ body {
 </head>
 <body>
 	<h1 align="center">Welcome Admin</h1>
-	
+
 	<div class="navbar">
-	<div class="dropdown">
+		<div class="dropdown">
 			<button class="dropbtn">
 				Admin <i class="fa fa-caret-down"></i>
 			</button>
-			 <div class="dropdown-content">
-				<a href="/admindetails/addadmindetailsbyuser">Add a new admin</a> 
-				<a href="/admindetails/adminlist">View all admins details</a>                             
+			<div class="dropdown-content">
+				<a href="/admindetails/addadmindetailsbyuser">Add a new admin</a> <a
+					href="/admindetails/adminlist">View all admins details</a>
+			</div>
 		</div>
-		</div>
-		
+
 		<div class="dropdown">
 			<button class="dropbtn">
 				Employees <i class="fa fa-caret-down"></i>
 			</button>
-			 <div class="dropdown-content">
-				<a href="/employeedetails/addemployeedetails">Add a new employee</a> 
-				<a href="/employeedetails/employeelistforadmin">View all employees details</a>                             
+			<div class="dropdown-content">
+				<a href="/employeedetails/addemployeedetails">Add a new employee</a>
+				<a href="/employeedetails/employeelistforadmin">View all
+					employees details</a>
+			</div>
 		</div>
-		</div>
-		
+
 		<div class="dropdown">
 			<button class="dropbtn">
 				Payslip <i class="fa fa-caret-down"></i>
 			</button>
-			 <div class="dropdown-content">
-				<a href="/payslipdetails/addpayslipdetails">Add payslip to employee</a> 
-				<a href="/payslipdetails/paysliplistforadmin">View all payslip details</a>                             
+			<div class="dropdown-content">
+				<a href="/payslipdetails/addpayslipdetails">Add payslip to
+					employee</a> <a href="/payslipdetails/paysliplistforadmin">View all
+					payslip details</a>
+			</div>
 		</div>
-		</div>
-		
+
 		<div class="dropdown">
 			<button class="dropbtn">
 				Attendance <i class="fa fa-caret-down"></i>
 			</button>
-			 <div class="dropdown-content">
-				<a href="/attendancedetails/addattendancedetails">Add attendance for employee </a> 
-				<a href="/attendancedetails/attendancelistforadmin">View all employee attendance details</a>                             
+			<div class="dropdown-content">
+				<a href="/attendancedetails/addattendancedetails">Add attendance
+					for employee </a> <a href="/attendancedetails/attendancelistforadmin">View
+					all employee attendance details</a>
+			</div>
 		</div>
-		</div>
-		</div>
-		
+	</div>
+
 </body>
 </html>

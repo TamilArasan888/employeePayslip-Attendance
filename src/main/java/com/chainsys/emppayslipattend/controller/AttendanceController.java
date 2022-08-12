@@ -45,7 +45,7 @@ public class AttendanceController {
 		@GetMapping("/deleteattendancebyid")
 		public String deleteAttendanceDetails(@RequestParam("attendanceid") int id) {
 			attendanceService.deleteById(id);
-			return "redirect:/attendancedetails/attendancelist";
+			return "redirect:/attendancedetails/attendancelistforadmin";
 		}
 
 		@GetMapping("/addattendancedetails")

@@ -8,7 +8,12 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+
 body {
+background-image:
+		url(https://cdn.pixabay.com/photo/2020/12/03/11/37/man-5800290_960_720.png);
+	background-repeat: no-repeat;
+	background-size: 1366px 768px;
 	font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -76,7 +81,7 @@ body {
 <body>
 	<h1 align="center">Welcome Employee</h1>
 	<div class="navbar">
-		<a href="/employeedetails/getemployeepaysliplist">PaySlip</a>
+		<a href="/employeedetails/getemployeepaysliplist?id=">PaySlip</a>
 		<div class="dropdown">
 			<button class="dropbtn">
 				Attendance <i class="fa fa-caret-down"></i>
