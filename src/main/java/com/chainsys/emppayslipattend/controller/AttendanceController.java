@@ -58,7 +58,7 @@ public class AttendanceController {
 		@PostMapping("/addattendance")
 		public String addNewAttendDetails(@ModelAttribute("addattendancedetail") Attendance attendance) {
 			attendanceService.save(attendance);
-			return "redirect:/attendancedetails/attendancelist";
+			return "redirect:/attendancedetails/attendancelistforadmin";
 		}
 
 		@GetMapping("/updateattendancedetails")

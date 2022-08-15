@@ -12,7 +12,7 @@
 </head>
 <body>
 	<form:form action="" method="post" modelAttribute="getadmindetailsbyid">
-		<h1>Get Admin Details</h1>
+		<h1>Admin Details</h1>
 		<div class="form">
 			<table>
 				<tbody>

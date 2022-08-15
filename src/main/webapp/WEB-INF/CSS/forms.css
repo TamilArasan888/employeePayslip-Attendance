@@ -1,0 +1,230 @@
+@charset "ISO-8859-1";
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image:
+		url(https://res.cloudinary.com/practicaldev/image/fetch/s--VUjY6vGQ--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/dm3d0q71otpp5c6auetc.jpg);
+	background-size: 1366px 768px;
+	font-family: sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+h1 {
+	font-family: "Lucida Console", "Courier New", monospace;
+	font-size: 25px;
+	color: #face69;
+	text-align: center;
+}
+
+/* .container {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
+	overflow: hidden;
+	max-width: 100%;
+	width: 400px;
+} */
+
+.form-admin {
+	height: 500px;
+	width: 400px;
+	background-color: rgba(255, 255, 255, 0.13);
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	backdrop-filter: blur(10px);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+	padding: 50px 35px;
+}
+
+.form-employee {
+	height: 800px;
+	width: 400px;
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	padding: 50px 35px;
+}
+
+.form-payslip {
+	height: 400px;
+	width: 400px;
+	background-color: rgba(255, 255, 255, 0.13);
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	backdrop-filter: blur(10px);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+	padding: 50px 35px;
+}
+
+.form-attendance {
+	height: 600px;
+	width: 400px;
+	background-color: rgba(255, 255, 255, 0.13);
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 50%;
+	left: 50%;
+	border-radius: 10px;
+	backdrop-filter: blur(10px);
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+	padding: 50px 35px;
+}
+
+.button {
+	text-align:center;
+	margin-top: 5px;
+	margin-left:20%;
+	width: 65%;
+	background:#face69;
+	color:black;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-control label {
+	font-size:25px;
+	font-weight: 800;
+	color:cyan;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control input {
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 20px;
+	display: block;
+	padding: 5px;
+	width: 100%;
+}
+
+.form-control input:focus {
+	outline: none;
+	border-color: #777;
+}
+
+
+
+.form-control-employee {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-control-employee label {
+	font-size:25px;
+	font-weight:800;
+	color:cyan;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control-employee input {
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 20px;
+	display: block;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control-employee input:focus {
+	outline: none;
+	border-color: #777;
+}
+
+
+
+
+.form-control-payslip {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-control-payslip label {
+	font-size:20px;
+	font-weight: 800;
+	color:cyan;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control-payslip input {
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 14px;
+	display: block;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control-payslip input:focus {
+	outline: none;
+	border-color: #777;
+}
+
+
+
+
+.form-control-attendance {
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+.form-control-attendance label {
+	font-size:15px;
+	font-weight: 800;
+	color:cyan;
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control-attendance input {
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 10px;
+	display: block;
+	padding: 10px;
+	width: 100%;
+}
+
+.form-control-attendance input:focus {
+	outline: none;
+	border-color: #777;
+}
+
+.back {
+	position: absolute;
+	top: 10;
+	left: 10;
+	padding: 5px 8px;
+	background-color: #ffffff;
+	color: #080710;
+}

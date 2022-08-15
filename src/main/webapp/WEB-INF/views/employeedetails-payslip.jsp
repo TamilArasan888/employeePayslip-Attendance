@@ -71,6 +71,7 @@
 					<th>Gross Salary</th>
 					<th>Net Salary</th>
 					<th>Employee Id</th>
+					<th>View</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -81,6 +82,7 @@
 						<td>${payslip.grossSalary}</td>
 						<td>${payslip.netSalary}</td>
 						<td>${payslip.employeeID}</td>
+						<td><button><a href="">View</a></button> </td>
 					</tr>
 				</c:forEach>
 			</tbody>

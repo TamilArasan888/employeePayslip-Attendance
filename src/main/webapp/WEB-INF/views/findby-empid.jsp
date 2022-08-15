@@ -12,7 +12,7 @@
 </head>
 <body>
 	<form:form action="" method="post" modelAttribute="getemployeebyid">
-		<h1>Get Employee Details</h1>
+		<h1>Employee Details</h1>
 		<div class="form">
 			<table>
 				<tbody>

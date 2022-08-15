@@ -12,7 +12,7 @@
 </head>
 <body>
 	<form:form action="" method="post" modelAttribute="getattendance">
-		<h1>Get Attendance Details</h1>
+		<h1>Attendance Details</h1>
 		<div class="form">
 			<table>
 				<tbody>

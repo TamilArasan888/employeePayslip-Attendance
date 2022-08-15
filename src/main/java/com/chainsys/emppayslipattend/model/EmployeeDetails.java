@@ -46,8 +46,6 @@ public class EmployeeDetails {
 	@Column(name = "emp_Address")
 	private String employeeAddress;
 
-	@GeneratedValue(strategy=GenerationType.AUTO,generator = "job_Id_reference")
-	@SequenceGenerator(name="job_Id_reference",sequenceName = "job_Id_reference",allocationSize = 1)
 	@Column(name = "emp_Jobid")
 	private int employeeJobID;
 

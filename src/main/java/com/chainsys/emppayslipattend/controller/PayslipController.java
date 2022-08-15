@@ -64,7 +64,7 @@ public class PayslipController {
 			return "add-pay-form";
 		} else {
 			payslipService.save(payslip);
-			return "redirect:/payslipdetails/paysliplist";
+			return "redirect:/payslipdetails/paysliplistforadmin";
 		}
 	}
 

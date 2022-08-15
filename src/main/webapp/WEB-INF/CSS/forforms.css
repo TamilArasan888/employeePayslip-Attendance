@@ -15,7 +15,7 @@ body {
 h1 {
 	font-family: "Lucida Console", "Courier New", monospace;
 	font-size: 40px;
-	color: cyan;
+	color: #face69;
 }
 
 .form label {
@@ -31,6 +31,7 @@ h1 {
 .form input {
 	width: 200px;
 	height: 27px;
+	font-size:15px;
 }
 .form select{
 	font-family: Verdana, sans-serif;
@@ -44,8 +45,12 @@ h1 {
 }
 
 .form button {
+	font-size:15px;
+	font-weight:800;
 	border-radius: 25px;
-	background: cyan;
+	background:#face69;
+	color:black;
 	padding: 20px;
 	width: 140px;
+	margin-right:60%;
 }

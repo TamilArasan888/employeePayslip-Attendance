@@ -19,42 +19,46 @@ private BusinessLogic() {
 		return basicSalary.getEmployeeBasicSalary()+basicSalary.getHouseRentAllowance()+basicSalary.getDailyAllowance();
 	}
 	
-	public static int findemployeeAttendance(List<Attendance>attendancelist,int employeeId) {
-		int noOfPresent=0;
+	public static int findEmployeeAttendance(List<Attendance>attendancelist,int employeeId) {
+		int noOfDaysPresent=0;
 		Iterator<Attendance> itr=attendancelist.iterator();
 		while(itr.hasNext()) {
-			Attendance attendance=(Attendance)itr.next();
+			Attendance attendance=itr.next();
 			if(attendance.getEmployeeID()==employeeId) {
-				noOfPresent+=1;
+				noOfDaysPresent+=1;
 			}	
 		}
-		return noOfPresent;
+		return noOfDaysPresent;
 	}
 	
-	public static float getCutSalaryPercent(Date[] array,int noOfPresent) {
-		String startdate=array[0]+"";
+	public static int getCutSalaryPercent(Date[] array,int noOfDaysPresent) {
+		String startDate=array[0]+"";
 		String endDate=array[1]+"";
 		
-		String[] startdateArray=startdate.split("-");
-		String[] enddateArray=endDate.split("-");
+		String[] startDateArray=startDate.split("-");
+		String[] endDateArray=endDate.split("-");
 		
-		int day1=Integer.parseInt(startdateArray[2]);
-		int day2=Integer.parseInt(enddateArray[2]);
+		int day1=Integer.parseInt(startDateArray[2]);
+		int day2=Integer.parseInt(endDateArray[2]);
 		
 		int totalDays=day2-day1+1;
-		return ((totalDays-noOfPresent)/totalDays);
+		return totalDays;
 	}
 	
-	public static float netSalaryCalculation(float grossSalary,Optional<BasicSalary> basicSal,float cutSalaryPercent) {
+	public static float netSalaryCalculation(float grossSalary,Optional<BasicSalary> basicSal,int totalNoOfDays,int noOfPresents) {
 		BasicSalary basicSalary=basicSal.get();
-		float cutSalary=grossSalary*cutSalaryPercent;
-		System.out.println(cutSalary);
-		return grossSalary-basicSalary.getProvidentFund()-(grossSalary*basicSalary.getIncomeTax()/100)-cutSalary;
+		double cutSalary=grossSalary/totalNoOfDays;
+		double cutPF=basicSalary.getProvidentFund()/totalNoOfDays;
+		double total=cutSalary*noOfPresents;
+		double totalPF=cutPF*noOfPresents;
+		float net=(float)(total-totalPF);
+		float incomeTax=(float)net*basicSalary.getIncomeTax()/100;
+		return net-incomeTax;
 	}
 	
 	public static Date[] fromDateCalculation(Date payslipDate) {
 		String stringDate=payslipDate+"";
-		String dateArray[]=stringDate.split("-");
+		String []dateArray=stringDate.split("-");
 		int month=Integer.parseInt(dateArray[1]);
 		int year=Integer.parseInt(dateArray[0]);
 		if(month>1) {
@@ -90,29 +94,10 @@ private BusinessLogic() {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		Date startEndDate[]=new Date[2];
+		Date[] startEndDate=new Date[2];
 		startEndDate[0]=startdate;
 		startEndDate[1]=enddate;
 		
 		return startEndDate;
 	}
-	
-	
-	
-//	public static void main(String[] args) {
-//		SimpleDateFormat SimpleDateFormat=new SimpleDateFormat("dd/MM/yyyy");
-//		String startDateString="12/03/2022";
-//		try {
-//		java.util.Date date1=SimpleDateFormat.parse(startDateString);
-//		Date startdate=new java.sql.Date(date1.getTime());
-//		Date [] array=fromDateCalculation(startdate);
-//		System.out.println(array[0]);
-//		System.out.println(array[1]);
-//		System.out.println(noOfDaysLeave(array,20));
-//		} catch (ParseException e) {
-//			System.out.println("somthing");
-//			e.printStackTrace();
-//		}
-//	}
-	
 }

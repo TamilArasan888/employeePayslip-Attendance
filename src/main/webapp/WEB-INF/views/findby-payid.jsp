@@ -12,7 +12,7 @@
 </head>
 <body>
 	<form:form action="" method="post" modelAttribute="getpayslip">
-		<h1>Get Payslip Details</h1>
+		<h1>Payslip Details</h1>
 		<div class="form">
 			<table>
 				<tbody>
