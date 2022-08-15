@@ -81,14 +81,14 @@ background-image:
 <body>
 	<h1 align="center">Welcome Employee</h1>
 	<div class="navbar">
-		<a href="/employeedetails/getemployeepaysliplist?id=">PaySlip</a>
+		<a href="/employeedetails/getemployeepaysliplist?id=${employeeId}">PaySlip</a>
 		<div class="dropdown">
 			<button class="dropbtn">
 				Attendance <i class="fa fa-caret-down"></i>
 			</button>
 			<div class="dropdown-content">
 				<a href="/attendancedetails/addattendancedetails">To Put
-					Attendance</a> <a href="/employeedetails/getemployeeattendancelist">To View
+					Attendance</a> <a href="/employeedetails/getemployeeattendancelist?id=${employeeId}">To View
 					Attendance Details</a>
 			</div>
 		</div>

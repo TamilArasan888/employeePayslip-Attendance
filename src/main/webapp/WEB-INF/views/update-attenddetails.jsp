@@ -1,58 +1,51 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Attendance Details</title>
+<style>
+<%@include file="/WEB-INF/CSS/forforms.css"%>
+</style>
 </head>
 <body>
-    <div id="root" align="center">
-        <div id="form">
-            <form:form action ="updateattendance" method = "post" modelAttribute = "updateattendancedetails">
-            <h1>Update Attendance Details</h1>
-            <div>
-                    <label for="attendanceID">Attendance ID : </label>
-                    <div>
-                        <form:input path="attendanceID" />
-                    </div>
-                </div>
-                <div>
-                    <label for="attendanceDate">Attendance Date : </label>
-                    <div>
-                        <form:input path="attendanceDate" />
-                    </div>
-                </div>
-                <div>
-                    <label for="inTime">In-Time : </label>
-                    <div>
-                        <form:input path="inTime" />
-                    </div>
-                </div>
-                <div>
-                    <label for="outTime">Out-Time : </label>
-                    <div>
-                        <form:input path="outTime" />
-                    </div>
-                </div>
-                <div>
-                    <label for="dailyTask">Daily Task Description : </label>
-                    <div>
-                        <form:input path="dailyTask" />
-                    </div>
-                </div>
-                <div>
-                    <label for="employeeID">Employee Id : </label>
-                    <div>
-                        <form:input path="employeeID" />
-                    </div>
-                </div>
-                <div>
-                    <form:button>Update Attendance</form:button>
-                </div>
-            </form:form>
-        </div>
-    </div>
+	<form:form action="updateattendance" method="post"
+		modelAttribute="updateattendancedetails">
+		<h1>Update Attendance Details</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="employeeID">Employee Id : </label></td>
+						<td><form:input path="employeeID" /></td>
+					</tr>
+					<tr>
+						<td><label for="attendanceID">Attendance ID : </label></td>
+						<td><form:input path="attendanceID" /></td>
+					</tr>
+					<tr>
+						<td><label for="attendanceDate">Attendance Date : </label></td>
+						<td><form:input path="attendanceDate" /></td>
+					</tr>
+					<tr>
+						<td><label for="inTime">In-Time : </label></td>
+						<td><form:input path="inTime" /></td>
+					</tr>
+					<tr>
+						<td><label for="outTime">Out-Time : </label></td>
+						<td><form:input path="outTime" /></td>
+					</tr>
+					<tr>
+						<td><label for="dailyTask">Daily Task Description : </label></td>
+						<td><form:input path="dailyTask" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<br> <br>
+			<form:button>Update Attendance</form:button>
+		</div>
+	</form:form>
 </body>
 </html>

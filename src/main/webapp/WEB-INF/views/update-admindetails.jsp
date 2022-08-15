@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
@@ -7,43 +7,33 @@
 <meta charset="ISO-8859-1">
 <title>Add Admin Details</title>
 <style type="text/css">
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
-}
+<%@include file="/WEB-INF/CSS/forforms.css"%>
 </style>
 </head>
 <body>
-    <div id="root" align="center">
-        <div id="form">
-            <form:form action ="updateadmin" method = "post" modelAttribute = "updateadmindetails">
-            <h1>Update Admin Details</h1>
-            <div>
-					<label for="adminID">Admin ID : </label>
-					<div>
-						<form:input path="adminID" />
-					</div>
-				</div>
-				<form:errors path="adminID" cssClass="text-danger" />
-				<div>
-					<label for="adminName">Admin Name : </label>
-					<div>
-						<form:input path="adminName" />
-					</div>
-				</div>
-				<form:errors path="adminName" cssClass="text-danger" />
-				<div>
-					<label for="adminPassword">Admin Password : </label>
-					<div>
-						<form:input path="adminPassword" />
-					</div>
-				</div>
-				<form:errors path="adminPassword" cssClass="text-danger" />
-                <div>
-                    <form:button>Update Admin Details</form:button>
-                </div>
-            </form:form>
-        </div>
-    </div>
+	<form:form action="updateadmin" method="post"
+		modelAttribute="updateadmindetails">
+		<h1>Update Admin Details</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="adminID">Admin ID : </label></td>
+						<td><form:input path="adminID" /></td>
+					</tr>
+					<tr>
+						<td><label for="adminName">Admin Name : </label></td>
+						<td><form:input path="adminName" /></td>
+					</tr>
+					<tr>
+						<td><label for="adminPassword">Admin Password : </label></td>
+						<td><form:input path="adminPassword" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<br> <br>
+			<form:button>Update Admin Details</form:button>
+		</div>
+	</form:form>
 </body>
 </html>

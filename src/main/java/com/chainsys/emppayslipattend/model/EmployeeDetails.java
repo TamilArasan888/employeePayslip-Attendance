@@ -12,12 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "employee_Details")
@@ -28,36 +22,27 @@ public class EmployeeDetails {
 	@Column(name = "emp_Id")
 	private int employeeID;
 	
-	@Size(max = 20, min = 3, message = "*Name length should be 3 to 20")
-    @NotBlank(message = "*Name can't be Empty")
-    @Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	@Column(name = "emp_Firstname")
 	private String employeeFirstName;
 
-	@NotEmpty(message = "*Please Enter LastName")
 	@Column(name = "emp_Lastname")
 	private String employeeLastName;
 
-	@NotEmpty(message = "*Please click gender category")
 	@Column(name = "emp_Gender")
 	private String employeeGender;
 
 	@Column(name = "emp_DOB")
 	private Date employeeDOB;
 
-	@Email(message = "*Email is not valid")
-	@NotEmpty(message = "*Please enter email")
 	@Column(name = "emp_Email")
 	private String employeeEmail;
 
-	@NotEmpty(message = "*Please enter password")
 	@Column(name = "emp_Password")
 	private String employeePassword;
 
 	@Column(name = "emp_Phoneno")
 	private long employeePhoneNumber;
 
-	@NotEmpty(message = "*Please enter Address")
 	@Column(name = "emp_Address")
 	private String employeeAddress;
 
@@ -69,14 +54,12 @@ public class EmployeeDetails {
 	@Column(name = "emp_Role")
 	private String employeeRole;
 
-	@NotEmpty(message = "*Please enter manager name")
 	@Column(name = "emp_Manager")
 	private String employeeManager;
 
 	@Column(name = "emp_Hiredate")
 	private Date employeeHireDate;
 
-	@Range(min=1,message="*Value should be greater than 0")
 	@Column(name = "emp_Workinghours")
 	private int employeeWorkingHours;
 

@@ -7,94 +7,76 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Employee Details & Attendancelist</title>
+<style>
+<%@include file="/WEB-INF/CSS/for-formsandtables.css"%>
+</style>
 </head>
 <body>
-	<div id="root" align="center">
-		<div id="form">
-			<form:form action="" method="post"
-				modelAttribute="getemployeedetails">
-				<div>
-					<h3>Employee details with his Attendance list</h3>
-				</div>
-				<div>
-					<label for="employeeID">Employee ID : </label>
+	<form:form action="" method="post" modelAttribute="getemployeedetails">
+		<h1>Employee details with his Attendance list</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="employeeID">Employee ID : </label></td>
+						<td>
 					<form:input path="employeeID" readonly="true" />
-				</div>
-
-				<div>
-					<label for="employeeFirstName">Employee FirstName : </label>
+						</td>
+						</tr>
+					<tr>
+						<td><label for="employeeFirstName">Employee FirstName
+								: </label></td>
+						<td>
 					<form:input path="employeeFirstName" readonly="true" />
-				</div>
+						</td>
+						</tr>
 
-				<div>
-					<label for="employeeLastName">Employee LastName : </label>
+					<tr>
+						<td><label for="employeeLastName">Employee LastName :
+						</label></td>
+						<td>
 					<form:input path="employeeLastName" readonly="true" />
-				</div>
+						</td>
+						</tr>
 
-				<div>
-					<label for="employeeGender">Gender : </label>
-					<form:input path="employeeGender" readonly="true" />
-				</div>
-
-				<div>
-					<label for="employeeDOB">Date Of Birth : </label>
-					<form:input path="employeeDOB" readonly="true" />
-				</div>
-
-				<div>
-					<label for="employeeEmail">Email : </label>
+					<tr>
+						<td><label for="employeeEmail">Email : </label></td>
+						<td>
 					<form:input path="employeeEmail" readonly="true" />
-				</div>
+						</td>
+						</tr>
 
-				<div>
-					<label for="employeePassword">Password : </label>
-					<form:input path="employeePassword" readonly="true" />
-				</div>
-
-				<div>
-					<label for="employeePhoneNumber">Phone Number : </label>
-					<form:input path="employeePhoneNumber" readonly="true" />
-				</div>
-
-				<div>
-					<label for="employeeAddress">Address : </label>
-					<form:input path="employeeAddress" readonly="true" />
-				</div>
-
-				<div>
-					<label for="employeeJobID">Job ID : </label>
+					<tr>
+						<td><label for="employeeJobID">Job ID : </label></td>
+						<td>
 					<form:input path="employeeJobID" readonly="true" />
-				</div>
+						</td>
+						</tr>
 
-				<div>
-					<label for="employeeRole">Employee Role : </label>
+					<tr>
+						<td><label for="employeeRole">Employee Role : </label></td>
+						<td>
 					<form:input path="employeeRole" readonly="true" />
-				</div>
+						</td>
+						</tr>
 
-				<div>
-					<label for="employeeManager">Manager Name : </label>
+					<tr>
+						<td><label for="employeeManager">Manager Name : </label></td>
+						<td>
 					<form:input path="employeeManager" readonly="true" />
-				</div>
-
-				<div>
-					<label for="employeeHireDate">HireDate : </label>
-					<form:input path="employeeHireDate" readonly="true" />
-				</div>
-
-				<div>
-					<label for="employeeWorkingHours">WorkingHours : </label>
-					<form:input path="employeeWorkingHours" readonly="true" />
-				</div>
-			</form:form>
+						</td>
+						</tr>
+				</tbody>
+			</table>
 		</div>
-	</div>
+	</form:form>
 
 
 	<div>
-		<h3>Attendance list</h3>
+		<h1>Attendance list</h1>
 	</div>
-	<div id="table root">
-		<table border='2' width='100%' cellpadding='2'>
+	<div class="list">
+		<table>
 			<thead>
 				<tr>
 					<th>Attendance Id</th>

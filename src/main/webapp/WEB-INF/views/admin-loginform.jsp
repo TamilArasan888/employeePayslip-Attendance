@@ -54,7 +54,7 @@ body {
 }
 
 form {
-	height: 520px;
+	height: 500px;
 	width: 400px;
 	background-color: rgba(255, 255, 255, 0.13);
 	position: absolute;
@@ -69,7 +69,8 @@ form {
 }
 
 form * {
-	font-family: 'Poppins', sans-serif;
+	font-family: sans-serif;
+	font-style: italic;
 	color: black;
 	letter-spacing: 0.5px;
 	outline: none;
@@ -77,8 +78,8 @@ form * {
 }
 
 form h1 {
-	font-size: 32px;
-	font-weight: 500;
+	font-size: 40px;
+	font-weight: 700;
 	line-height: 42px;
 	text-align: center;
 }
@@ -86,7 +87,7 @@ form h1 {
 label {
 	display: block;
 	margin-top: 30px;
-	font-size: 16px;
+	font-size: 30px;
 	font-weight: 500;
 }
 
@@ -116,12 +117,6 @@ button {
 	font-weight: 600;
 	border-radius: 5px;
 	cursor: pointer;
-}
-</style>
-<style type="text/css">
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
 }
 </style>
 </head>

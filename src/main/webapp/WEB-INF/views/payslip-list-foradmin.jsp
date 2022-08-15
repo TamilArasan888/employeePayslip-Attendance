@@ -6,6 +6,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Payslip List</title>
+<style>
+<%@include file="/WEB-INF/CSS/fortables.css"%>
+</style>
 </head>
 <body>
 	<div id="table root">

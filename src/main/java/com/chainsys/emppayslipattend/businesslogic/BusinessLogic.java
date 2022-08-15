@@ -90,11 +90,11 @@ private BusinessLogic() {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		Date sartEndDate[]=new Date[2];
-		sartEndDate[0]=startdate;
-		sartEndDate[1]=enddate;
+		Date startEndDate[]=new Date[2];
+		startEndDate[0]=startdate;
+		startEndDate[1]=enddate;
 		
-		return sartEndDate;
+		return startEndDate;
 	}
 	
 	

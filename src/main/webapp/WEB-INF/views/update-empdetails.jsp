@@ -7,95 +7,101 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Employee Details</title>
+<style>
+<%@include file="/WEB-INF/CSS/forforms.css"%>
+</style>
 </head>
 <body>
-	<div id="root" align="center">
-		<div id="form">
-			<form:form action="updateemployee" method="post"
-				modelAttribute="updateemployeedetails">
-				<h1>Update Employee details</h1>
-				<div>
-					<div>
-						<label for="employeeID">Employee ID : </label>
-						<form:input path="employeeID" />
-					</div>
-					<form:errors path="employeeID" cssClass="text-danger" />
-					<div>
-						<label for="employeeFirstName">Employee FirstName : </label>
-						<form:input path="employeeFirstName" />
-					</div>
-					<form:errors path="employeeFirstName" cssClass="text-danger" />
-				</div>
-				<div>
-					<label for="employeeLastName">Employee LastName : </label>
-					<form:input path="employeeLastName" />
-				</div>
-				<form:errors path="employeeLastName" cssClass="text-danger" />
-				<div>
-					<label for="employeeGender">Gender : </label>
-					<form:radiobutton path="employeeGender" value="Male" />
-					Male
-					<form:radiobutton path="employeeGender" value="Female" />
-					Female
-				</div>
-				<form:errors path="employeeGender" cssClass="text-danger" />
-				<div>
-					<label for="employeeDOB">Date Of Birth : </label>
-					<form:input type="date" path="employeeDOB" />
-				</div>
-				<div>
-					<label for="employeeEmail">Email : </label>
-					<form:input path="employeeEmail" />
-				</div>
-				<form:errors path="employeeEmail" cssClass="text-danger" />
-				<div>
-					<label for="employeePassword">Password : </label>
-					<form:input path="employeePassword" />
-				</div>
-				<form:errors path="employeePassword" cssClass="text-danger" />
-				<div>
-					<label for="employeePhoneNumber">Phone Number : </label>
+	<form:form action="updateemployee" method="post"
+		modelAttribute="updateemployeedetails">
+		<h1>Update Employee details</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="employeeID">Employee ID : </label></td>
+						<td><form:input path="employeeID" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeFirstName">Employee FirstName
+								: </label></td>
+						<td><form:input path="employeeFirstName" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeLastName">Employee LastName :
+						</label></td>
+						<td><form:input path="employeeLastName" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeGender">Gender : </label></td>
+						<td class="radbtn"><form:radiobutton path="employeeGender" value="Male" />
+							Male <form:radiobutton path="employeeGender" value="Female" />
+						Female</td>
+					</tr>
+					<tr>
+						<td><label for="employeeDOB">Date Of Birth : </label></td>
+						<td><form:input type="date" path="employeeDOB" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeeEmail">Email : </label></td>
+						<td><form:input path="employeeEmail" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeePassword">Password : </label></td>
+						<td><form:input path="employeePassword" /></td>
+					</tr>
+					<tr>
+						<td><label for="employeePhoneNumber">Phone Number : </label></td>
+						<td>
 					<form:input path="employeePhoneNumber" />
-				</div>
-				<form:errors path="employeePhoneNumber" cssClass="text-danger" />
-				<div>
-					<label for="employeeAddress">Address : </label>
+						</td>
+						</tr>
+					<tr>
+						<td><label for="employeeAddress">Address : </label></td>
+						<td>
 					<form:input path="employeeAddress" />
-				</div>
-				<form:errors path="employeeAddress" cssClass="text-danger" />
-				<div>
-					<label for="employeeJobID">Job ID : </label>
+						</td>
+						</tr>
+					<tr>
+						<td><label for="employeeJobID">Job ID : </label></td>
+						<td>
 					<form:input path="employeeJobID" />
-				</div>
-				<form:errors path="employeeJobID" cssClass="text-danger" />
-				<div>
-					<label for="employeeRole">Employee Role : </label>
+						</td>
+						</tr>
+					<tr>
+						<td><label for="employeeRole">Employee Role : </label></td>
+						<td>
 					<form:select path="employeeRole">
-						<c:forEach var="basicSalary" items="${basicSalary}">
-							<form:option value="${basicSalary.employeeRole}"
-								label="${basicSalary.employeeRole}" />
-						</c:forEach>
-					</form:select>
-				</div>
-				<div>
-					<label for="employeeManager">Manager Name : </label>
+							<c:forEach var="basicSalary" items="${basicSalary}">
+								<form:option value="${basicSalary.employeeRole}"
+									label="${basicSalary.employeeRole}" />
+							</c:forEach>
+						</form:select>
+						</td>
+						</tr>
+					<tr>
+						<td><label for="employeeManager">Manager Name : </label></td>
+						<td>
 					<form:input path="employeeManager" />
-				</div>
-				<form:errors path="employeeManager" cssClass="text-danger" />
-				<div>
-					<label for="employeeHireDate">HireDate : </label>
+						</td>
+						</tr>
+					<tr>
+						<td><label for="employeeHireDate">HireDate : </label></td>
+						<td>
 					<form:input type="date" path="employeeHireDate" />
-				</div>
-				<div>
-					<label for="employeeWorkingHours">WorkingHours : </label>
+						</td>
+						</tr>
+					<tr>
+						<td><label for="employeeWorkingHours">WorkingHours :
+						</label></td>
+						<td>
 					<form:input path="employeeWorkingHours" />
+						</td>
+						</tr>
+				</tbody>
+			</table>
+				<form:button>Update Employee</form:button>
 				</div>
-				<form:errors path="employeeWorkingHours" cssClass="text-danger" />
-				<div>
-					<form:button>Update Employee Details</form:button>
-				</div>
-			</form:form>
-		</div>
-	</div>
+	</form:form>
 </body>
 </html>

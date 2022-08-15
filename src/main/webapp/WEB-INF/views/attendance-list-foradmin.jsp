@@ -6,10 +6,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Attendance List</title>
+<style>
+<%@include file="/WEB-INF/CSS/fortables.css"%>
+</style>
 </head>
 <body>
-	<div id="table root">
-		<table border='2' width='100%' cellpadding='2'>
+	<div>
+		<table>
 			<thead>
 				<tr>
 					<th>Employee ID</th>
@@ -18,6 +21,7 @@
 					<th>In-Time</th>
 					<th>Out-Time</th>
 					<th>Daily Task Description</th>
+					<th>View Details</th>
 					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
@@ -32,7 +36,8 @@
 						<td>${attendance.inTime}</td>
 						<td>${attendance.outTime}</td>
 						<td>${attendance.dailyTask}</td>
-						
+						<td><a 
+							href="/attendancedetails/findattendancebyid?attendanceid=${attendance.attendanceID}">View</a>
 						<td><a
 							href="/attendancedetails/updateattendancedetails?attendanceid=${attendance.attendanceID}">Edit</a></td>
 						<td><a

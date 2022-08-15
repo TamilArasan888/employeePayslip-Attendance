@@ -38,7 +38,7 @@ public class PayslipService {
 		float grossSalary=BusinessLogic.grossSalaryCalculation(basicSalary);
 		payslip.setGrossSalary(grossSalary);
 		
-		Date dates[]=BusinessLogic.fromDateCalculation(payslip.getPayslipDate());
+		Date[] dates=BusinessLogic.fromDateCalculation(payslip.getPayslipDate());
 		
 		List<Attendance> attendancelist=attendanceService.getAttendanceBetweenTwoDates(dates[0],dates[1]);
 		

@@ -11,6 +11,7 @@ body {
 	background-image: url(https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
 	background-repeat: no-repeat;
 	background-size: 1366px 768px;
+	text-align: center;
 }
 
 h1 {
@@ -40,7 +41,7 @@ border-radius: 10px;
 </head>
 <body>
 	<div id="root" style="width: auto;">
-		<div id="form" align="center">
+		<div class="form">
 			<form:form action="checkemployeelogin" method="post"
 				modelAttribute="employeelogindetails">
 				<h1 style="font-size: 45px;">EMPLOYEE LOGIN</h1>

@@ -1,49 +1,44 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Payslip Details</title>
+<style>
+<%@include file="/WEB-INF/CSS/forforms.css"%>
+</style>
 </head>
 <body>
-    <div id="root" align="center">
-        <div id="form">
-            <form:form action ="" method = "post" modelAttribute = "getpayslip">
-            <h1>Get Payslip Details</h1>
-            <div>
-                    <label for="payslipID">Payslip ID : </label>
-                    <div>
-                        <form:input path="payslipID" readonly="true"/>
-                    </div>
-                </div>
-                <div>
-                    <label for="payslipDate">Payslip Date : </label>
-                    <div>
-                        <form:input path="payslipDate" readonly="true"/>
-                    </div>
-                </div>
-                <div>
-                    <label for="grossSalary">Gross Salary : </label>
-                    <div>
-                        <form:input path="grossSalary" readonly="true"/>
-                    </div>
-                </div>
-                <div>
-                    <label for="netSalary">Net Salary : </label>
-                    <div>
-                        <form:input path="netSalary" readonly="true"/>
-                    </div>
-                </div>
-                <div>
-                    <label for="employeeID">Employee Id : </label>
-                    <div>
-                        <form:input path="employeeID" readonly="true"/>
-                    </div>
-                </div>
-            </form:form>
-        </div>
-    </div>
+	<form:form action="" method="post" modelAttribute="getpayslip">
+		<h1>Get Payslip Details</h1>
+		<div class="form">
+			<table>
+				<tbody>
+					<tr>
+						<td><label for="employeeID">Employee Id : </label></td>
+						<td><form:input path="employeeID" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="payslipID">Payslip ID : </label></td>
+						<td><form:input path="payslipID" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="payslipDate">Payslip Date : </label></td>
+						<td><form:input path="payslipDate" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="grossSalary">Gross Salary : </label></td>
+						<td><form:input path="grossSalary" readonly="true" /></td>
+					</tr>
+					<tr>
+						<td><label for="netSalary">Net Salary : </label></td>
+						<td><form:input path="netSalary" readonly="true" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form:form>
 </body>
 </html>

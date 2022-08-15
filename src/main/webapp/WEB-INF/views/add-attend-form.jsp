@@ -7,74 +7,59 @@
 <meta charset="ISO-8859-1">
 <title>Add Attendance Details</title>
 <style type="text/css">
-body{
-	background-image:
-		url(https://media.istockphoto.com/photos/blue-wall-texture-picture-id175400834?b=1&k=20&m=175400834&s=170667a&w=0&h=R1InA1GKCO1_SsGdtipJgHxvE033OwaTSE7EN-O_Zjw=);
-	background-repeat: no-repeat;
-	background-size: 1366px 768px;
-}
+	<%@include file="/WEB-INF/CSS/forforms.css"%>
 </style>
 </head>
 <body>
-	<div id="root" align="center">
-		<div id="form">
+		
 			<form:form action="addattendance" method="post"
 				modelAttribute="addattendancedetail">
 				<h1>Attendance Form</h1>
 
-				<%--  <div>
+				<%--  <tr>
 					<label for="attendanceID">Attendance ID : </label>
-					<div>
+					<tr>
 						<form:input path="attendanceID" placeholder="Enter Attendance Id"
 							required="true" />
-					</div>
-				</div> --%>
+					</tr>
+				</tr> --%>
+<div class="form">
+<table>
+<tbody>
+				<tr>
+					<td><label for="attendanceDate">Attendance Date : </label></td>
+					<td><form:input type="date" path="attendanceDate"
+							placeholder="Enter Attendance Date" required="true" /></td>
+				</tr>
 
-				<div>
-					<label for="attendanceDate">Attendance Date : </label>
-					<div>
-						<form:input type="date" path="attendanceDate"
-							placeholder="Enter Attendance Date" required="true" />
-					</div>
-				</div>
+				<tr>
+					<td><label for="inTime">In-Time : </label></td>
+					<td><form:input path="inTime" placeholder="Enter In-Time"
+							required="true" /></td>
+				</tr>
 
-				<div>
-					<label for="inTime">In-Time : </label>
-					<div>
-						<form:input path="inTime" placeholder="Enter In-Time"
-							required="true" />
-					</div>
-				</div>
+				<tr>
+					<td><label for="outTime">Out-Time : </label></td>
+						<td><form:input path="outTime" placeholder="Enter Out-Time"
+							required="true" /></td>
+				</tr>
 
-				<div>
-					<label for="outTime">Out-Time : </label>
-					<div>
-						<form:input path="outTime" placeholder="Enter Out-Time"
-							required="true" />
-					</div>
-				</div>
+				<tr>
+					<td><label for="dailyTask">Daily Task Description : </label></td>
+					<td><form:input path="dailyTask" placeholder="Enter Daily Task"
+							required="true" /></td>
+				</tr>
 
-				<div>
-					<label for="dailyTask">Daily Task Description : </label>
-					<div>
-						<form:input path="dailyTask" placeholder="Enter Daily Task"
-							required="true" />
+				<tr>
+					<td><label for="employeeID">Employee Id : </label></td>
+					<td><form:input path="employeeID" placeholder="Enter Employee ID"
+							required="true" /></td>
+				</tr>
+</tbody>
+</table>
+<br><br>
+					<form:button type="submit" name="submit">Add Attendance</form:button>
 					</div>
-				</div>
-
-				<div>
-					<label for="employeeID">Employee Id : </label>
-					<div>
-						<form:input path="employeeID" placeholder="Enter Employee ID"
-							required="true" />
-					</div>
-				</div>
-
-				<div>
-					<form:button>Add Attendance</form:button>
-				</div>
 			</form:form>
-		</div>
-	</div>
 </body>
 </html>

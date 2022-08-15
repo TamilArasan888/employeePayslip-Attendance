@@ -6,16 +6,19 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin List</title>
-
+<style>
+<%@include file="/WEB-INF/CSS/fortables.css"%>
+</style>
 </head>
 <body>
-	<div id="table root">
-		<table border='2' width="80%" cell-padding='2'>
+	<div>
+		<table>
 			<thead>
 				<tr>
 					<th>Admin Id</th>
 					<th>Admin Name</th>
 					<th>Admin Password</th>
+					<th>View</th>
 					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
@@ -26,6 +29,8 @@
 						<td>${admin.adminID}</td>
 						<td>${admin.adminName}</td>
 						<td>${admin.adminPassword}</td>
+						<td><a 
+							href="/admindetails/getadmindetailsbyid?adminid=${admin.adminID}">View</a></td>
 						<td><a
 							href="/admindetails/updateadmindetails?adminid=${admin.adminID}">Edit</a></td>
 						<td><a

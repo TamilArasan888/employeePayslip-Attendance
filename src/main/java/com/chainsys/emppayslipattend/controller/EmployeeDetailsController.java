@@ -2,11 +2,9 @@ package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
 import java.util.Optional;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -63,15 +61,11 @@ public class EmployeeDetailsController {
 	}
 
 	@PostMapping("/addemployee")
-	public String addNewEmployeeDetails(@Valid@ModelAttribute("addemployeedetail") EmployeeDetails employee,Errors errors) {
-	if(errors.hasErrors()){
-		return "add-emp-form";
-	}
-		else {
+	public String addNewEmployeeDetails(@ModelAttribute("addemployeedetail") EmployeeDetails employee) {
 		Optional<BasicSalary> basicSalary=employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
 		employee.setEmpBasicsalary(basicSalary.get().getEmployeeBasicSalary());
 		employeeDetailsService.save(employee);
-		return "redirect:/employeedetails/employeelogin";}
+		return "redirect:/employeedetails/employeelogin";
 	}
 
 	@GetMapping("/updateemployeedetails")
@@ -94,6 +88,7 @@ public class EmployeeDetailsController {
 		EmployeeDetailsPayslipDTO dto=employeeDetailsService.getEmployeedetailsPayslip(id);
 		model.addAttribute("getemployeedetails",dto.getEmployeeDetails());
 		model.addAttribute("payslipdetails",dto.getPayslipList());
+		
 		return "employeedetails-payslip";
 	}
 	
@@ -112,9 +107,10 @@ public class EmployeeDetailsController {
     }                   
 
     @PostMapping("/checkemployeelogin")
-    public String checkingAccess(@ModelAttribute("employeelogindetails") EmployeeDetails employeeDet) {
+    public String checkingAccess(@ModelAttribute("employeelogindetails") EmployeeDetails employeeDet,Model model) {
         EmployeeDetails employee = employeeDetailsService.getEmployeeByIDEmailAndPassword(employeeDet.getEmployeeID(), employeeDet.getEmployeeEmail(), employeeDet.getEmployeePassword());
         if (employee!= null){
+        	model.addAttribute("employeeId", employee.getEmployeeID());
             return "employee-indexpage";
         } else
             return "redirect-employeeloginpage";
