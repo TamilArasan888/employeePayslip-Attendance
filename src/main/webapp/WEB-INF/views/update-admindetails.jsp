@@ -19,6 +19,7 @@
 		<h1>Update Admin Details</h1>
 		<div class="form">
 			<table>
+			<caption>Update Admin</caption>
 				<tbody>
 					<tr>
 						<td><label for="adminID">Admin ID : </label></td>

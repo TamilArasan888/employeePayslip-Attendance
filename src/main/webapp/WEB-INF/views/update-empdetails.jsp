@@ -20,6 +20,7 @@
 		<h1>Update Employee details</h1>
 		<div class="form">
 			<table>
+			<caption>Update Employee</caption>
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee ID : </label></td>

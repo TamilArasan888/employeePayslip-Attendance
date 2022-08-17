@@ -38,10 +38,10 @@
 <a href="/admindetails/deleteadmindetailsbyid?adminid=">Delete Admin By Id</a><br>
 <a href="/admindetails/getadmindetailsbyid?adminid=">Find Admin By Id</a><br>
 
-<h1>Get Employee details & His Payslip list</h1>
-<a href="/employeedetails/getemployeepaysliplist?id=">Get EmployeeDetails & Payslip</a><br>
+<h1>Get Employee details and His Payslip list</h1>
+<a href="/employeedetails/getemployeepaysliplist?id=">Get EmployeeDetails and Payslip</a><br>
 
-<h1>Get Employee details & His Attendance list</h1>
-<a href="/employeedetails/getemployeeattendancelist?id=">Get EmployeeDetails & Attendance</a><br>
+<h1>Get Employee details And His Attendance list</h1>
+<a href="/employeedetails/getemployeeattendancelist?id=">Get EmployeeDetails and Attendance</a><br>
 </body>
 </html>

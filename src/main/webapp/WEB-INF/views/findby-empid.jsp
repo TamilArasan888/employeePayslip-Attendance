@@ -15,6 +15,7 @@
 		<h1>Employee Details</h1>
 		<div class="form">
 			<table>
+			<caption>Employee Details</caption>
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee ID : </label></td>

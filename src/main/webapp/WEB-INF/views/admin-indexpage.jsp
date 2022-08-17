@@ -5,8 +5,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin Index Page</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body {
 	background-image:
@@ -87,7 +85,7 @@ color:white;
 	<div class="navbar">
 		<div class="dropdown">
 			<button class="dropbtn">
-				Admin <i class="fa fa-caret-down"></i>
+				Admin
 			</button>
 			<div class="dropdown-content">
 				<a href="/admindetails/addadmindetailsbyuser">Add a new admin</a> <a
@@ -97,7 +95,7 @@ color:white;
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Employees <i class="fa fa-caret-down"></i>
+				Employees
 			</button>
 			<div class="dropdown-content">
 				<a href="/employeedetails/addemployeedetails">Add a new employee</a>
@@ -108,7 +106,7 @@ color:white;
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Payslip <i class="fa fa-caret-down"></i>
+				Payslip
 			</button>
 			<div class="dropdown-content">
 				<a href="/payslipdetails/addpayslipdetails">Add payslip to
@@ -119,7 +117,7 @@ color:white;
 
 		<div class="dropdown">
 			<button class="dropbtn">
-				Attendance <i class="fa fa-caret-down"></i>
+				Attendance
 			</button>
 			<div class="dropdown-content">
 				<a href="/attendancedetails/addattendancedetails">Add attendance

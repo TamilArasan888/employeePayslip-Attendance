@@ -13,6 +13,7 @@
 <body>
 	<div id="table root">
 		<table>
+		<caption>Payslip list</caption>
 			<thead>
 				<tr>
 					<th>Employee Id</th>

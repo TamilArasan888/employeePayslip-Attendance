@@ -16,6 +16,7 @@
 		<h1>Employee details with his Attendance list</h1>
 		<div class="form">
 			<table>
+			<caption>Employee Details</caption>
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee ID : </label></td>
@@ -77,6 +78,7 @@
 	</div>
 	<div class="list">
 		<table>
+		<caption>Employee Attendance list</caption>
 			<thead>
 				<tr>
 					<th>Attendance Id</th>

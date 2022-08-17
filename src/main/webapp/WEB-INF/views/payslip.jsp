@@ -21,6 +21,7 @@
 		<h1>Employee Details</h1>
 		<div class="form">
 			<table>
+			<caption>Employee Details</caption>
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee ID : </label></td>
@@ -106,6 +107,7 @@
 		<h1>Payslip Details</h1>
 		<div class="form">
 			<table>
+			<caption>PaySlip Details</caption>
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee Id : </label></td>

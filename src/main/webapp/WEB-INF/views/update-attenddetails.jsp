@@ -19,6 +19,7 @@
 		<h1>Update Attendance Details</h1>
 		<div class="form">
 			<table>
+			<caption>Update Attendance</caption>
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee Id : </label></td>

@@ -19,6 +19,7 @@
 		<h1>Update Payslip Details</h1>
 		<div class="form">
 			<table>
+			<caption>Update Payslip</caption>
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee Id : </label></td>
