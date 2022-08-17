@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
+
 body {
-	background-image:
-		url(https://wallpapercave.com/wp/wp2863770.jpg);
+	background-image: url(https://wallpapercave.com/wp/wp2863770.jpg);
 	background-repeat: no-repeat;
 	background-size: 1366px 768px;
 	text-align: center;
@@ -39,11 +39,11 @@ h1 {
 }
 
 .list tr:hover {
-	background-color:#fa9393;
+	background-color: #fa9393;
 }
 
 .list th {
-	background-color:#8a0303;
+	background-color: #8a0303;
 	color: white;
 	border: 1px solid black;
 	font-family: Arial, Helvetica, sans-serif;
@@ -54,4 +54,20 @@ h1 {
 	color: black;
 	text-align: center;
 	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.backbtn {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+.backbtn button{
+	text-align: center;
+	font-size: 20px;
+	border: 3px solid red;
+	border-radius: 20px;
 }

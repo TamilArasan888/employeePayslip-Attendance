@@ -1,7 +1,6 @@
 package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -15,8 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.emppayslipattend.model.BasicSalary;
-import com.chainsys.emppayslipattend.model.EmployeeDetails;
 import com.chainsys.emppayslipattend.model.Payslip;
 import com.chainsys.emppayslipattend.service.BasicSalaryService;
 import com.chainsys.emppayslipattend.service.EmployeeDetailsService;

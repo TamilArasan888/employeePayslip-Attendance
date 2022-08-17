@@ -10,7 +10,7 @@
 <body>
 	<div id="table root">
 		<table>
-		<caption>Attendance List</caption>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Attendance Id</th>

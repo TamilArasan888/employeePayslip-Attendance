@@ -41,7 +41,7 @@ public class AttendanceController {
 			model.addAttribute("getattendance", attendance);
 			return "findby-attendid";
 		}
-
+		
 		@GetMapping("/deleteattendancebyid")
 		public String deleteAttendanceDetails(@RequestParam("attendanceid") int id) {
 			attendanceService.deleteById(id);

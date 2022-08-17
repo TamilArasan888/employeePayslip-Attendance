@@ -16,13 +16,13 @@
 		<h1>Employee details with his Attendance list</h1>
 		<div class="form">
 			<table>
-			<caption>Employee Details</caption>
+			<caption></caption>
 				<tbody>
 					<tr>
-						<td><label for="employeeID">Employee ID : </label></td>
-						<td>
+						<th><label for="employeeID">Employee ID : </label></th>
+						<th>
 					<form:input path="employeeID" readonly="true" />
-						</td>
+						</th>
 						</tr>
 					<tr>
 						<td><label for="employeeFirstName">Employee FirstName
@@ -78,7 +78,7 @@
 	</div>
 	<div class="list">
 		<table>
-		<caption>Employee Attendance list</caption>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Attendance Id</th>

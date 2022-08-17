@@ -10,7 +10,7 @@
 <body>
     <div id="table root">
         <table>
-        <caption>Payslip List</caption>
+        <caption></caption>
             <thead>
             <tr>
             <th>Payslip Id</th>

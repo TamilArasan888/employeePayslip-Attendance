@@ -15,7 +15,8 @@
 		<h1>Admin Details</h1>
 		<div class="form">
 			<table>
-			<caption>Admin Details</caption>
+			<caption></caption>
+			<tr><th></th></tr>
 				<tbody>
 					<tr>
 						<td><label for="adminID">Admin ID : </label></td>

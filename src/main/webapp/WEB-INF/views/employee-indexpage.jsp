@@ -29,7 +29,8 @@
 			</div>
 		</div>
 		<div class="navbar-right">
-				<a href="/employeedetails/employeelogin">Log Out</a>
+				<a href="/employeedetails/employeelogin">Back</a>
+				<a href="/index">Log Out</a>
 			</div>
 	</div>
 </body>

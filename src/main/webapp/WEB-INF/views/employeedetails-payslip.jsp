@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Employee Details & Payslip</title>
+<title>Employee Details and Payslip</title>
 <style>
 <%@include file="/WEB-INF/css/for-formsandtables.css"%>
 </style>
@@ -16,7 +16,8 @@
 		<h1>Employee details with his payslip list</h1>
 		<div class="form">
 			<table>
-			<caption>Employee Details</caption>
+			<caption></caption>
+			<tr><th></th></tr>
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee ID : </label></td>
@@ -65,7 +66,7 @@
 	</div>
 	<div class="list">
 		<table>
-		<caption>PaySlip List</caption>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Payslip Id</th>
@@ -89,6 +90,10 @@
 				</c:forEach>
 			</tbody>
 		</table>
+	</div>
+	<br><br>
+	<div class="backbtn">
+	<a href="/employeedetails/employeeindex"><button>Back</button></a>
 	</div>
 </body>
 </html>

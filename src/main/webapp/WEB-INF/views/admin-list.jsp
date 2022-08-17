@@ -13,7 +13,7 @@
 <body>
 	<div>
 		<table>
-		<caption>Admin Details list</caption>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Admin Id</th>

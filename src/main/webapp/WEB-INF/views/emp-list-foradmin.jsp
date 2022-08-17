@@ -13,7 +13,7 @@
 <body>
 	<div id="table root">
 		<table>
-		<caption>Employee Details List</caption>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Employee Id</th>

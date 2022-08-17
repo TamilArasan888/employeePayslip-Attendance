@@ -116,6 +116,13 @@ public class EmployeeDetailsController {
             return "redirect-employeeloginpage";
     }
     
+    @GetMapping("/employeeindex")
+    public String employeeIndexPage(Model model) {
+        EmployeeDetails employee = new EmployeeDetails();
+        model.addAttribute("employeelogindetails", employee);
+        return "employee-indexpage";
+    }
+    
     @GetMapping("/attendancetype")
     public String index(Model model) {
         return "attendance-type";

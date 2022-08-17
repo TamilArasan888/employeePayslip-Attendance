@@ -13,7 +13,7 @@
 <body>
 	<div>
 		<table>
-		<caption>Employee Attendance List</caption>
+		<caption></caption>
 			<thead>
 				<tr>
 					<th>Employee ID</th>
