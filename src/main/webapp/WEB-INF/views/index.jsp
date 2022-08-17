@@ -2,11 +2,11 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Index</title>
-<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <style>
 body {
 	background-image:
@@ -16,7 +16,9 @@ body {
 	background-attachment: fixed;
 	background-size: cover;
 }
-
+.form{
+text-align:center;
+}
 h1 {
 	font-family: "Audiowide", sans-serif;
 	font-color: white;
@@ -35,7 +37,8 @@ h2 {
 	font-style: oblique;
 }
 
-.layout {
+.form .layout {
+	margin-left:34%;
 	width: 360px;
 	height: 390px;
 	padding: 50px;
@@ -47,9 +50,9 @@ color: black;
 </style>
 </head>
 <body>
-	<div id="form" align="center">
+	<div class="form">
 		<form:form action="index" method="post">
-			<h1>Welcome To Employee PaySlip & Attendance
+			<h1>Welcome To Employee PaySlip And Attendance
 				System</h1>
 			<div class="layout">
 				<div class="admin">
@@ -58,7 +61,7 @@ color: black;
 						<a href="/admindetails/adminlogin" style="text-decoration:none">Admin Login</a>
 					</h2>
 				</div>
-				<div>
+				<div class="employee">
 				<div class='fas fa-users' style='font-size:115px;color:black'></div>
 					<h2>
 						<a href="/employeedetails/employeelogin" style="text-decoration:none">Employee Login</a>

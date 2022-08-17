@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Index Page</title>
 </head>
 <body>
-<h1 align="center">INDEX</h1>
+<h1>INDEX</h1>
 <h1>Employee Details Crud</h1>
 <a href="/employeedetails/addemployeedetails">Add Employee Details</a><br>
 <a href="/employeedetails/employeelist">View All Employee Details</a><br>

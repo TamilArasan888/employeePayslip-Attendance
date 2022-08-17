@@ -2,12 +2,12 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Payslip Details</title>
 <style>
-<%@include file="/WEB-INF/CSS/forforms.css"%>
+<%@include file="/WEB-INF/css/forforms.css"%>
 </style>
 </head>
 <body>

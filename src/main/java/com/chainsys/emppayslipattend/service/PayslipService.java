@@ -59,6 +59,7 @@ public class PayslipService {
 	public void deleteById(int payid) {
 		payslipRepository.deleteById(payid);
 	}
+//	public int[] get
 
 
 }

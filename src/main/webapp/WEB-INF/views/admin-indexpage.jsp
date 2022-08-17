@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin Index Page</title>
@@ -16,6 +16,7 @@ body {
 	font-family: Arial, Helvetica, sans-serif;
 }
 h1{
+text-align:center;
 font-family:lucida Handwriting, Cursive;
 color:white;
 }
@@ -81,7 +82,7 @@ color:white;
 </style>
 </head>
 <body>
-	<h1 align="center">Welcome Admin</h1>
+	<h1>Welcome Admin</h1>
 
 	<div class="navbar">
 		<div class="dropdown">

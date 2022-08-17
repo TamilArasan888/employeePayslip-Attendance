@@ -5,17 +5,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>ERROR</title>
+<style type="text/css">
+h2,h3,a{
+text-align:center;
+}
+</style>
 </head>
 <body>
 	<div>
-		<h2 align="center">OOPS!!! PLEASE ENTER CORRECT EMPLOYEE DETAILS
+		<h2>OOPS!!! PLEASE ENTER CORRECT EMPLOYEE DETAILS
 			TO LOGIN!!</h2>
 	</div>
 	<div>
-		<h3 align="center">Press the button to go Employee login page
+		<h3>Press the button to go Employee login page
 			again</h3>
 	</div>
-	<div align="center">
+	<div>
 		<a href="/employeedetails/employeelogin"><button type="button"
 				onclick="">Redirect To LoginPage</button></a>
 	</div>

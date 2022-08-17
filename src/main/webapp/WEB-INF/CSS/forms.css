@@ -22,15 +22,6 @@ h1 {
 	text-align: center;
 }
 
-/* .container {
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 5px;
-	box-shadow: 10px 20px 25px rgba(0, 0, 0, .3);
-	overflow: hidden;
-	max-width: 100%;
-	width: 400px;
-} */
-
 .form-admin {
 	height: 500px;
 	width: 400px;
@@ -151,6 +142,23 @@ h1 {
 	display: block;
 	padding: 10px;
 	width: 100%;
+}
+
+.form-control-employee radiobutton{
+	font-family: Verdana, sans-serif;
+	font-size: 30px;
+	color: white;
+	width: 100%;
+}
+
+.form-control-employee select{
+	border: 2px solid #fefefe;
+	border-radius: 4px;
+	font-size: 30px;
+	display: block;
+	padding: 10px;
+	width: 100%;
+	
 }
 
 .form-control-employee input:focus {

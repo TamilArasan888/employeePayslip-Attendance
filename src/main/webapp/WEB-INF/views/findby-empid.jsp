@@ -2,12 +2,12 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Employee ByID</title>
 <style>
-<%@include file="/WEB-INF/CSS/forforms.css"%>
+<%@include file="/WEB-INF/css/forforms.css"%>
 </style>
 </head>
 <body>
@@ -18,7 +18,7 @@
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee ID : </label></td>
-						<td><fo rm:input path="employeeID" readonly="true" /></td>
+						<td><form:input path="employeeID" readonly="true" /></td>
 					</tr>
 					<tr>
 						<td><label for="employeeFirstName">Employee FirstName

@@ -2,20 +2,19 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Payslip Details</title>
 <style type="text/css">
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
-}
-<%@include file="/WEB-INF/CSS/forforms.css"%>
+<%@include file="/WEB-INF/css/forforms.css"%>
 </style>
+<script type="text/javascript">
+<%@include file="/WEB-INF/js/payslip.js"%>
+</script>
 </head>
 <body>
-	<form:form action="updatepayslip" method="post"
+	<form:form name="form" action="updatepayslip" method="post"
 		modelAttribute="updatepayslipdetails">
 		<h1>Update Payslip Details</h1>
 		<div class="form">
@@ -23,7 +22,7 @@
 				<tbody>
 					<tr>
 						<td><label for="employeeID">Employee Id : </label></td>
-						<td><form:input path="employeeID" /></td>
+						<td><form:input path="employeeID" name="employeeID" onblur="employeeIDCheck();"/></td>
 					</tr>
 					<tr>
 						<td><label for="payslipID">Payslip ID : </label></td>
@@ -31,7 +30,7 @@
 					</tr>
 					<tr>
 						<td><label for="payslipDate">Payslip Date : </label></td>
-						<td><form:input path="payslipDate" /></td>
+						<td><form:input path="payslipDate" name="payslipDate" onblur="payslipDateCheck();"/></td>
 					</tr>
 					<tr>
 						<td><label for="grossSalary">Gross Salary : </label></td>

@@ -1,97 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Employee Index Page</title>
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-
-body {
-background-image:
-		url(https://cdn.pixabay.com/photo/2020/12/03/11/37/man-5800290_960_720.png);
-	background-repeat: no-repeat;
-	background-size: 1366px 768px;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-.navbar {
-	overflow: hidden;
-	background-color: #333;
-}
-
-.navbar a {
-	float: left;
-	font-size: 16px;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-.dropdown {
-	float: left;
-	overflow: hidden;
-}
-
-.dropdown .dropbtn {
-	font-size: 16px;
-	border: none;
-	outline: none;
-	color: white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit;
-	margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-	background-color: red;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #f9f9f9;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.dropdown-content a {
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
-
-.dropdown-content a:hover {
-	background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-	display: block;
-}
+<style type="text/css">
+<%@include file="/WEB-INF/css/employee-index.css"%>
 </style>
 </head>
 <body>
-	<h1 align="center">Welcome Employee</h1>
+	<h1>Welcome Employee</h1>
 	<div class="navbar">
+	
 		<a href="/employeedetails/getemployeepaysliplist?id=${employeeId}">PaySlip</a>
+		
 		<div class="dropdown">
 			<button class="dropbtn">
-				Attendance <i class="fa fa-caret-down"></i>
+				Attendance
 			</button>
+			
 			<div class="dropdown-content">
 				<a href="/attendancedetails/addattendancedetails">To Put
-					Attendance</a> <a href="/employeedetails/getemployeeattendancelist?id=${employeeId}">To View
-					Attendance Details</a>
+					Attendance</a> <a
+					href="/employeedetails/getemployeeattendancelist?id=${employeeId}">To
+					View Attendance Details</a>
+
 			</div>
 		</div>
+		<div class="navbar-right">
+				<a href="/employeedetails/employeelogin">Log Out</a>
+			</div>
 	</div>
 </body>
 </html>
