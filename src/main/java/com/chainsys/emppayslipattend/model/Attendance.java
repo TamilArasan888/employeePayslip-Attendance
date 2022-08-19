@@ -1,7 +1,6 @@
 package com.chainsys.emppayslipattend.model;
 
 import java.sql.Date;
-import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,10 +24,10 @@ public class Attendance {
 	private Date attendanceDate;
 	
 	@Column(name="in_Time")
-	private Timestamp inTime;
+	private String inTime;
 	
 	@Column(name="out_Time")
-	private Timestamp outTime;
+	private String outTime;
 	
 	@Column(name="daily_Task")
 	private String dailyTask;
@@ -56,19 +55,19 @@ public class Attendance {
 		this.attendanceDate = attendanceDate;
 	}
 
-	public Timestamp getInTime() {
+	public String getInTime() {
 		return inTime;
 	}
 
-	public void setInTime(Timestamp inTime) {
+	public void setInTime(String inTime) {
 		this.inTime = inTime;
 	}
 
-	public Timestamp getOutTime() {
+	public String getOutTime() {
 		return outTime;
 	}
 
-	public void setOutTime(Timestamp outTime) {
+	public void setOutTime(String outTime) {
 		this.outTime = outTime;
 	}
 

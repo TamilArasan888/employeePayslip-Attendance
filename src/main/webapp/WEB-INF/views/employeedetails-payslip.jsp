@@ -93,7 +93,7 @@
 	</div>
 	<br><br>
 	<div class="backbtn">
-	<a href="/employeedetails/employeeindex"><button>Back</button></a>
+	<button onclick="history.back()">Back</button>
 	</div>
 </body>
 </html>

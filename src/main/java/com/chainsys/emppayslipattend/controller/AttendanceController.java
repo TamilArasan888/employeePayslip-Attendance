@@ -2,6 +2,9 @@ package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,9 +24,11 @@ public class AttendanceController {
 		@Autowired
 		private AttendanceService attendanceService;
 
-		@GetMapping("/attendancelist")
-		public String getAttendance(Model model) {
-			List<Attendance> attendance = attendanceService.getAttendance();
+		@GetMapping("/attendancelists")
+		public String getAttendance(Model model,HttpServletRequest request) {
+			HttpSession session=request.getSession();
+			int employeeId=(int)session.getAttribute("employeeId");
+			List<Attendance> attendance = attendanceService.getAttendenceByEmployeeId(employeeId);
 			model.addAttribute("allattendancedetails", attendance);
 			return "list-attend";
 		}
@@ -58,7 +63,7 @@ public class AttendanceController {
 		@PostMapping("/addattendance")
 		public String addNewAttendDetails(@ModelAttribute("addattendancedetail") Attendance attendance) {
 			attendanceService.save(attendance);
-			return "redirect:/attendancedetails/attendancelistforadmin";
+			return "redirect:/attendancedetails/attendancelists";
 		}
 
 		@GetMapping("/updateattendancedetails")
@@ -71,7 +76,22 @@ public class AttendanceController {
 		@PostMapping("/updateattendance")
 		public String updateAttendDetails(@ModelAttribute("updateattendancedetails") Attendance attendance) {
 			attendanceService.save(attendance);
-			return "redirect:/attendancedetails/attendancelist";
+			return "redirect:/attendancedetails/attendancelistforadmin";
+		}
+		
+		
+		
+		@GetMapping("/updatetimeattendance")
+		public String showUpdateInTimeAttend(@RequestParam("empId") int id, Model model) {
+			Attendance attendance = attendanceService.findByid(id);
+			model.addAttribute("updatetimeattendance", attendance);
+			return "out-attendance";
+		}
+
+		@PostMapping("/timeattendance")
+		public String updateInimeAttend(@ModelAttribute("updatetimeattendance") Attendance attendance) {
+			attendanceService.save(attendance);
+			return "redirect:/attendancedetails/attendancelists";
 		}
 
 }

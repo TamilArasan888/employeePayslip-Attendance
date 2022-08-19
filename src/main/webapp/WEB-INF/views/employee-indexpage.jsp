@@ -10,28 +10,31 @@
 </style>
 </head>
 <body>
-	<h1>Welcome Employee</h1>
+	<h1>Welcome ${name}</h1>
+
+
 	<div class="navbar">
-	
 		<a href="/employeedetails/getemployeepaysliplist?id=${employeeId}">PaySlip</a>
 		
 		<div class="dropdown">
 			<button class="dropbtn">
-				Attendance
+				Put Attendance
 			</button>
 			
 			<div class="dropdown-content">
-				<a href="/attendancedetails/addattendancedetails">To Put
-					Attendance</a> <a
-					href="/employeedetails/getemployeeattendancelist?id=${employeeId}">To
-					View Attendance Details</a>
-
-			</div>
-		</div>
-		<div class="navbar-right">
-				<a href="/employeedetails/employeelogin">Back</a>
-				<a href="/index">Log Out</a>
-			</div>
-	</div>
+				<a href="/attendancedetails/addattendancedetails">In-Time
+					Attendance</a>
+					 <a
+					href="/attendancedetails/updatetimeattendance?empId=${employeeId}">Out-Time
+					Attendance</a>
+			</div></div>
+			 <a
+					href="/employeedetails/getemployeeattendancelist?id=${employeeId}">View
+					Attendance Details</a>
+			
+	<div class="navbar-right">
+		<a href="/employeedetails/employeelogin">Back</a> <a href="/employeedetails/logout">Log
+			Out</a>
+	</div></div>
 </body>
 </html>

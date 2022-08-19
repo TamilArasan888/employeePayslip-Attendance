@@ -6,6 +6,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Attendance List</title>
+<style type="text/css">
+	<%@include file="/WEB-INF/css/fortables.css"%>
+</style>
 </head>
 <body>
 	<div id="table root">

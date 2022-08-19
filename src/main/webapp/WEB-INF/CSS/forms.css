@@ -63,7 +63,7 @@ h1 {
 
 .form-attendance {
 	height: 600px;
-	width: 400px;
+	width: 500px;
 	background-color: rgba(255, 255, 255, 0.13);
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -201,7 +201,7 @@ h1 {
 }
 
 .form-control-attendance label {
-	font-size:15px;
+	font-size:20px;
 	font-weight: 800;
 	color:cyan;
 	display: inline-block;
@@ -211,7 +211,7 @@ h1 {
 .form-control-attendance input {
 	border: 2px solid #fefefe;
 	border-radius: 4px;
-	font-size: 10px;
+	font-size: 14px;
 	display: block;
 	padding: 10px;
 	width: 100%;

@@ -2,6 +2,10 @@ package com.chainsys.emppayslipattend.controller;
 
 import java.util.List;
 import java.util.Optional;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -107,10 +111,12 @@ public class EmployeeDetailsController {
     }                   
 
     @PostMapping("/checkemployeelogin")
-    public String checkingAccess(@ModelAttribute("employeelogindetails") EmployeeDetails employeeDet,Model model) {
+    public String checkingAccess(@ModelAttribute("employeelogindetails") EmployeeDetails employeeDet,HttpSession session,Model model) {
         EmployeeDetails employee = employeeDetailsService.getEmployeeByIDEmailAndPassword(employeeDet.getEmployeeID(), employeeDet.getEmployeeEmail(), employeeDet.getEmployeePassword());
         if (employee!= null){
         	model.addAttribute("employeeId", employee.getEmployeeID());
+        	session.setAttribute("employeeId", employee.getEmployeeID());
+        	model.addAttribute("name", employee.getEmployeeFirstName());
             return "employee-indexpage";
         } else
             return "redirect-employeeloginpage";
@@ -127,4 +133,10 @@ public class EmployeeDetailsController {
     public String index(Model model) {
         return "attendance-type";
     }  
+    @GetMapping("/logout")
+    public String logout(Model model,HttpServletRequest request) {
+    	HttpSession session=request.getSession(true);
+    	session.invalidate();
+    	return "/index";
+    }
 }
