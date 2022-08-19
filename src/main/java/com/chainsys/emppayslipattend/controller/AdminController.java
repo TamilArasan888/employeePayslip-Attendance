@@ -19,6 +19,7 @@ import com.chainsys.emppayslipattend.service.AdminService;
 @Controller
 @RequestMapping("/admindetails")
 public class AdminController {
+	private static final String REDIRECTTOADMINLIST="redirect:/admindetails/adminlist";
 
 	@Autowired
 	private AdminService adminService;
@@ -40,7 +41,7 @@ public class AdminController {
 	@GetMapping("/deleteadmindetailsbyid")
 	public String deleteAdminDetailsbyid(@RequestParam("adminid") int id) {
 		adminService.deleteById(id);
-		return "redirect:/admindetails/adminlist";
+		return REDIRECTTOADMINLIST;
 	}
 
 	@GetMapping("/addadmindetailsbyuser")
@@ -56,7 +57,7 @@ public class AdminController {
 			return "add-admin-details";
 		} else {
 			adminService.save(admin);
-			return "redirect:/admindetails/adminlist";
+			return REDIRECTTOADMINLIST;
 		}
 	}
 
@@ -74,7 +75,7 @@ public class AdminController {
 		} 
 		else {
 		adminService.save(adm);
-		return "redirect:/admindetails/adminlist";
+		return REDIRECTTOADMINLIST;
 	}
 	}
 	
