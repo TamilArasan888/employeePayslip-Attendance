@@ -2,7 +2,7 @@
  * 
  */
 let employeeFirstNameCheck = function() {
-    let nameRegex = new RegExp("^[a-zA-Z\s]+$");
+    let nameRegex = new RegExp`(^[a-zA-Z\s]+$)`;
     if(!document.form.employeeFirstName.value.match(nameRegex)){
            if(alert("Employee First Name can't be empty and must contain only alphabets")){ 
                 document.form.employeeFirstName.focus();
@@ -16,7 +16,7 @@ let employeeFirstNameCheck = function() {
 }
 
 let employeeLastNameCheck = function() {
-    let nameRegex = new RegExp("^[a-zA-Z\s]+$");
+    let nameRegex = new RegExp`(^[a-zA-Z\s]+$)`;
     if(!document.form.employeeLastName.value.match(nameRegex)){
            if(alert("Employee Last Name can't be empty and must contain only alphabets")){ 
                 document.form.employeeLastName.focus();
@@ -60,7 +60,7 @@ let dobCheck = function() {
 
 
 let emailCheck = function() {
-	let rg = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
+	let rg = new RegExp`(^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$)`;
 	if(!document.form.employeeEmail.value.match(rg)){
 		if(alert("Email is not valid!!.Enter a Valid Email.")){
 			document.form.employeeEmail.focus();
@@ -75,7 +75,7 @@ let emailCheck = function() {
 
 
 let passwordCheck = function() {
-	let rg = new RegExp("^[a-zA-Z)-9]{5,20}$");
+	let rg = new RegExp`(^[a-zA-Z)-9]{5,20}$)`;
 	if(!document.form.employeePassword.value.match(rg)){
 		if(alert("Password is not valid!! Password length must be 5 characters that contains alphabets or numbers.")){
 			document.form.employeePassword.focus();
@@ -91,7 +91,7 @@ let passwordCheck = function() {
 
 
 let phoneNumberCheck = function() {
-	 let phoneRg = new RegExp("[1-9]{1}[0-9]{9}");
+	 let phoneRg = new RegExp`([0-9]{10})`;
 	 if(!document.form.employeePhoneNumber.value.match(phoneRg)){
 			if(alert("Phone Number is not valid!! Phone number must be 10 digits.")){
 				 document.form.employeePhoneNumber.focus();

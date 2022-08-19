@@ -12,7 +12,10 @@ h1 {
 	font-size: 40px;
 	color: #8a0303;
 }
-
+.form{
+	margin-left:25%;
+	
+}
 .form label {
 	font-family: Verdana, sans-serif;
 	font-size: 30px;

@@ -6,13 +6,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Out Time Attendance</title>
+<style type="text/css">
+	<%@include file="/WEB-INF/css/forms.css"%>
+</style>
 </head>
 <body>
 <div class="form-attendance">
 			<form:form name="form" action="timeattendance" method="post"
 				modelAttribute="updatetimeattendance">
-				<h1>Attendance Form</h1>
-				
+				<h1>Out-Time Attendance Form</h1>
+				<div>
+					<div>
+						<form:input path="attendanceID" placeholder="Enter Attendance Id"
+							required="true" type="hidden"/>
+					</div>
+				</div>
 				<div class="form-control-attendance">
 					<label for="attendanceDate">Attendance Date : </label>
 					<form:input path="attendanceDate" type="date" id="attendanceDate" name="attendanceDate" onblur="attendanceDateCheck();"
@@ -21,20 +29,20 @@
 				
 				<div class="form-control-attendance">
 					<label for="inTime">In-Time : </label>
-					<form:input path="inTime" type="time" id="intime" value="00:00" name="inTime" onblur="inTimeCheck();" placeholder="Enter In-Time"
+					<form:input path="inTime" type="time" id="intime"  name="inTime" onblur="inTimeCheck();" placeholder="Enter In-Time"
 							required="true" readonly="true"/>
 				</div>
 				
 				<div class="form-control-attendance">
 					<label for="outTime">Out-Time : </label>
-						<form:input path="outTime" type="time" id="outtime" value="00:00" name="outTime" onblur="outTimeCheck();" placeholder="Enter Out-Time"
+						<form:input path="outTime" type="time" id="outtime"  name="outTime" onblur="outTimeCheck();" placeholder="Enter Out-Time"
 							required="true" />
 				</div>
 				
 				<div class="form-control-attendance">
 					<label for="dailyTask">Daily Task Description : </label>
 					<form:input path="dailyTask" name="dailyTask" onblur="dailyTaskCheck();" placeholder="Enter Daily Task"
-							required="true" readonly="true"/>
+							required="true" />
 				</div>
 				
 				<div class="form-control-attendance">

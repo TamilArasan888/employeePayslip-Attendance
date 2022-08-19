@@ -19,7 +19,10 @@ public class AttendanceService {
 	public Attendance findByid(int id) {
 		return attendanceRepository.findById(id);
 	}
-
+	public Attendance findLastAttendance(int id) {
+		List<Attendance> attendList=attendanceRepository.findByEmployeeIDOrderByAttendanceDateDesc(id);
+		 return attendList.get(0);
+	}
 	public Attendance save(Attendance atten) {
 		return attendanceRepository.save(atten);
 	}

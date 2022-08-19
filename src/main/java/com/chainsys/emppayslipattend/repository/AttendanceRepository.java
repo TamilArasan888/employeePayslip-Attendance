@@ -13,6 +13,6 @@ public interface AttendanceRepository extends CrudRepository<Attendance,Integer>
     List<Attendance> findAll();
     List<Attendance> findByEmployeeID(int id);
     List<Attendance> findByAttendanceDateGreaterThanEqualAndAttendanceDateLessThanEqual(Date startDate,Date endDate);
-    
+    List<Attendance> findByEmployeeIDOrderByAttendanceDateDesc(int empId);
 }
 

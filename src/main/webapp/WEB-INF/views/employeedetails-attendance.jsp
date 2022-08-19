@@ -17,16 +17,15 @@
 		<div class="form">
 			<table>
 			<caption></caption>
+			<tr><th></th></tr>
 				<tbody>
 					<tr>
-						<th><label for="employeeID">Employee ID : </label></th>
-						<th>
-					<form:input path="employeeID" readonly="true" />
-						</th>
+						<td><label for="employeeID">Employee ID : </label></td>
+						<td>
+					<form:input path="employeeID" readonly="true" /></td>
 						</tr>
 					<tr>
-						<td><label for="employeeFirstName">Employee FirstName
-								: </label></td>
+						<td><label for="employeeFirstName">Employee FirstName : </label></td>
 						<td>
 					<form:input path="employeeFirstName" readonly="true" />
 						</td>

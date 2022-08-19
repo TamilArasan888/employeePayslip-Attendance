@@ -83,13 +83,13 @@ public class AttendanceController {
 		
 		@GetMapping("/updatetimeattendance")
 		public String showUpdateInTimeAttend(@RequestParam("empId") int id, Model model) {
-			Attendance attendance = attendanceService.findByid(id);
+			Attendance attendance = attendanceService.findLastAttendance(id);
 			model.addAttribute("updatetimeattendance", attendance);
 			return "out-attendance";
 		}
 
 		@PostMapping("/timeattendance")
-		public String updateInimeAttend(@ModelAttribute("updatetimeattendance") Attendance attendance) {
+		public String updateInTimeAttend(@ModelAttribute("updatetimeattendance") Attendance attendance) {
 			attendanceService.save(attendance);
 			return "redirect:/attendancedetails/attendancelists";
 		}

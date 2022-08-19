@@ -14,7 +14,7 @@ let adminIDCheck = function() {
     } 
 }
 let adminNameCheck = function() {
-    let nameRegex = new RegExp(`^[a-zA-Z\s]+$`);
+    let nameRegex = new RegExp`(^[a-zA-Z\s]+$)`;
     if(!document.form.adminName.value.match(nameRegex)){
            if(alert("Admin Name can't be empty and must contain only alphabets")){ 
                 document.form.adminName.focus();
@@ -28,7 +28,7 @@ let adminNameCheck = function() {
 }
 
 let adminPasswordCheck = function() {
-	let rg = new RegExp(`^[a-zA-Z)-9]{5,20}$`);
+	let rg = new RegExp`(^[a-zA-Z)-9]{5,20}$)`;
 	if(!document.form.adminPassword.value.match(rg)){
 		if(alert("Password is not valid!! Password length must be 5 characters that contains alphabets or numbers.")){
 			document.form.adminPassword.focus();

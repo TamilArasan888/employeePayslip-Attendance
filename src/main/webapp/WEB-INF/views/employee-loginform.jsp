@@ -17,6 +17,45 @@ body {
 h1 {
 	font-family: lucida Handwriting, Cursive;
 	color: white;
+	font-size: 45px;
+}
+.empid{
+margin: 14px 0px 14px 0px;
+}
+.empid label{
+font-size: 35px;
+}
+.empid input{
+width: 20%;
+height: 25px;
+margin-left: 20px;
+font-size: 17px;
+}
+
+.empemail{
+margin: 14px 0px 14px 0px;
+}
+.empemail label{
+font-size: 35px;
+}
+.empemail input{
+width: 20%;
+height: 25px;
+margin-left: 135px;
+font-size: 17px;
+}
+
+.emppass{
+margin: 14px 0px 14px 0px;
+}
+.emppass label{
+font-size: 35px;
+}
+.emppass input{
+width: 20%;
+height: 25px;
+margin-left: 80px;
+font-size: 17px;
 }
 
 label {
@@ -40,35 +79,27 @@ border-radius: 10px;
 </style>
 </head>
 <body>
-	<div id="root" style="width: auto;">
 		<div class="form">
 			<form:form action="checkemployeelogin" method="post"
 				modelAttribute="employeelogindetails">
-				<h1 style="font-size: 45px;">EMPLOYEE LOGIN</h1>
+				<h1>EMPLOYEE LOGIN</h1>
 
-				<div style="margin: 14px 0px 14px 0px;">
-					<strong><label for="employeeID" style="font-size: 35px;">Employee
-							ID : </label></strong>
-					<form:input path="employeeID" id="input" placeholder="Enter Your Employee ID"
-						style="width: 20%;height: 25px;margin-left: 20px;font-size: 17px;" />
+				<div class="empid">
+					<strong><label for="employeeID">Employee ID : </label></strong>
+					<form:input path="employeeID" id="input" placeholder="Enter Your Employee ID"/>
 				</div>
 
-				<div style="margin: 14px 0px 14px 0px;">
-					<strong><label for="employeeEmail" style="font-size: 35px;">Email :
-					</label></strong>
-					<form:input path="employeeEmail" id="input" placeholder="Enter Your Email"
-						style="width: 20%;height: 25px;font-size: 17px;" />
+				<div class="empemail">
+					<strong><label for="employeeEmail">Email : </label></strong>
+					<form:input path="employeeEmail" id="input" placeholder="Enter Your Email"/>
 				</div>
 
-				<div style="margin: 14px 0px 14px 0px;">
-					<strong><label for="employeePassword" style="font-size: 35px;">Password
-						: </label></strong>
-					<form:input path="employeePassword"
-						placeholder="Enter Your Password" id="input" type="password"
-						style="width: 20%;height: 25px;font-size: 17px;" />
+				<div class="emppass">
+					<strong><label for="employeePassword">Password : </label></strong>
+					<form:input path="employeePassword"  id="input" placeholder="Enter Your Password" type="password"/>
 				</div>
 
-				<div style="margin-top: 20px; margin-left: 30px;">
+				<div>
 					<form:button class="login-form">SignIn</form:button>
 					<form:button class="login-form" style="margin-left: 12px;">
 						<a href="/employeedetails/addemployeedetails"
@@ -77,6 +108,5 @@ border-radius: 10px;
 				</div>
 			</form:form>
 		</div>
-	</div>
 </body>
 </html>
