@@ -1,7 +1,7 @@
 /**
  * 
  */
- var payslipDateCheck = function() {
+ let payslipDateCheck = function() {
 	if(document.form.payslipDate.value == ""){
 		if(alert("Payslip Date cannot be blank")){
 			document.form.payslipDate.focus();
@@ -15,7 +15,7 @@
 }
 
 
-var employeeIDCheck = function() {
+let employeeIDCheck = function() {
 	if(document.form.employeeID.value == ""){
 		if(alert("Empolyee Id cannot be blank.")){
 			document.form.employeeID.focus();

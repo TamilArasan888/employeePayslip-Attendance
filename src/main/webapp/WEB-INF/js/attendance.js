@@ -1,7 +1,7 @@
 /**
  * 
  */
-/* var attendanceDateCheck = function() {
+/* let attendanceDateCheck = function() {
 	if(document.form.attendanceDate.value == ""){
 		if(alert("Attendance Date cannot be blank.")){
 			document.form.attendanceDate.focus();
@@ -25,7 +25,7 @@ function attendanceDateCheck() {
  }
 
 
-var inTimeCheck = function() {
+let inTimeCheck = function() {
 	if(document.form.inTime.value == ""){
 		if(alert("In Time cannot be blank.")){
 			document.form.inTime.focus();
@@ -39,7 +39,7 @@ var inTimeCheck = function() {
 }
 
 
-var outTimeCheck = function() {
+let outTimeCheck = function() {
 	if(document.form.outTime.value == ""){
 		if(alert("Out Time cannot be blank.")){
 			document.form.outTime.focus();
@@ -52,7 +52,7 @@ var outTimeCheck = function() {
     } 
 }
 
-var dailyTaskCheck = function() {
+let dailyTaskCheck = function() {
 	if(document.form.dailyTask.value == ""){
 		if(alert("Daily Task cannot be blank.")){
 			document.form.dailyTask.focus();
@@ -66,7 +66,7 @@ var dailyTaskCheck = function() {
 }
 
 
-var employeeIDCheck = function() {
+let employeeIDCheck = function() {
 	if(document.form.employeeID.value == ""){
 		if(alert("Empolyee Id cannot be blank.")){
 			document.form.employeeID.focus();

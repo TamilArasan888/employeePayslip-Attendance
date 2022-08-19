@@ -1,8 +1,8 @@
 /**
  * 
  */
- var employeeFirstNameCheck = function() {
-    var nameRegex = new RegExp("^[a-zA-Z\s]+$");
+let employeeFirstNameCheck = function() {
+    let nameRegex = new RegExp("^[a-zA-Z\s]+$");
     if(!document.form.employeeFirstName.value.match(nameRegex)){
            if(alert("Employee First Name can't be empty and must contain only alphabets")){ 
                 document.form.employeeFirstName.focus();
@@ -15,8 +15,8 @@
    }
 }
 
-var employeeLastNameCheck = function() {
-    var nameRegex = new RegExp("^[a-zA-Z\s]+$");
+let employeeLastNameCheck = function() {
+    let nameRegex = new RegExp("^[a-zA-Z\s]+$");
     if(!document.form.employeeLastName.value.match(nameRegex)){
            if(alert("Employee Last Name can't be empty and must contain only alphabets")){ 
                 document.form.employeeLastName.focus();
@@ -30,7 +30,7 @@ var employeeLastNameCheck = function() {
 }
 
 
-var genderCheck = function() {
+let genderCheck = function() {
 	if(document.form.employeeGender.value == ""){
 		if(alert("Gender cannot be blank!! Select any of the button.")){
 			document.form.employeeGender.focus();
@@ -44,7 +44,7 @@ var genderCheck = function() {
 }
 
 
-var dobCheck = function() {
+let dobCheck = function() {
 	if(document.form.employeeDOB.value == ""){
 		if(alert("Date of Birth cannot be blank")){
 			document.form.employeeDOB.focus();
@@ -59,8 +59,8 @@ var dobCheck = function() {
 
 
 
-var emailCheck = function() {
-	var rg = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
+let emailCheck = function() {
+	let rg = new RegExp("^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$");
 	if(!document.form.employeeEmail.value.match(rg)){
 		if(alert("Email is not valid!!.Enter a Valid Email.")){
 			document.form.employeeEmail.focus();
@@ -74,8 +74,8 @@ var emailCheck = function() {
 }
 
 
-var passwordCheck = function() {
-	var rg = new RegExp("^[a-zA-Z)-9]{5,20}$");
+let passwordCheck = function() {
+	let rg = new RegExp("^[a-zA-Z)-9]{5,20}$");
 	if(!document.form.employeePassword.value.match(rg)){
 		if(alert("Password is not valid!! Password length must be 5 characters that contains alphabets or numbers.")){
 			document.form.employeePassword.focus();
@@ -90,8 +90,8 @@ var passwordCheck = function() {
 
 
 
-var phoneNumberCheck = function() {
-	 var phoneRg = new RegExp("[1-9]{1}[0-9]{9}");
+let phoneNumberCheck = function() {
+	 let phoneRg = new RegExp("[1-9]{1}[0-9]{9}");
 	 if(!document.form.employeePhoneNumber.value.match(phoneRg)){
 			if(alert("Phone Number is not valid!! Phone number must be 10 digits.")){
 				 document.form.employeePhoneNumber.focus();
@@ -105,7 +105,7 @@ var phoneNumberCheck = function() {
 }
 
 
-var addressCheck = function() {
+let addressCheck = function() {
 	 if(document.form.employeeAddress.value == ""){
 			if(alert("Address cannot be blank")){ 
 				 document.form.employeeAddress.focus();
@@ -119,7 +119,7 @@ var addressCheck = function() {
 }
 
 
-var jobIDCheck = function() {
+let jobIDCheck = function() {
 	 if(document.form.employeeJobID.value == ""){
 			if(alert("JobID cannot be blank")){ 
 				 document.form.employeeJobID.focus();
@@ -133,7 +133,7 @@ var jobIDCheck = function() {
 }
 
 
-var employeeRoleCheck = function() {
+let employeeRoleCheck = function() {
 	 if(document.form.employeeRole.value == ""){
 			if(alert("Employee Role cannot be blank!! Select one of the option.")){ 
 				 document.form.employeeRole.focus();
@@ -147,7 +147,7 @@ var employeeRoleCheck = function() {
 }
 
 
-var managerCheck = function() {
+let managerCheck = function() {
 	 if(document.form.employeeManager.value == ""){
 			if(alert("Manager name cannot be blank.")){ 
 				 document.form.employeeManager.focus();
@@ -161,7 +161,7 @@ var managerCheck = function() {
 }
 
 
-var hireDateCheck = function() {
+let hireDateCheck = function() {
 	 if(document.form.employeeHireDate.value == ""){
 			if(alert("Hire Date cannot be blank.")){ 
 				 document.form.employeeHireDate.focus();
@@ -175,7 +175,7 @@ var hireDateCheck = function() {
 }
 
 
-var workingHoursCheck = function() {
+let workingHoursCheck = function() {
 	 if(document.form.employeeWorkingHours.value == ""){
 			if(alert("Working Hours cannot be blank.")){ 
 				 document.form.employeeWorkingHours.focus();
