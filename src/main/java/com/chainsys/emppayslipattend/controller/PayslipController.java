@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.emppayslipattend.model.Payslip;
-import com.chainsys.emppayslipattend.service.BasicSalaryService;
-import com.chainsys.emppayslipattend.service.EmployeeDetailsService;
 import com.chainsys.emppayslipattend.service.PayslipService;
 
 @Controller
@@ -25,10 +23,7 @@ public class PayslipController {
 
 	@Autowired
 	private PayslipService payslipService;
-	@Autowired
-	private EmployeeDetailsService employeeDetailsService;
-	@Autowired
-	private BasicSalaryService basicSalaryService;
+	
 	@GetMapping("/paysliplist")
 	public String getPayslip(Model model) {
 		List<Payslip> payslip = payslipService.getPayslip();
@@ -85,13 +80,4 @@ public class PayslipController {
 		payslipService.save(payslip);
 		return "redirect:/payslipdetails/paysliplist";
 	}
-	
-//	@GetMapping("/payslip")
-//	public String getPaySlip(@RequestParam("id")int paySlipId,Model model) {
-//		Payslip payslip=payslipService.findByid(paySlipId);
-//		EmployeeDetails employeeDetails=employeeDetailsService.findById(payslip.getEmployeeID());
-//		Optional<BasicSalary> BasicSalary=basicSalaryService.getBasicSalaryById(employeeDetails.getEmployeeRole());
-//		
-//	}
-
 }

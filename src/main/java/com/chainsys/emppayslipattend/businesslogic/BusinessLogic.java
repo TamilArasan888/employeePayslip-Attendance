@@ -92,7 +92,6 @@ private BusinessLogic() {
 			startdate=new java.sql.Date(date1.getTime());
 			enddate=new java.sql.Date(date2.getTime());
 		} catch (ParseException e) {
-			e.printStackTrace();
 		}
 		Date[] startEndDate=new Date[2];
 		startEndDate[0]=startdate;

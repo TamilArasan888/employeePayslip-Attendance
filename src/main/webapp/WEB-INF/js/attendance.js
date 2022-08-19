@@ -1,18 +1,6 @@
 /**
  * 
  */
-/* let attendanceDateCheck = function() {
-	if(document.form.attendanceDate.value == ""){
-		if(alert("Attendance Date cannot be blank.")){
-			document.form.attendanceDate.focus();
-		}
-		else
-			document.activeElement.blur();
-    }
-    else{
-        return false;
-    } 
-}*/
 
 function attendanceDateCheck() {
        let date = document.getElementById('attendanceDate').value;
