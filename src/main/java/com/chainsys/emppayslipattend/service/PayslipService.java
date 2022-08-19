@@ -51,8 +51,7 @@ public class PayslipService {
 	}
 
 	public List<Payslip> getPayslip() {
-		List<Payslip> listPay = payslipRepository.findAll();
-		return listPay;
+		return payslipRepository.findAll();
 	}
 	
 	@Transactional

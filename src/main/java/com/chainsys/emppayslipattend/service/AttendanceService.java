@@ -33,8 +33,7 @@ public class AttendanceService {
 	}
 
 	public List<Attendance> getAttendance() {
-		List<Attendance> listAttend = attendanceRepository.findAll();
-		return listAttend;
+		return attendanceRepository.findAll();
 	}
 	public List<Attendance> getAttendenceByEmployeeId(int id){
 		return attendanceRepository.findByEmployeeID(id);

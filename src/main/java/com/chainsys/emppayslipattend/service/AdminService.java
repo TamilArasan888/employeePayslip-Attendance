@@ -26,8 +26,7 @@ public class AdminService {
 	}
 
 	public List<Admin> getAdmin() {
-		List<Admin> listAdm = adminRepository.findAll();
-		return listAdm;
+		return adminRepository.findAll();
 	}
 	
 	public Admin getAdminByIDNameAndPassword(int id,String name, String password) {

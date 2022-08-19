@@ -45,8 +45,7 @@ public class EmployeeDetailsService {
 	}
 
 	public List<EmployeeDetails> getEmployeeDetails() {
-		List<EmployeeDetails> listEmp = employeeDetailsRepository.findAll();
-		return listEmp;
+		return employeeDetailsRepository.findAll();
 	}
 
 	public List<BasicSalary> getAllBasicSalary() {
@@ -64,7 +63,7 @@ public class EmployeeDetailsService {
 		List<Payslip> payslipList = payslipRepository.findByEmployeeID(id);
 		Iterator<Payslip> payslipItr = payslipList.iterator();
 		while(payslipItr.hasNext()) {
-			employeeDetailsPayslipdto.addPayslip((Payslip)payslipItr.next());
+			employeeDetailsPayslipdto.addPayslip(payslipItr.next());
 		}
 		return employeeDetailsPayslipdto;
 	}
@@ -76,7 +75,7 @@ public class EmployeeDetailsService {
 		List<Attendance> attendanceList = attendanceRepository.findByEmployeeID(id);
 		Iterator<Attendance> attendanceItr = attendanceList.iterator();
 		while(attendanceItr.hasNext()) {
-			employeeDetailsAttendancedto.addAttendance((Attendance)attendanceItr.next());
+			employeeDetailsAttendancedto.addAttendance(attendanceItr.next());
 		}
 		return employeeDetailsAttendancedto;
 	}
