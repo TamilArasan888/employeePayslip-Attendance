@@ -41,8 +41,7 @@ private BusinessLogic() {
 		int day1=Integer.parseInt(startDateArray[2]);
 		int day2=Integer.parseInt(endDateArray[2]);
 		
-		int totalDays=day2-day1+1;
-		return totalDays;
+		return day2-day1+1;
 	}
 	
 	public static float netSalaryCalculation(float grossSalary,Optional<BasicSalary> basicSal,int totalNoOfDays,int noOfPresents) {
@@ -52,7 +51,7 @@ private BusinessLogic() {
 		double total=cutSalary*noOfPresents;
 		double totalPF=cutPF*noOfPresents;
 		float net=(float)(total-totalPF);
-		float incomeTax=(float)net*basicSalary.getIncomeTax()/100;
+		float incomeTax=net*basicSalary.getIncomeTax()/100;
 		return net-incomeTax;
 	}
 	
@@ -92,6 +91,7 @@ private BusinessLogic() {
 			startdate=new java.sql.Date(date1.getTime());
 			enddate=new java.sql.Date(date2.getTime());
 		} catch (ParseException e) {
+			// not in use
 			
 		}
 		Date[] startEndDate=new Date[2];
