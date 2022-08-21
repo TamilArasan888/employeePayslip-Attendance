@@ -14,6 +14,8 @@
 </script>
 </head>
 <body>
+<a href="/admindetails/adminindex"><button class="back-button"
+       >Go Back</button></a>
 <div class="form-payslip">
 	<form:form name="form" action="addpayslip" method="post"
 		modelAttribute="addpayslipdetail">

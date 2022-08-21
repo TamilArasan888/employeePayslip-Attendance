@@ -6,9 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>ERROR</title>
 <style type="text/css">
-h2,h3,a{
-text-align:center;
-}
+<%@include file="/WEB-INF/css/wronglogin.css"%>
 </style>
 </head>
 <body>
@@ -17,8 +15,8 @@ text-align:center;
 			TO LOGIN!!</h2>
 	</div>
 	<div>
-		<h3>Press the button to go Employee login page
-			again</h3>
+		<h3>Press the below button to go Employee login page
+			again!!</h3>
 	</div>
 	<div>
 		<a href="/employeedetails/employeelogin"><button type="button"

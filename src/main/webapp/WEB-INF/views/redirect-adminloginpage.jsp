@@ -6,9 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>ERROR</title>
 <style type="text/css">
-h2,h3,a{
-text-align:center;
-}
+<%@include file="/WEB-INF/css/wronglogin.css"%>
 </style>
 </head>
 <body>

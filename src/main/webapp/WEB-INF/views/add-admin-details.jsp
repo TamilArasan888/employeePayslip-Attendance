@@ -8,12 +8,33 @@
 <title>Add Admin Details</title>
 <style type="text/css">
 <%@include file="/WEB-INF/css/forms.css"%>
+.back-button {
+    border: none;
+    background-color: #ff4d4d;
+    font-size:15px;
+    color: white;
+    margin: auto;
+    width: 100px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px 0;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left:1%;
+    margin-top:1%;
+}
+a{
+text-decoration:none;
+}
 </style>
 <script type="text/javascript">
 <%@include file="/WEB-INF/js/admin.js"%>
 </script>
+
 </head>
 <body>
+<a href="/index"><button class="back-button"
+       >Go Back</button></a>
 <div class="form-admin">
 			<form:form action="addadmin" method="post"
 				modelAttribute="addadmindetail" name="form">

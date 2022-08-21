@@ -14,6 +14,8 @@
 </script>
 </head>
 <body>
+<button class="back-button"
+        onclick="history.back()">Go Back</button>
 		<div class="form-attendance">
 			<form:form name="form" action="addattendance" method="post"
 				modelAttribute="addattendancedetail">
@@ -46,8 +48,6 @@
 					<form:button class="button" type="submit" name="submit">Add Attendance</form:button>
 					</div>
 			</form:form>
-			<br>
-		<button onclick="history.back()">Back</button>
 			</div>	
 			
 </body>

@@ -12,6 +12,8 @@
 </style>
 </head>
 <body>
+<button class="back-button"
+        onclick="history.back()">Go Back</button>
 	<form:form action="" method="post" modelAttribute="getemployeedetails">
 		<h1>Employee details with his Attendance list</h1>
 		<div class="form">

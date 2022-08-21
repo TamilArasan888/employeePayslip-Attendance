@@ -11,6 +11,8 @@
 </style>
 </head>
 <body>
+<button class="back-button"
+        onclick="history.back()">Go Back</button>
 <div class="form-attendance">
 			<form:form name="form" action="timeattendance" method="post"
 				modelAttribute="updatetimeattendance">

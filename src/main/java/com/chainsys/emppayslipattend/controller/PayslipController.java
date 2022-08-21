@@ -80,4 +80,10 @@ public class PayslipController {
 		payslipService.save(payslip);
 		return "redirect:/payslipdetails/paysliplist";
 	}
+	
+	@GetMapping("/payslip")
+	public String payslip(Model model) {
+		model.addAttribute("payslip",model);
+		return "payslip";
+	}
 }

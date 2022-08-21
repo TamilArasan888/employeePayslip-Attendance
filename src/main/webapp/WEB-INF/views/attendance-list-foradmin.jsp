@@ -11,6 +11,8 @@
 </style>
 </head>
 <body>
+<a href="/admindetails/adminindex"><button class="back-button"
+      >Go Back</button></a>
 	<div>
 		<table>
 		<caption></caption>

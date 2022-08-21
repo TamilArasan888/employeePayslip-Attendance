@@ -17,7 +17,7 @@
 	</div>
 	
 	<div class="employee">
-	<form:form action="" method="post" modelAttribute="getemployeebyid">
+	<form:form action="" method="post" modelAttribute="payslip">
 		<h1>Employee Details</h1>
 		<div class="form">
 			<table>
@@ -103,7 +103,17 @@
 	
 	
 	<div class="payslip">
-	<h2>PaySlip</h2>
+				<h2>PaySlip</h2>
+	
+	<div class="basicsalary">
+	
+	
+	
+	
+	
+	
+	
+	</div>
 		<form:form action="" method="post" modelAttribute="getpayslip">
 		<h1>Payslip Details</h1>
 		<div class="form">
