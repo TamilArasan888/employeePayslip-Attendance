@@ -87,7 +87,7 @@
 						<td>${payslip.grossSalary}</td>
 						<td>${payslip.netSalary}</td>
 						<td>${payslip.employeeID}</td>
-						<td><a href="/payslipdetails/payslip"><button>View</button></a></td>
+						<td><a href="/payslipdetails/payslip?id=${payslip.employeeID}&payslipDate=${payslip.payslipDate}"><button>View</button></a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

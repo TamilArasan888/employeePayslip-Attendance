@@ -31,7 +31,7 @@ private BusinessLogic() {
 		return noOfDaysPresent;
 	}
 	
-	public static int getCutSalaryPercent(Date[] array,int noOfDaysPresent) {
+	public static int getCutSalaryPercent(Date[] array) {
 		String startDate=array[0]+"";
 		String endDate=array[1]+"";
 		

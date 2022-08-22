@@ -3,6 +3,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.emppayslipattend.model.Payslip;
 
+import java.sql.Date;
 import java.util.List;
 
 
@@ -12,4 +13,5 @@ public interface PayslipRepository extends CrudRepository<Payslip,Integer>  {
     void deleteById(int payId);
     List<Payslip> findAll();
     List<Payslip> findByEmployeeID(int id);
+    Payslip findByEmployeeIDAndPayslipDate(int id,Date payslipdate);
 }

@@ -121,7 +121,6 @@ public class EmployeeDetailsController {
         } else
             return "redirect-employeeloginpage";
     }
-    
     @GetMapping("/employeeindex")
     public String employeeIndexPage(Model model) {
         EmployeeDetails employee = new EmployeeDetails();
