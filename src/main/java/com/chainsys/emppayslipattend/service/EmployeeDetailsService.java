@@ -82,8 +82,8 @@ public class EmployeeDetailsService {
 		return employeeDetailsAttendancedto;
 	}
 	
-	public EmployeeDetails getEmployeeByIDEmailAndPassword(int id,String email, String password) {
-        return employeeDetailsRepository.findByEmployeeIDAndEmployeeEmailAndEmployeePassword(id, email, password);
+	public EmployeeDetails getEmployeeByIDAndPassword(int id, String password) {
+        return employeeDetailsRepository.findByEmployeeIDAndEmployeePassword(id,password);
     }
 
 }

@@ -12,7 +12,7 @@ public interface EmployeeDetailsRepository extends CrudRepository<EmployeeDetail
     void deleteById(int empId);
     List<EmployeeDetails> findAll();
     
-    EmployeeDetails findByEmployeeIDAndEmployeeEmailAndEmployeePassword(int id,String email,String password);
+    EmployeeDetails findByEmployeeIDAndEmployeePassword(int id,String password);
 
 }
 

@@ -23,10 +23,10 @@
 					<form:input path="employeeID" id="input" placeholder="Enter Your Employee ID" required="true" />
 				</div>
 
-				<div class="empemail">
+				<%-- <div class="empemail">
 					<strong><label for="employeeEmail">Email : </label></strong>
 					<form:input path="employeeEmail" id="input" placeholder="Enter Your Email" required="true"/>
-				</div>
+				</div> --%>
 
 				<div class="emppass">
 					<strong><label for="employeePassword">Password : </label></strong>

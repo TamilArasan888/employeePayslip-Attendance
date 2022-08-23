@@ -11,6 +11,8 @@
 </style>
 </head>
 <body>
+<a href="/attendancedetails/addattendancedetails"><button class="back-button"
+       >Go Back</button></a>
 	<div id="table root">
 		<table>
 		<caption></caption>

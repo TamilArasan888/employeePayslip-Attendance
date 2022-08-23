@@ -25,6 +25,8 @@ import com.chainsys.emppayslipattend.service.EmployeeDetailsService;
 @RequestMapping("/employeedetails")
 public class EmployeeDetailsController {
 
+	public static final String BASICSALARY = "basicsalary";
+
 	@Autowired
 	private EmployeeDetailsService employeeDetailsService;
 
@@ -34,7 +36,7 @@ public class EmployeeDetailsController {
 		model.addAttribute("allemployeedetails", employee);
 		return "list-emp";
 	}
-	
+
 	@GetMapping("/employeelistforadmin")
 	public String getEmployeeDetailsByAdmin(Model model) {
 		List<EmployeeDetails> employee = employeeDetailsService.getEmployeeDetails();
@@ -59,31 +61,31 @@ public class EmployeeDetailsController {
 	public String showAddForm(Model model) {
 		EmployeeDetails employee = new EmployeeDetails();
 		model.addAttribute("addemployeedetail", employee);
-		List<BasicSalary> basicSalary=employeeDetailsService.getAllBasicSalary();
-		model.addAttribute("basicSalary", basicSalary);
+		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
+		model.addAttribute(BASICSALARY, basicSalary);
 		return "add-emp-form";
 	}
 
 	@PostMapping("/addemployee")
 	public String addNewEmployeeDetails(@ModelAttribute("addemployeedetail") EmployeeDetails employee) {
-		Optional<BasicSalary> basicSalary=employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
+		Optional<BasicSalary> basicSalary = employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
 		employee.setEmpBasicsalary(basicSalary.get().getEmployeeBasicSalary());
 		employeeDetailsService.save(employee);
 		return "redirect:/employeedetails/employeelogin";
 	}
-	
+
 	@GetMapping("/addemployeedetailsbyadmin")
 	public String showAddFormByadmin(Model model) {
 		EmployeeDetails employee = new EmployeeDetails();
 		model.addAttribute("addemployeedetailbyadmin", employee);
-		List<BasicSalary> basicSalary=employeeDetailsService.getAllBasicSalary();
-		model.addAttribute("basicSalary", basicSalary);
+		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
+		model.addAttribute(BASICSALARY, basicSalary);
 		return "addemployee-byadmin";
 	}
 
 	@PostMapping("/addemployeebyadmin")
 	public String addNewEmployeeDetailsByadmin(@ModelAttribute("addemployeedetailbyadmin") EmployeeDetails employee) {
-		Optional<BasicSalary> basicSalary=employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
+		Optional<BasicSalary> basicSalary = employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
 		employee.setEmpBasicsalary(basicSalary.get().getEmployeeBasicSalary());
 		employeeDetailsService.save(employee);
 		return "redirect:/employeedetails/employeelist";
@@ -93,8 +95,8 @@ public class EmployeeDetailsController {
 	public String showUpdateEmpForm(@RequestParam("employeeid") int id, Model model) {
 		EmployeeDetails employee = employeeDetailsService.findById(id);
 		model.addAttribute("updateemployeedetails", employee);
-		List<BasicSalary> basicSalary=employeeDetailsService.getAllBasicSalary();
-		model.addAttribute("basicSalary", basicSalary);
+		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
+		model.addAttribute(BASICSALARY, basicSalary);
 		return "update-empdetails";
 	}
 
@@ -103,58 +105,61 @@ public class EmployeeDetailsController {
 		employeeDetailsService.save(employee);
 		return "redirect:/employeedetails/employeelistforadmin";
 	}
-	
+
 	@GetMapping("/getemployeepaysliplist")
-	public String getEmployeePayslip(@RequestParam("id") int id,Model model) {
-		EmployeeDetailsPayslipDTO dto=employeeDetailsService.getEmployeedetailsPayslip(id);
-		model.addAttribute("getemployeedetails",dto.getEmployeeDetails());
-		model.addAttribute("payslipdetails",dto.getPayslipList());
-		
+	public String getEmployeePayslip(@RequestParam("id") int id, Model model) {
+		EmployeeDetailsPayslipDTO dto = employeeDetailsService.getEmployeedetailsPayslip(id);
+		model.addAttribute("getemployeedetails", dto.getEmployeeDetails());
+		model.addAttribute("payslipdetails", dto.getPayslipList());
+
 		return "employeedetails-payslip";
 	}
-	
+
 	@GetMapping("/getemployeeattendancelist")
-	public String getEmployeeattendance(@RequestParam("id") int id,Model model) {
-		EmployeeDetailsAttendanceDTO dto=employeeDetailsService.getEmployeedetailsAttendance(id);
-		model.addAttribute("getemployeedetails",dto.getEmployeeDetails());
-		model.addAttribute("attendancedetails",dto.getAttendanceList());
+	public String getEmployeeattendance(@RequestParam("id") int id, Model model) {
+		EmployeeDetailsAttendanceDTO dto = employeeDetailsService.getEmployeedetailsAttendance(id);
+		model.addAttribute("getemployeedetails", dto.getEmployeeDetails());
+		model.addAttribute("attendancedetails", dto.getAttendanceList());
 		return "employeedetails-attendance";
 	}
-	
-	@GetMapping("/employeelogin")
-    public String employeeAccessForm(Model model) {
-        EmployeeDetails employee = new EmployeeDetails();
-        model.addAttribute("employeelogindetails", employee);
-        return "employee-loginform";
-    }                   
 
-    @PostMapping("/checkemployeelogin")
-    public String checkingAccess(@ModelAttribute("employeelogindetails") EmployeeDetails employeeDet,HttpSession session,Model model) {
-        EmployeeDetails employee = employeeDetailsService.getEmployeeByIDEmailAndPassword(employeeDet.getEmployeeID(), employeeDet.getEmployeeEmail(), employeeDet.getEmployeePassword());
-        if (employee!= null){
-        	model.addAttribute("employeeId", employee.getEmployeeID());
-        	session.setAttribute("employeeId", employee.getEmployeeID());
-        	model.addAttribute("name", employee.getEmployeeFirstName());
-            return "employee-indexpage";
-        } else
-            return "redirect-employeeloginpage";
-    }
-    
-    @GetMapping("/employeeindex")
-    public String employeeIndexPage(Model model) {
-        EmployeeDetails employee = new EmployeeDetails();
-        model.addAttribute("employeelogindetails", employee);
-        return "employee-indexpage";
-    }
-    
-    @GetMapping("/attendancetype")
-    public String index(Model model) {
-        return "attendance-type";
-    }  
-    @GetMapping("/logout")
-    public String logout(Model model,HttpServletRequest request) {
-    	HttpSession session=request.getSession(true);
-    	session.invalidate();
-    	return "/index";
-    }
+	@GetMapping("/employeelogin")
+	public String employeeAccessForm(Model model) {
+		EmployeeDetails employee = new EmployeeDetails();
+		model.addAttribute("employeelogindetails", employee);
+		return "employee-loginform";
+	}
+
+	@PostMapping("/checkemployeelogin")
+	public String checkingAccess(@ModelAttribute("employeelogindetails") EmployeeDetails employeeDet,
+			HttpSession session, Model model) {
+		EmployeeDetails employee = employeeDetailsService.getEmployeeByIDAndPassword(employeeDet.getEmployeeID(),
+				employeeDet.getEmployeePassword());
+		if (employee != null) {
+			model.addAttribute("employeeId", employee.getEmployeeID());
+			session.setAttribute("employeeId", employee.getEmployeeID());
+			model.addAttribute("name", employee.getEmployeeFirstName());
+			return "employee-indexpage";
+		} else
+			return "redirect-employeeloginpage";
+	}
+
+	@GetMapping("/employeeindex")
+	public String employeeIndexPage(Model model) {
+		EmployeeDetails employee = new EmployeeDetails();
+		model.addAttribute("employeelogindetails", employee);
+		return "employee-indexpage";
+	}
+
+	@GetMapping("/attendancetype")
+	public String index(Model model) {
+		return "attendance-type";
+	}
+
+	@GetMapping("/logout")
+	public String logout(Model model, HttpServletRequest request) {
+		HttpSession session = request.getSession(true);
+		session.invalidate();
+		return "/index";
+	}
 }
