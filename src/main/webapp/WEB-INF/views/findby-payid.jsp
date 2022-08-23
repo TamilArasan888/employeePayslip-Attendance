@@ -11,6 +11,8 @@
 </style>
 </head>
 <body>
+<a href="/payslipdetails/paysliplistforadmin"><button class="back-button"
+       >Go Back</button></a>
 	<form:form action="" method="post" modelAttribute="getpayslip">
 		<h1>Payslip Details</h1>
 		<div class="form">

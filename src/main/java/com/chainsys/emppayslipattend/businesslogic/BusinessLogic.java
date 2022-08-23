@@ -22,6 +22,7 @@ private BusinessLogic() {
 	public static int findEmployeeAttendance(List<Attendance>attendancelist,int employeeId) {
 		int noOfDaysPresent=0;
 		Iterator<Attendance> itr=attendancelist.iterator();
+		
 		while(itr.hasNext()) {
 			Attendance attendance=itr.next();
 			if(attendance.getEmployeeID()==employeeId) {
@@ -46,18 +47,24 @@ private BusinessLogic() {
 	
 	public static float netSalaryCalculation(float grossSalary,Optional<BasicSalary> basicSal,int totalNoOfDays,int noOfPresents) {
 		BasicSalary basicSalary=basicSal.get();
+		
 		double cutSalary=grossSalary/totalNoOfDays;
 		double cutPF=basicSalary.getProvidentFund()/totalNoOfDays;
+		
 		double total=cutSalary*noOfPresents;
 		double totalPF=cutPF*noOfPresents;
+		
 		float net=(float)(total-totalPF);
+		
 		float incomeTax=net*basicSalary.getIncomeTax()/100;
+		
 		return net-incomeTax;
 	}
 	
 	public static Date[] fromDateCalculation(Date payslipDate) {
 		String stringDate=payslipDate+"";
 		String []dateArray=stringDate.split("-");
+		
 		int month=Integer.parseInt(dateArray[1]);
 		int year=Integer.parseInt(dateArray[0]);
 		if(month>1) {

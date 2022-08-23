@@ -55,6 +55,7 @@ public class PayslipService {
 	public List<Integer> getAttendance(int id,Date payslipdate) {
 		List<Integer> days=new ArrayList<>();
 		Date[] dates=BusinessLogic.fromDateCalculation(payslipdate);
+		
 		List<Attendance> attendancelist=attendanceService.getAttendanceBetweenTwoDates(dates[0],dates[1]);
         int noOfPresent=BusinessLogic.findEmployeeAttendance(attendancelist,id);
 		int totalNoDays=BusinessLogic.getCutSalaryPercent(dates);

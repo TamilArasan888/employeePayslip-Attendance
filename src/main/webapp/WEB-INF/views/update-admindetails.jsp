@@ -14,6 +14,8 @@
 </script>
 </head>
 <body>
+<a href="/admindetails/adminlist"><button class="back-button"
+       >Go Back</button></a>
 	<form:form name="form" action="updateadmin" method="post"
 		modelAttribute="updateadmindetails">
 		<h1>Update Admin Details</h1>

@@ -40,11 +40,11 @@ p {
 }
 
 .form {
-	margin-left: 20%;
+	margin-left: 10%;
 }
 
 .basicsalary .form {
-	margin-left: 20%;
+	margin-left: 10%;
 }
 
 .attendance {
@@ -52,7 +52,7 @@ p {
 }
 
 .payslip-details {
-	margin-left: 25%;
+	margin-left: 10%;
 }
 button{
 margin-left:50%;

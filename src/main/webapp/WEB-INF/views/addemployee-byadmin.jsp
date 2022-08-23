@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="ISO-8859-1">
-<title>Add Employee Details</title>
+<title>Add Employee By Admin</title>
 <style type="text/css">
 <%@include file="/WEB-INF/css/forms.css"%>
 </style>
@@ -16,8 +16,8 @@
 </head>
 <body>
 	<div class="form-employee">
-		<form:form name="form" action="addemployee" method="post"
-			modelAttribute="addemployeedetail">
+		<form:form name="form" action="addemployeebyadmin" method="post"
+			modelAttribute="addemployeedetailbyadmin">
 
 			<h1>Employee Registration Form</h1>
 
@@ -112,7 +112,8 @@
 				
 			</div>
 	</form:form>
-	<a href="/index"><button class="back-button2" >Go Back</button></a>
+	<a href="/admindetails/adminindex"><button class="back-button2" >Go Back</button></a>
 	</div>
+
 </body>
 </html>

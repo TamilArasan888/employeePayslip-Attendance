@@ -11,6 +11,8 @@
 </style>
 </head>
 <body>
+<a href="/attendancedetails/attendancelistforadmin"><button class="back-button"
+       >Go Back</button></a>
 	<form:form action="" method="post" modelAttribute="getattendance">
 		<h1>Attendance Details</h1>
 		<div class="form">

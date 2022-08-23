@@ -71,6 +71,23 @@ public class EmployeeDetailsController {
 		employeeDetailsService.save(employee);
 		return "redirect:/employeedetails/employeelogin";
 	}
+	
+	@GetMapping("/addemployeedetailsbyadmin")
+	public String showAddFormByadmin(Model model) {
+		EmployeeDetails employee = new EmployeeDetails();
+		model.addAttribute("addemployeedetailbyadmin", employee);
+		List<BasicSalary> basicSalary=employeeDetailsService.getAllBasicSalary();
+		model.addAttribute("basicSalary", basicSalary);
+		return "addemployee-byadmin";
+	}
+
+	@PostMapping("/addemployeebyadmin")
+	public String addNewEmployeeDetailsByadmin(@ModelAttribute("addemployeedetailbyadmin") EmployeeDetails employee) {
+		Optional<BasicSalary> basicSalary=employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
+		employee.setEmpBasicsalary(basicSalary.get().getEmployeeBasicSalary());
+		employeeDetailsService.save(employee);
+		return "redirect:/employeedetails/employeelist";
+	}
 
 	@GetMapping("/updateemployeedetails")
 	public String showUpdateEmpForm(@RequestParam("employeeid") int id, Model model) {
@@ -103,6 +120,7 @@ public class EmployeeDetailsController {
 		model.addAttribute("attendancedetails",dto.getAttendanceList());
 		return "employeedetails-attendance";
 	}
+	
 	@GetMapping("/employeelogin")
     public String employeeAccessForm(Model model) {
         EmployeeDetails employee = new EmployeeDetails();
@@ -121,6 +139,7 @@ public class EmployeeDetailsController {
         } else
             return "redirect-employeeloginpage";
     }
+    
     @GetMapping("/employeeindex")
     public String employeeIndexPage(Model model) {
         EmployeeDetails employee = new EmployeeDetails();

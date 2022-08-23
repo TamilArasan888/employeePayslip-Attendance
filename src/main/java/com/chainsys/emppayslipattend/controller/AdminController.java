@@ -102,5 +102,4 @@ public class AdminController {
 	public String index(Model model) {
 		return "admin-indexpage";
 	}
-
 }

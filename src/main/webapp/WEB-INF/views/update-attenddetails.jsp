@@ -14,6 +14,8 @@
 </script>
 </head>
 <body>
+<a href="/attendancedetails/attendancelistforadmin"><button class="back-button"
+       >Go Back</button></a>
 	<form:form name="form" action="updateattendance" method="post"
 		modelAttribute="updateattendancedetails">
 		<h1>Update Attendance Details</h1>

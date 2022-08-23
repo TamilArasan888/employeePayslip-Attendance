@@ -14,6 +14,8 @@
 </script>
 </head>
 <body>
+<a href="/payslipdetails/paysliplistforadmin"><button class="back-button"
+       >Go Back</button></a>
 	<form:form name="form" action="updatepayslip" method="post"
 		modelAttribute="updatepayslipdetails">
 		<h1>Update Payslip Details</h1>

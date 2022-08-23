@@ -11,6 +11,8 @@
 </style>
 </head>
 <body>
+<a href="/admindetails/adminlist"><button class="back-button"
+       >Go Back</button></a>
 	<form:form action="" method="post" modelAttribute="getadmindetailsbyid">
 		<h1>Admin Details</h1>
 		<div class="form">

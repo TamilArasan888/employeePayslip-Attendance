@@ -7,7 +7,9 @@ import com.chainsys.emppayslipattend.model.EmployeeDetails;
 import com.chainsys.emppayslipattend.model.Payslip;
 
 public class EmployeeDetailsPayslipDTO {
+	
 	private EmployeeDetails employeeDetails;
+	
 	private List<Payslip> payslipList = new ArrayList<Payslip>();
 
 	public EmployeeDetails getEmployeeDetails() {

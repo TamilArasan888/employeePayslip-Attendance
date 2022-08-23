@@ -89,6 +89,20 @@ h1 {
 	cursor: pointer;
 	text-decoration: none;
 }
+.back-button2 {
+	text-align:center;
+	margin-top: 5px;
+	margin-left:30%;
+	width: 40%;
+	background:#face69;
+	color:black;
+	padding: 5px 0;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
 
 .form-control {
 	margin-bottom: 10px;

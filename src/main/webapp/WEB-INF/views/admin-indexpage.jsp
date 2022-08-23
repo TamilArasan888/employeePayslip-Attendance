@@ -27,7 +27,7 @@
 				Employees
 			</button>
 			<div class="dropdown-content">
-				<a href="/employeedetails/addemployeedetails">Add a new employee</a>
+				<a href="/employeedetails/addemployeedetailsbyadmin">Add a new employee</a>
 				<a href="/employeedetails/employeelistforadmin">View all
 					employees details</a>
 			</div>

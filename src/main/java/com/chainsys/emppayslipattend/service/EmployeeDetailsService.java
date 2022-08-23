@@ -57,10 +57,12 @@ public class EmployeeDetailsService {
 	}
 
 	public EmployeeDetailsPayslipDTO getEmployeedetailsPayslip(int id) {
+		
 		EmployeeDetails employeeDetails = findById(id);
 		EmployeeDetailsPayslipDTO employeeDetailsPayslipdto = new EmployeeDetailsPayslipDTO();
 		employeeDetailsPayslipdto.setEmployeeDetails(employeeDetails);
 		List<Payslip> payslipList = payslipRepository.findByEmployeeID(id);
+		
 		Iterator<Payslip> payslipItr = payslipList.iterator();
 		while(payslipItr.hasNext()) {
 			employeeDetailsPayslipdto.addPayslip(payslipItr.next());
