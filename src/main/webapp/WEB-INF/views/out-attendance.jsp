@@ -13,7 +13,7 @@
 <body>
 <a href="/employeedetails/employeeindex"><button class="back-button"
        >Go Back</button></a>
-<div class="form-attendance">
+<div class="form-out-attendance">
 			<form:form name="form" action="timeattendance" method="post"
 				modelAttribute="updatetimeattendance">
 				<h1>Out-Time Attendance Form</h1>

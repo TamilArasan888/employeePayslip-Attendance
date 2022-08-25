@@ -19,7 +19,7 @@ import com.chainsys.emppayslipattend.service.AdminService;
 @Controller
 @RequestMapping("/admindetails")
 public class AdminController {
-	private static final String REDIRECTTOADMINLIST="redirect:/admindetails/adminlist";
+	private static final String REDIRECTTOADMINLIST = "redirect:/admindetails/adminlist";
 
 	@Autowired
 	private AdminService adminService;
@@ -69,16 +69,15 @@ public class AdminController {
 	}
 
 	@PostMapping("/updateadmin")
-	public String updateAdminDetails(@Valid@ModelAttribute("updateadmindetails") Admin adm,Errors errors) {
+	public String updateAdminDetails(@Valid @ModelAttribute("updateadmindetails") Admin adm, Errors errors) {
 		if (errors.hasErrors()) {
 			return "update-admindetails";
-		} 
-		else {
-		adminService.save(adm);
-		return REDIRECTTOADMINLIST;
+		} else {
+			adminService.save(adm);
+			return REDIRECTTOADMINLIST;
+		}
 	}
-	}
-	
+
 //	Get and PostMapping for Admin Login checking
 	@GetMapping("/adminlogin")
 	public String adminAccessForm(Model model) {
@@ -88,16 +87,18 @@ public class AdminController {
 	}
 
 	@PostMapping("/checkadminlogin")
-	public String checkingAccess(@ModelAttribute("adminlogindetails") Admin admin) {
+	public String checkingAccess(@ModelAttribute("adminlogindetails") Admin admin, Model model) {
 		Admin adm = adminService.getAdminByIDNameAndPassword(admin.getAdminID(), admin.getAdminName(),
 				admin.getAdminPassword());
 		if (adm != null) {
-
 			return "redirect:/admindetails/adminindex";
-		} else
+		}
+
+		else {
 			return "redirect-adminloginpage";
+		}
 	}
-	
+
 	@GetMapping("/adminindex")
 	public String index(Model model) {
 		return "admin-indexpage";

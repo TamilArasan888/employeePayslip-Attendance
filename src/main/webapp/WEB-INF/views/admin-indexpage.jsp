@@ -49,8 +49,7 @@
 				Attendance
 			</button>
 			<div class="dropdown-content">
-				<a href="/attendancedetails/addattendancedetails">Add attendance
-					for employee </a> <a href="/attendancedetails/attendancelistforadmin">View
+					<a href="/attendancedetails/attendancelistforadmin">View
 					all employee attendance details</a>
 			</div>
 		</div>

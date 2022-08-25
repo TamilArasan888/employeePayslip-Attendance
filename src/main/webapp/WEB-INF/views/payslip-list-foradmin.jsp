@@ -24,7 +24,6 @@
 					<th>Gross Salary</th>
 					<th>Net Salary</th>
 					<th>View Details</th>
-					<th>Edit</th>
 					<th>Delete</th>
 				</tr>
 			</thead>
@@ -38,8 +37,6 @@
 						<td>${payslip.netSalary}</td>
 						<td><a
 							href="/employeedetails/getemployeepaysliplist?id=${payslip.employeeID}">View</a></td>
-						<td><a
-							href="/payslipdetails/updatepayslipdetails?payslipid=${payslip.payslipID}">Edit</a></td>
 						<td><a
 							href="/payslipdetails/deletepayslipbyid?payslipid=${payslip.payslipID}">Delete</a></td>
 					</tr>

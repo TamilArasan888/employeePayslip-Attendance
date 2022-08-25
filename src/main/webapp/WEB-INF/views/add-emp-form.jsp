@@ -81,7 +81,7 @@
 
 			<div class="form-control-employee">
 				<label for="employeeRole">Employee Role : </label>
-				<form:select path="employeeRole" name="employeeRole" onblur="employeeRoleCheck();" required="true">
+				<form:select path="employeeRole" name="employeeRole" onblur="employeeRoleCheck();">
 					<c:forEach var="basicSalary" items="${basicSalary}">
 						<form:option value="${basicSalary.employeeRole}"
 							label="${basicSalary.employeeRole}" />
@@ -112,7 +112,7 @@
 				
 			</div>
 	</form:form>
-	<a href="/index"><button class="back-button2" >Go Back</button></a>
+	<a href="/employeedetails/employeelogin"><button class="back-button2" >Go Back</button></a>
 	</div>
 </body>
 </html>

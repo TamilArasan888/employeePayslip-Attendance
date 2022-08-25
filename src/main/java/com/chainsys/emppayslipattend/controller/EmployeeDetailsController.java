@@ -25,8 +25,6 @@ import com.chainsys.emppayslipattend.service.EmployeeDetailsService;
 @RequestMapping("/employeedetails")
 public class EmployeeDetailsController {
 
-	public static final String BASICSALARY = "basicsalary";
-
 	@Autowired
 	private EmployeeDetailsService employeeDetailsService;
 
@@ -62,7 +60,7 @@ public class EmployeeDetailsController {
 		EmployeeDetails employee = new EmployeeDetails();
 		model.addAttribute("addemployeedetail", employee);
 		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
-		model.addAttribute(BASICSALARY, basicSalary);
+		model.addAttribute("basicsalary", basicSalary);
 		return "add-emp-form";
 	}
 
@@ -79,7 +77,7 @@ public class EmployeeDetailsController {
 		EmployeeDetails employee = new EmployeeDetails();
 		model.addAttribute("addemployeedetailbyadmin", employee);
 		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
-		model.addAttribute(BASICSALARY, basicSalary);
+		model.addAttribute("basicsalary", basicSalary);
 		return "addemployee-byadmin";
 	}
 
@@ -96,7 +94,7 @@ public class EmployeeDetailsController {
 		EmployeeDetails employee = employeeDetailsService.findById(id);
 		model.addAttribute("updateemployeedetails", employee);
 		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
-		model.addAttribute(BASICSALARY, basicSalary);
+		model.addAttribute("basicsalary", basicSalary);
 		return "update-empdetails";
 	}
 
