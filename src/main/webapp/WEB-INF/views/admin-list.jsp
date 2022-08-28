@@ -37,7 +37,8 @@
 						<td><a
 							href="/admindetails/updateadmindetails?adminid=${admin.adminID}">Edit</a></td>
 						<td><a
-							href="/admindetails/deleteadmindetailsbyid?adminid=${admin.adminID}">Delete</a></td>
+							href="/admindetails/deleteadmindetailsbyid?adminid=${admin.adminID}" 
+							onclick="if (confirm('Are you sure you want to Delete?')) form.action='/Config?pg=FIBiller&amp;cmd=delete'; else return false;">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

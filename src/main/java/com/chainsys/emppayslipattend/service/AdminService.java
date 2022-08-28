@@ -29,8 +29,8 @@ public class AdminService {
 		return adminRepository.findAll();
 	}
 	
-	public Admin getAdminByIDNameAndPassword(int id,String name, String password) {
-        return adminRepository.findByAdminIDAndAdminNameAndAdminPassword(id, name, password);
+	public Admin getAdminByIDAndPassword(int id,String password) {
+        return adminRepository.findByAdminIDAndAdminPassword(id,password);
     }
 	
 }

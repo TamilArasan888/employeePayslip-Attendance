@@ -10,6 +10,6 @@ public interface AdminRepository extends CrudRepository<Admin,Integer>  {
     Admin save(Admin adm); 
     void deleteById(int admId);
     List<Admin> findAll();
-    Admin findByAdminIDAndAdminNameAndAdminPassword(int id,String name, String password);
+    Admin findByAdminIDAndAdminPassword(int id,String password);
 
 }

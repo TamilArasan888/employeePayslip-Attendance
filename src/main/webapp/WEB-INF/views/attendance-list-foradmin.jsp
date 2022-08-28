@@ -44,7 +44,8 @@
 						<td><a
 							href="/attendancedetails/updateattendancedetails?attendanceid=${attendance.attendanceID}">Edit</a></td>
 						<td><a
-							href="/attendancedetails/deleteattendancebyid?attendanceid=${attendance.attendanceID}">Delete</a></td>
+							href="/attendancedetails/deleteattendancebyid?attendanceid=${attendance.attendanceID}"
+							onclick="if (confirm('Are you sure you want to Delete?')) form.action='/Config?pg=FIBiller&amp;cmd=delete'; else return false;">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -38,7 +38,8 @@
 						<td><a
 							href="/employeedetails/getemployeepaysliplist?id=${payslip.employeeID}">View</a></td>
 						<td><a
-							href="/payslipdetails/deletepayslipbyid?payslipid=${payslip.payslipID}">Delete</a></td>
+							href="/payslipdetails/deletepayslipbyid?payslipid=${payslip.payslipID}"
+							onclick="if (confirm('Are you sure you want to Delete?')) form.action='/Config?pg=FIBiller&amp;cmd=delete'; else return false;">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

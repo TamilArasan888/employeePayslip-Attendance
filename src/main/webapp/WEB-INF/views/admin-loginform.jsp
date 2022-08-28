@@ -28,10 +28,10 @@
 			placeholder="Enter Your Admin ID" required="true" />
 		<form:errors path="adminID" cssClass="text-danger" />
 
-		<label for="adminName">Admin Name : </label>
+		<%-- <label for="adminName">Admin Name : </label>
 		<form:input id="adminname" path="adminName"
 			placeholder="Enter Admin Name" required="true" />
-		<form:errors path="adminName" cssClass="text-danger" />
+		<form:errors path="adminName" cssClass="text-danger" /> --%>
 
 		<label for="adminPassword">Admin Password : </label>
 		<form:input id="adminpassword" path="adminPassword" type="password"
@@ -41,6 +41,9 @@
 		<form:button>SignIn</form:button>
 
 	</form:form>
+	</div>
+	<div>
+	${message}
 	</div>
 </body>
 </html>

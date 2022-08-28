@@ -60,7 +60,7 @@ public class EmployeeDetailsController {
 		EmployeeDetails employee = new EmployeeDetails();
 		model.addAttribute("addemployeedetail", employee);
 		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
-		model.addAttribute("basicsalary", basicSalary);
+		model.addAttribute("basicSalary", basicSalary);
 		return "add-emp-form";
 	}
 
@@ -77,7 +77,7 @@ public class EmployeeDetailsController {
 		EmployeeDetails employee = new EmployeeDetails();
 		model.addAttribute("addemployeedetailbyadmin", employee);
 		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
-		model.addAttribute("basicsalary", basicSalary);
+		model.addAttribute("basicSalary", basicSalary);
 		return "addemployee-byadmin";
 	}
 
@@ -86,7 +86,7 @@ public class EmployeeDetailsController {
 		Optional<BasicSalary> basicSalary = employeeDetailsService.getBasicSalaryById(employee.getEmployeeRole());
 		employee.setEmpBasicsalary(basicSalary.get().getEmployeeBasicSalary());
 		employeeDetailsService.save(employee);
-		return "redirect:/employeedetails/employeelist";
+		return "redirect:/employeedetails/employeelistforadmin";
 	}
 
 	@GetMapping("/updateemployeedetails")
@@ -94,7 +94,7 @@ public class EmployeeDetailsController {
 		EmployeeDetails employee = employeeDetailsService.findById(id);
 		model.addAttribute("updateemployeedetails", employee);
 		List<BasicSalary> basicSalary = employeeDetailsService.getAllBasicSalary();
-		model.addAttribute("basicsalary", basicSalary);
+		model.addAttribute("basicSalary", basicSalary);
 		return "update-empdetails";
 	}
 
